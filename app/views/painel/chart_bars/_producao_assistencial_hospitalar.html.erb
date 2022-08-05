@@ -1,0 +1,75 @@
+<div class="card flex-fill w-100">
+    <div class="card-header">
+        <h5 class="card-title fs-4 mb-0 text-secondary"><strong>Produção Assistencial Hospitalar</strong></h5>
+    </div>
+    <div class="card-body py-3">
+        <div class="chart chart-sm" >
+            <canvas id="prodHosp"></canvas>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    // setup 
+    var data = {
+      labels: [<% @production_by_specialties.each do |production_by_specialty| %>"<%= production_by_specialty.specialty %>",<% end %>],
+      datasets: [{
+        label: 'Meta',
+        data: [<% @production_by_specialties.each do |production_by_specialty| %><%= production_by_specialty.foreseen %>,<% end %>],
+        backgroundColor: [
+          '#3b7ddd'
+        ],
+        borderColor: [
+          '#3b7ddd'
+        ],
+        borderWidth: 0
+      },
+      {
+        label: 'Realizadas',
+        data: [<% @production_by_specialties.each do |production_by_specialty| %><%= production_by_specialty.accomplished %>,<% end %>],
+        backgroundColor: [
+          '#dc3545'
+        ],
+        borderColor: [
+          '#dc3545'
+        ],
+        borderWidth: 0
+      }]
+    };
+
+    // config 
+    var config = {
+      type: 'bar',
+      data,
+      options: {
+        maintainAspectRatio: false,
+        legend: {
+            display: true
+        },
+        indexAxis: 'y',
+        scales: {
+          yAxes: [{
+                gridLines: {
+                    display: false
+                },
+                stacked: false,
+                ticks: {
+                    stepSize: 20
+                }
+            }],
+            xAxes: [{
+                stacked: false,
+                gridLines: {
+                    color: "transparent"
+                }
+            }]
+        }
+      }
+    };
+
+    // render init block
+    var prodHosp = new Chart(
+      document.getElementById('prodHosp'),
+      config
+    );
+</script>
