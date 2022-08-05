@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   
   get 'welcome/index'
   get 'welcome/bi_hegv'
-  root "welcome#index"
+  root "painel#show"
 
   resources :painel
 
