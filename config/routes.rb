@@ -1,14 +1,11 @@
 Rails.application.routes.draw do
-  resources :censo_setors
-    
-  get 'painel/index'
-  get 'painel/show'
+     
+  
   get 'welcome/index'
   get 'welcome/bi_hegv'
   root "welcome#index"
 
-  #resources :painel do
-  #end
+  resources :painel
 
   resources :censo_setors do
     collection do
