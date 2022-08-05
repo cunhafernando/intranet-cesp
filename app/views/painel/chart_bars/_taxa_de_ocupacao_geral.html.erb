@@ -1,0 +1,75 @@
+<div class="card flex-fill w-100">
+    <div class="card-header">
+        <h5 class="card-title fs-4 mb-0 text-secondary"><strong>Taxa de Ocupação Operacional Mensal</strong></h5>
+    </div>
+    <div class="card-body py-3">
+        <div class="chart chart-sm" style="height:425px" >
+            <canvas id="myChart"></canvas>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    // setup 
+    var data = {
+      labels: [<% @censo_setors.each do |censo_setor| %>"<%= censo_setor.secao %> (<%= (((censo_setor.pacientes_dia) / (censo_setor.leitos_dia)) * 100).to_i %>%)",<% end %>],
+      datasets: [{
+        label: 'Pacientes/Dia',
+        data: [<% @censo_setors.each do |censo_setor| %><%= censo_setor.pacientes_dia %>,<% end %>],
+        backgroundColor: [
+          '#3b7ddd'
+        ],
+        borderColor: [
+          '#3b7ddd'
+        ],
+        borderWidth: 0
+      },
+      {
+        label: 'Leitos/Dia',
+        data: [<% @censo_setors.each do |censo_setor| %><%= censo_setor.leitos_dia %>,<% end %>],
+        backgroundColor: [
+          'red'
+        ],
+        borderColor: [
+          'red'
+        ],
+        borderWidth: 0
+      }]
+    };
+
+    // config 
+    var config = {
+      type: 'bar',
+      data,
+      options: {
+        maintainAspectRatio: false,
+        legend: {
+            display: true
+        },
+        indexAxis: 'y',
+        scales: {
+          yAxes: [{
+                gridLines: {
+                    display: false
+                },
+                stacked: false,
+                ticks: {
+                    stepSize: 150
+                }
+            }],
+            xAxes: [{
+                stacked: false,
+                gridLines: {
+                    color: "transparent"
+                }
+            }]
+        }
+      }
+    };
+
+    // render init block
+    var myChart = new Chart(
+      document.getElementById('myChart'),
+      config
+    );
+</script>
