@@ -39,7 +39,7 @@ class PainelController < ApplicationController
   def computed_tomographies
     @computed_tomographies = ComputedTomography.all
     @total_tomografia = ComputedTomography.all.sum(:amount)
-    @media_tomografia = ((((@total_tomografia.to_f) / 2400) * 100).to_i) - 100
+    @media_tomografia = (((((@total_tomografia.to_f) / 2400) * 100).to_i) - 100)
     @color_media_tomografia = if @media_tomografia >= 0 
       "success" 
     else 
