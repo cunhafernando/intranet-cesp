@@ -16,7 +16,7 @@ class PainelController < ApplicationController
   def consolidados
     @consolidados = Consolidado.all
     @taxa_mortalidade_institucional = ((Consolidado.all.sum(:obito_maior) / Consolidado.all.sum(:total_de_saidas)) * 100).ceil(2)
-    @taxa_ocupacao_operacional = ((Consolidado.all.sum(:pacientes_dia) / Consolidado.all.sum(:leitos_dia)) * 100).to_i
+    @taxa_ocupacao_operacional = ((Consolidado.all.sum(:pacientes_dia) / Consolidado.all.sum(:leitos_dia)) * 100)
     @media_permanencia_geral = (Consolidado.all.sum(:pacientes_dia) / Consolidado.all.sum(:total_de_saidas)).to_i
     @diferenca_da_meta = 85 - @taxa_ocupacao_operacional
     @color_consolidado_tmi = if @taxa_mortalidade_institucional <= 10 
