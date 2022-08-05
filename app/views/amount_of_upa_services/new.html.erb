@@ -1,0 +1,25 @@
+<h1>nova lista de atendimento mensal UPA </h1>
+
+<div class="row align-items-center mt-5 mb-5">
+    <div class="col-6">
+    <h3>Importar lista</h3>
+      <%= form_tag import_amount_of_upa_services_path, multipart: true do %>
+        <%= file_field_tag :file %>
+        <%= submit_tag "Importar", :class=> "btn btn-success" %>
+      <% end %>
+    </div>
+    <div class="col-6">
+      <h3>Limpar lista de ramais</h3>
+      <%= link_to "Limpar lista", remove_all_amount_of_upa_services_path, :method => :get, class: "btn btn-danger" %>
+    </div>
+  </div>
+<div>
+
+<%= render "form", amount_of_upa_service: @amount_of_upa_service %>
+
+
+<br>
+
+<div>
+  <%= link_to "Back to amount of upa services", amount_of_upa_services_path, class: "btn btn-warning" %>
+</div>

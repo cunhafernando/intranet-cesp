@@ -1,0 +1,58 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Consolidados</h1>
+<%= link_to "Nova lista Censo Consolidado", new_consolidado_path, :class=> "btn btn-success" %>
+
+<table class="table table-hover my-0">
+  <thead>
+    <tr>
+      <th>Leitos</th>
+      <th>Leitos Extra</th>
+      <th>Leitos/Dia</th>
+      <th>Pacientes/Dia</th>
+      <th>Internados</th>
+      <th>Total de Entradas</th>
+      <th>Altas</th>
+      <th>Transf. Externa</th>
+      <th>Óbito >= 24</th>
+      <th>Óbito < 24</th>
+      <th>Tot. Saídas</th>
+      <th>MPD</th>
+      <th>TOCO</th>
+      <th>TOCH</th>
+      <th>MPe</th>
+      <th>TMG</th>
+      <th>TMI</th>      
+      <th>IR</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @consolidados.each do |consolidado| %>
+      <tr>
+        <td><%= consolidado.leitos %></td>
+        <td><%= consolidado.leitos_extra %></td>
+        <td><%= consolidado.leitos_dia %></td>
+        <td><%= consolidado.pacientes_dia %></td>
+        <td><%= consolidado.internados %></td>
+        <td><%= consolidado.total_de_entradas %></td>
+        <td><%= consolidado.altas %></td>
+        <td><%= consolidado.transf_externa %></td>
+        <td><%= consolidado.obito_maior %></td>
+        <td><%= consolidado.obito_menor %></td>
+        <td><%= consolidado.total_de_saidas %></td>
+        <td><%= consolidado.mpd %></td>
+        <td><%= consolidado.toco %></td>
+        <td><%= consolidado.toch %></td>
+        <td><%= consolidado.mpe %></td>
+        <td><%= consolidado.tmg %></td>
+        <td><%= consolidado.tmi %></td>
+        <td><%= consolidado.ir %></td>
+        <td><%= link_to 'Mostrar', consolidado, class: "btn btn-success" %></td>
+        <td><%= link_to 'Editar', edit_consolidado_path(consolidado), class: "btn btn-warning" %></td>
+        <td><%= link_to 'Apagar', consolidado, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<%= render @computed_tomography %>
+
+<div>
+  <%= link_to "Editar esta tomografia", edit_computed_tomography_path(@computed_tomography) %> |
+  <%= link_to "Voltar para lista de tomografias", computed_tomographies_path %>
+
+  <%= button_to "Apagar esta tomografia", @computed_tomography, method: :delete %>
+</div>

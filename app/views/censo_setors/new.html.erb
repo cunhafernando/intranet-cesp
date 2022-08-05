@@ -1,0 +1,20 @@
+<h1>Nova lista de setores</h1>
+<div class="row align-items-center mt-5 mb-5">
+    <div class="col-6">
+    <h3>Importar lista</h3>
+      <%= form_tag import_censo_setors_path, multipart: true do %>
+        <%= file_field_tag :file %>
+        <%= submit_tag "Importar", :class=> "btn btn-success" %>
+      <% end %>
+    </div>
+    <div class="col-6">
+      <h3>Limpar lista Censo por Setor</h3>
+      <%= link_to "Limpar lista", remove_all_censo_setors_path, :method => :get, class: "btn btn-danger" %>
+    </div>
+  </div>
+<div>
+<%= render "form", censo_setor: @censo_setor %>
+<br>
+<div>
+  <%= link_to "Back to censo setors", censo_setors_path, class: "btn btn-warning" %>
+</div>

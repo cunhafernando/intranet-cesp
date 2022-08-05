@@ -1,0 +1,89 @@
+<%= form_with(model: amount_of_upa_service) do |form| %>
+  <% if amount_of_upa_service.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(amount_of_upa_service.errors.count, "error") %> proibiu que esta lista fosse salva:</h2>
+
+      <ul>
+        <% amount_of_upa_service.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row justify-content-center">
+    <div class="col-3">
+      <%= form.label :year_month, style: "display: block", class: "form-label" %>
+      <%= form.text_field :year_month, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :registered, style: "display: block", class: "form-label" %>
+      <%= form.text_field :registered, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :classified, style: "display: block", class: "form-label" %>
+      <%= form.text_field :classified, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :attended, style: "display: block", class: "form-label" %>
+      <%= form.text_field :attended, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :welcomed, style: "display: block", class: "form-label" %>
+      <%= form.text_field :welcomed, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :service_time, style: "display: block", class: "form-label" %>
+      <%= form.text_field :service_time, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :green_time, style: "display: block", class: "form-label" %>
+      <%= form.text_field :green_time, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :green_in_the_goal, style: "display: block", class: "form-label" %>
+      <%= form.text_field :green_in_the_goal, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :green_off_target, style: "display: block", class: "form-label" %>
+      <%= form.text_field :green_off_target, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :yellow_time, style: "display: block", class: "form-label" %>
+      <%= form.text_field :yellow_time, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :yellow_in_the_goal, style: "display: block", class: "form-label" %>
+      <%= form.text_field :yellow_in_the_goal, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :yellow_off_target, style: "display: block", class: "form-label" %>
+      <%= form.text_field :yellow_off_target, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :red_in_the_goal, style: "display: block", class: "form-label" %>
+      <%= form.text_field :red_in_the_goal, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :red_off_target, style: "display: block", class: "form-label" %>
+      <%= form.text_field :red_off_target, class: "form-label" %>
+    </div>
+
+    <div>
+      <%= form.submit class: 'btn btn-success' %>
+    </div>
+  </div>
+<% end %>

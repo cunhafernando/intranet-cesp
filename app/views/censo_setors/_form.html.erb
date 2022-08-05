@@ -1,0 +1,124 @@
+<%= form_with(model: censo_setor) do |form| %>
+  <% if censo_setor.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(censo_setor.errors.count, "error") %> proibiu que esta lista fosse salva:</h2>
+
+      <ul>
+        <% censo_setor.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row justify-content-center">
+    <div class="col-3">
+      <%= form.label :secao, style: "display: block", class: "form-label" %>
+      <%= form.text_field :secao, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :leitos, style: "display: block", class: "form-label" %>
+      <%= form.text_field :leitos, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :leitos_extra, style: "display: block", class: "form-label" %>
+      <%= form.text_field :leitos_extra, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :leitos_dia, style: "display: block", class: "form-label" %>
+      <%= form.text_field :leitos_dia, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :pacientes_dia, style: "display: block", class: "form-label" %>
+      <%= form.text_field :pacientes_dia, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :internados, style: "display: block", class: "form-label" %>
+      <%= form.text_field :internados, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :transf_interna_entradas, style: "display: block", class: "form-label" %>
+      <%= form.text_field :transf_interna_entradas, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :total_de_entradas, style: "display: block", class: "form-label" %>
+      <%= form.text_field :total_de_entradas, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :altas, style: "display: block", class: "form-label" %>
+      <%= form.text_field :altas, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :transf_externa, style: "display: block", class: "form-label" %>
+      <%= form.text_field :transf_externa, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :obito_maior, style: "display: block", class: "form-label" %>
+      <%= form.text_field :obito_maior, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :obito_menor, style: "display: block", class: "form-label" %>
+      <%= form.text_field :obito_menor, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :transf_interna_saida, style: "display: block", class: "form-label" %>
+      <%= form.text_field :transf_interna_saida, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :total_de_saidas, style: "display: block", class: "form-label" %>
+      <%= form.text_field :total_de_saidas, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :mpd, style: "display: block", class: "form-label" %>
+      <%= form.text_field :mpd, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :toco, style: "display: block", class: "form-label" %>
+      <%= form.text_field :toco, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :toch, style: "display: block", class: "form-label" %>
+      <%= form.text_field :toch, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :mpe, style: "display: block", class: "form-label" %>
+      <%= form.text_field :mpe, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :tmg, style: "display: block", class: "form-label" %>
+      <%= form.text_field :tmg, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :tmi, style: "display: block", class: "form-label" %>
+      <%= form.text_field :tmi, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :ir, style: "display: block", class: "form-label" %>
+      <%= form.text_field :ir, class: "form-label" %>
+    </div>
+
+    <div>
+      <%= form.submit %>
+    </div>
+  </div>
+<% end %>

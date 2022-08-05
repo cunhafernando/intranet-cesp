@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Produção por especialidade</h1>
+
+<%= link_to "Nova lista de Produção por especialidade", new_production_by_specialty_path, :class=> "btn btn-success" %>
+
+<table class="table table-hover my-0">
+  <thead>
+    <tr>
+      <th>ESPECIALIDADE</th>
+      <th>PREVISTO</th>
+      <th>REALIZADO</th>
+      <th>%REALIZADO </th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @production_by_specialties.each do |production_by_specialty| %>
+      <tr>
+        <td><%= production_by_specialty.specialty %></td>
+        <td><%= production_by_specialty.foreseen %></td>
+        <td><%= production_by_specialty.accomplished %></td>
+        <td><%= production_by_specialty.performed_per_cent %></td>
+        <td><%= link_to 'Show', production_by_specialty, class: "btn btn-success" %></td>
+        <td><%= link_to 'Edit', edit_production_by_specialty_path(production_by_specialty), class: "btn btn-warning" %></td>
+        <td><%= link_to 'Destroy', production_by_specialty, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+

@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Tomografia Computadorizada</h1>
+
+<%= link_to "New computed tomography", new_computed_tomography_path, :class=> "btn btn-success" %>
+
+<table class="table table-hover my-0">
+  <thead>
+    <tr>
+      <th>DATA</th>
+      <th>EXAME</th>
+      <th>CÓD. SIGTAP</th>
+      <th>LIBERADOR POR:</th>
+      <th>DATA DA LIBERAÇÃO</th>
+      <th>SEÇÃO SOLICITANTE</th>
+      <th>QTD.</th>
+      <th>QTD. REVISÕES</th>
+      <th>PROCED.</th>
+      <th>VALOR</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @computed_tomographies.each do |computed_tomography| %>
+      <tr>
+        <td><%= computed_tomography.date %></td>
+        <td><%= computed_tomography.exam %></td>
+        <td><%= computed_tomography.sigtap_code %></td>
+        <td><%= computed_tomography.released_by %></td>
+        <td><%= computed_tomography.release_date %></td>
+        <td><%= computed_tomography.requesting_section %></td>
+        <td><%= computed_tomography.amount %></td>
+        <td><%= computed_tomography.number_of_reviews %></td>
+        <td><%= computed_tomography.procedure %></td>
+        <td><%= computed_tomography.value %></td>
+        <td><%= link_to 'Show', computed_tomography, class: "btn btn-success" %></td>
+        <td><%= link_to 'Edit', edit_computed_tomography_path(computed_tomography), class: "btn btn-warning" %></td>
+        <td><%= link_to 'Destroy', computed_tomography, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

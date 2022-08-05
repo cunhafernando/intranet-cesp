@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  specialty: MyString
+  foreseen: 1.5
+  accomplished: 1.5
+  performed_per_cent: 1.5
+
+two:
+  specialty: MyString
+  foreseen: 1.5
+  accomplished: 1.5
+  performed_per_cent: 1.5

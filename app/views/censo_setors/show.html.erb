@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<%= render @censo_setor %>
+
+<div>
+  <%= link_to "Editar este Censo Setor", edit_censo_setor_path(@censo_setor) %> |
+  <%= link_to "Voltar para lista Censo Setor", censo_setors_path %>
+
+  <%= button_to "Apagar este Censo Setor", @censo_setor, method: :delete %>
+</div>

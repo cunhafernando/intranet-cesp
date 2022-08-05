@@ -1,0 +1,2 @@
+module CensoSetorsHelper
+end

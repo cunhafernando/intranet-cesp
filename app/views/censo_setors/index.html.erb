@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Censo por Setor</h1>
+<%= link_to "Nova lista Censo Consolidado", new_censo_setor_path, :class=> "btn btn-success" %>
+
+<table class="table table-hover my-0">
+  <thead>
+    <tr>
+      <th>Seção</th>
+      <th>Leitos</th>
+      <th>Leitos Extra</th>
+      <th>Leitos/Dia</th>
+      <th>Pacientes/Dia</th>
+      <th>Internados</th>
+      <th>Transf. Int. Entrada</th>
+      <th>Total de Entradas</th>
+      <th>Altas</th>
+      <th>Transf. Externa</th>
+      <th>Óbito >= 24</th>
+      <th>Óbito < 24</th>
+      <th>Transf. Int. Saída</th>
+      <th>Tot. Saídas</th>
+      <th>MPD</th>
+      <th>TOCO</th>
+      <th>TOCH</th>
+      <th>MPe</th>
+      <th>TMG</th>
+      <th>TMI</th>      
+      <th>IR</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @censo_setors.each do |censo_setor| %>
+      <tr>
+        <td><%= censo_setor.secao %></td>
+        <td><%= censo_setor.leitos %></td>
+        <td><%= censo_setor.leitos_extra %></td>
+        <td><%= censo_setor.leitos_dia %></td>
+        <td><%= censo_setor.pacientes_dia %></td>
+        <td><%= censo_setor.internados %></td>
+        <td><%= censo_setor.transf_interna_entradas %></td>
+        <td><%= censo_setor.total_de_entradas %></td>
+        <td><%= censo_setor.altas %></td>
+        <td><%= censo_setor.transf_externa %></td>
+        <td><%= censo_setor.obito_maior %></td>
+        <td><%= censo_setor.obito_menor %></td>
+        <td><%= censo_setor.transf_interna_saida %></td>
+        <td><%= censo_setor.total_de_saidas %></td>
+        <td><%= censo_setor.mpd %></td>
+        <td><%= censo_setor.toco %></td>
+        <td><%= censo_setor.toch %></td>
+        <td><%= censo_setor.mpe %></td>
+        <td><%= censo_setor.tmg %></td>
+        <td><%= censo_setor.tmi %></td>
+        <td><%= censo_setor.ir %></td>
+        <td><%= link_to 'Mostrar', censo_setor, class: "btn btn-success" %></td>
+        <td><%= link_to 'Editar', edit_censo_setor_path(censo_setor), class: "btn btn-warning" %></td>
+        <td><%= link_to 'Apagar', censo_setor, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

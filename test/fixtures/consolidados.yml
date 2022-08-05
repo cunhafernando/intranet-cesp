@@ -1,0 +1,41 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  leitos: 1.5
+  leitos_extra: 1.5
+  leitos_dia: 1.5
+  pacientes_dia: 1.5
+  internados: 1.5
+  total_de_entradas: 1.5
+  altas: 1.5
+  transf_externa: 1.5
+  obito_maior: 1.5
+  obito_menor: 1.5
+  total_de_saidas: 1.5
+  mpd: 1.5
+  toco: 1.5
+  toch: 1.5
+  mpe: 1.5
+  tmg: 1.5
+  tmi: 1.5
+  ir: 1.5
+
+two:
+  leitos: 1.5
+  leitos_extra: 1.5
+  leitos_dia: 1.5
+  pacientes_dia: 1.5
+  internados: 1.5
+  total_de_entradas: 1.5
+  altas: 1.5
+  transf_externa: 1.5
+  obito_maior: 1.5
+  obito_menor: 1.5
+  total_de_saidas: 1.5
+  mpd: 1.5
+  toco: 1.5
+  toch: 1.5
+  mpe: 1.5
+  tmg: 1.5
+  tmi: 1.5
+  ir: 1.5

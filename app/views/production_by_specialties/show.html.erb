@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<%= render @production_by_specialty %>
+
+<div>
+  <%= link_to "Editar esta especialidade", edit_production_by_specialty_path(@production_by_specialty) %> |
+  <%= link_to "Voltar para lista de especialidades", production_by_specialties_path %>
+
+  <%= button_to "Apagar esta especialidade", @production_by_specialty, method: :delete %>
+</div>

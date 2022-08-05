@@ -1,0 +1,25 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2022-07-22 11:19:10
+  exam: MyString
+  sigtap_code: MyString
+  released_by: MyString
+  release_date: 2022-07-22 11:19:10
+  requesting_section: MyString
+  amount: 1
+  number_of_reviews: 1
+  procedure: MyString
+  value: 1
+
+two:
+  date: 2022-07-22 11:19:10
+  exam: MyString
+  sigtap_code: MyString
+  released_by: MyString
+  release_date: 2022-07-22 11:19:10
+  requesting_section: MyString
+  amount: 1
+  number_of_reviews: 1
+  procedure: MyString
+  value: 1

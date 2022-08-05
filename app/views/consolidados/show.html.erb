@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<%= render @consolidado %>
+
+<div>
+  <%= link_to "Editar este censo consolidado", edit_consolidado_path(@consolidado) %> |
+  <%= link_to "Voltar para lista de Censo consolidado", consolidados_path %>
+
+  <%= button_to "Apagar este Censo consolidados", @consolidado, method: :delete %>
+</div>

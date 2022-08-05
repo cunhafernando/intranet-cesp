@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<%= render @amount_of_upa_service %>
+
+<div>
+  <%= link_to "Editar", edit_amount_of_upa_service_path(@amount_of_upa_service) %> |
+  <%= link_to "Voltar para lista", amount_of_upa_services_path %>
+
+  <%= button_to "Apagar", @amount_of_upa_service, method: :delete %>
+</div>
