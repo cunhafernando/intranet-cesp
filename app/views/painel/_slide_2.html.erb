@@ -2,23 +2,24 @@
     <div class="container-fluid p-0">
         <div class="row justify-content-between">
 			<div class="col-12 col-lg-3">
-				<div class="mb-4">
-					<h1 class="h3 d-inline align-middle"><%= image_tag("logos/hegv_logo.png", :alt => "rss feed", :width => "120") %></h1>
+				<div class="mb-0">
+					<h1 class="h3 d-inline align-middle"><%= image_tag("logos/hegv_logo.png", :alt => "rss feed", :width => "70") %></h1>
 					<a class="badge bg-dark text-white ms-2" href="upgrade-to-pro.html">Slide 2</a>
 				</div>
 			</div>
             <div class="col-12 col-lg-6">
-				<div class="mb-4">
+				<div class="mb-0">
 					<h1 class="d-inline align-middle text-secondary"><strong>GESTÃO À VISTA DIGITAL: SAÍDAS</strong></h1>
 				</div>
 			</div>
 			<div class="col-12 col-lg-3">
-				<div class="mb-4">
-					<h1 class="h3 d-inline align-middle"><%= image_tag("logos/sec_saude_logo.png", :alt => "rss feed", :width => "100", class:"float-end mb-4") %></h1>
+				<div class="mb-0">
+					<h1 class="h3 d-inline align-middle"><%= image_tag("logos/sec_saude_logo.png", :alt => "rss feed", :width => "65", class:"float-end mb-0") %></h1>
 				</div>
 			</div>
 		</div>
         <div class="row">
+                    <h3 class="d-inline align-middle text-secondary">Média de Permanência</h3>
             <div class="col-xl-6 col-xxl-5 d-flex">
                 <div class="w-100">
                     <div class="row">
@@ -26,11 +27,13 @@
                             <%= render 'painel/cards/media_permanencia_geral' %>
                             <%= render 'painel/cards/media_permanencia_uti_ped' %>
 							<%= render 'painel/cards/media_permanencia_clinica_pediatrica' %>
+                            <%= render 'painel/cards/media_permanencia_clinica_pediatrica' %>
                         </div>
                         <div class="col-sm-6">
                             <%= render 'painel/cards/media_permanencia_ctis' %>
                             <%= render 'painel/cards/media_permanencia_clinica_medica' %>
 							<%= render 'painel/cards/media_permanencia_clinica_cirurgica' %>
+                            <%= render 'painel/cards/media_permanencia_clinica_pediatrica' %>
                         </div>
                     </div>
                 </div>
