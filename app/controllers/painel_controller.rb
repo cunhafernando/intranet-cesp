@@ -11,6 +11,30 @@ class PainelController < ApplicationController
 
   def censo_setors
     @censo_setors = CensoSetor.all
+    @mpe_ortopedia = (CensoSetor.where(secao: 'ORTOPEDIA').sum(:mpe)).ceil(2)
+    @color_mpe_ortopedia = if @mpe_ortopedia <= 7 
+      "success" 
+    else 
+      "danger" 
+    end
+    @meta_mpe_ortopedia =if @mpe_ortopedia <= 7
+      "Meta atingida"
+    else
+      "Meta não atingida"
+    end
+
+    @mpe_enfermaria_neuro = (CensoSetor.where(secao: 'ENFERMARIA NEURO').sum(:mpe)).ceil(2)
+    @color_mpe_enfermaria_neuro = if @mpe_enfermaria_neuro <= 7 
+      "success" 
+    else 
+      "danger" 
+    end
+    @meta_mpe_enfermaria_neuro =if @mpe_enfermaria_neuro <= 7
+      "Meta atingida"
+    else
+      "Meta não atingida"
+    end
+
     @mpe_clinica_medica = (CensoSetor.where(secao: 'CLINICA MEDICA').sum(:mpe)).ceil(2)
     @color_mpe_clinica_medica = if @mpe_clinica_medica <= 7 
       "success" 
@@ -136,7 +160,7 @@ class PainelController < ApplicationController
 
   def consolidados
     @consolidados = Consolidado.all
-    
+
     @taxa_mortalidade_institucional = ((Consolidado.all.sum(:obito_maior) / Consolidado.all.sum(:total_de_saidas)) * 100).ceil(2)
     @color_taxa_mortalidade_institucional = if @taxa_mortalidade_institucional <= 10 
       "success" 
