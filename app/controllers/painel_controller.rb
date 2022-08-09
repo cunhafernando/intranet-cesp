@@ -136,15 +136,22 @@ class PainelController < ApplicationController
 
   def consolidados
     @consolidados = Consolidado.all
+    
     @taxa_mortalidade_institucional = ((Consolidado.all.sum(:obito_maior) / Consolidado.all.sum(:total_de_saidas)) * 100).ceil(2)
-    @taxa_ocupacao_operacional = ((Consolidado.all.sum(:pacientes_dia) / Consolidado.all.sum(:leitos_dia)) * 100)
-    @media_permanencia_geral = (Consolidado.all.sum(:pacientes_dia) / Consolidado.all.sum(:total_de_saidas))
-    @diferenca_da_meta = 85 - @taxa_ocupacao_operacional
-    @color_consolidado_tmi = if @taxa_mortalidade_institucional <= 10 
+    @color_taxa_mortalidade_institucional = if @taxa_mortalidade_institucional <= 10 
       "success" 
     else 
       "danger" 
     end
+    @meta_taxa_mortalidade_institucional =if @taxa_mortalidade_institucional <= 10
+      "Meta atingida"
+    else
+      "Meta não atingida"
+    end
+
+    @taxa_ocupacao_operacional = ((Consolidado.all.sum(:pacientes_dia) / Consolidado.all.sum(:leitos_dia)) * 100)
+    @media_permanencia_geral = (Consolidado.all.sum(:pacientes_dia) / Consolidado.all.sum(:total_de_saidas))
+    @diferenca_da_meta = 85 - @taxa_ocupacao_operacional
     @color_consolidado_perm = if @taxa_ocupacao_operacional >= 85
       "success" 
     else 
@@ -153,7 +160,7 @@ class PainelController < ApplicationController
     @meta_consolidado_perm =if @taxa_ocupacao_operacional >= 85
       "Meta Atingida"
     else
-      "Abaixo da meta"
+      "Meta não atingida"
     end
     @color_consolidado_mpe = if @media_permanencia_geral <= 7
       "success" 
