@@ -22,8 +22,20 @@ class PainelController < ApplicationController
     else
       "Meta não atingida"
     end
+
     @clinica_cirurgica = (CensoSetor.where(secao: 'CLINICA CIRÚRGICA').sum(:mpe)).ceil(2)
-    @clinica_pediatrica = (CensoSetor.where(secao: 'CLINICA PEDIATRICA').sum(:mpe)).ceil(2)
+    @mpe_clinica_pediatrica = (CensoSetor.where(secao: 'CLINICA PEDIATRICA').sum(:mpe)).ceil(2)
+    @color_mpe_clinica_pediatrica = if @mpe_clinica_pediatrica <= 7 
+      "success" 
+    else 
+      "danger" 
+    end
+    @meta_mpe_clinica_pediatrica =if @mpe_clinica_pediatrica <= 7
+      "Meta atingida"
+    else
+      "Meta não atingida"
+    end
+
     @mpe_uti_ped = (CensoSetor.where(secao: 'UTI PED').sum(:mpe)).ceil(2)
     @color_mpe_uti_ped = if @mpe_uti_ped <= 7 
       "success" 
