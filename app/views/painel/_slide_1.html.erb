@@ -7,9 +7,15 @@
 					<a class="badge bg-dark text-white ms-2" href="upgrade-to-pro.html">Slide 1</a>
 				</div>
 			</div>
+            <div class="col-12 col-lg-6">
+				<div class="mb-4">
+					<h1 class="d-inline align-middle text-secondary"><strong>GESTÃO À VISTA DIGITAL: OCUPAÇÃO</strong></h1>
+					
+				</div>
+			</div>
 			<div class="col-12 col-lg-3">
 				<div class="mb-4">
-					<h1 class="h3 d-inline align-middle"><%= image_tag("logos/sec_saude_logo.png", :alt => "rss feed", :width => "100") %></h1>
+					<h1 class="h3 d-inline align-middle"><%= image_tag("logos/sec_saude_logo.png", :alt => "rss feed", :width => "100", class:"float-end mb-4") %></h1>
 				</div>
 			</div>
 		</div>
@@ -19,45 +25,20 @@
                     <div class="row">
                         <div class="col-sm-6">
                             <%= render 'painel/cards/taxa_de_ocupacao_geral' %>
-                            <%= render 'painel/cards/taxa_de_ocupacao_clinica_cirurgica' %>
+                            <%= render 'painel/cards/taxa_de_ocupacao_cti_2' %>
+							<%= render 'painel/cards/taxa_de_ocupacao_cti_4' %>
                         </div>
                         <div class="col-sm-6">
-                            <%= render 'painel/cards/taxa_de_ocupacao_clinica_medica' %>
-                            <%= render 'painel/cards/taxa_de_ocupacao_clinica_pediatrica' %>
+                            <%= render 'painel/cards/taxa_de_ocupacao_cti_1' %>
+                            <%= render 'painel/cards/taxa_de_ocupacao_cti_3' %>
+							<%= render 'painel/cards/taxa_de_ocupacao_uti_ped' %>
                         </div>
                     </div>
                 </div>
             </div>
 
             <div class="col-xl-6 col-xxl-7">
-                <%= render 'painel/chart_bars/producao_assistencial_hospitalar' %>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xl-6 col-xxl-5 d-flex">
-                <div class="w-100">
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <%= render 'painel/cards/taxa_de_ocupacao_cti_1' %> 
-                        </div>
-                        <div class="col-sm-6">
-                            <%= render 'painel/cards/taxa_de_ocupacao_cti_2' %>
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-6 col-xxl-5 d-flex">
-                <div class="w-100">
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <%= render 'painel/cards/taxa_de_ocupacao_cti_3' %> 
-                        </div>
-                        <div class="col-sm-6">
-                            <%= render 'painel/cards/taxa_de_ocupacao_cti_4' %>
-                        </div>
-                    </div>
-                </div>
+                <%= render 'painel/chart_bars/taxa_de_ocupacao_geral' %>
             </div>
         </div>
     </div>

@@ -4,7 +4,7 @@
     </div>
     <div class="card-body py-3">
         <div class="chart chart-sm" style="height:450px" >
-            <canvas id="myChart"></canvas>
+            <canvas id="mediaPermanencia"></canvas>
         </div>
     </div>
 </div>
@@ -25,8 +25,8 @@
         borderWidth: 0
       },
       {
-        label: 'Leitos/Dia',
-        data: [<% @censo_setors.each do |censo_setor| %><%= censo_setor.leitos_dia %>,<% end %>],
+        label: 'Total de Saídas',
+        data: [<% @censo_setors.each do |censo_setor| %><%= censo_setor.total_de_saidas %>,<% end %>],
         backgroundColor: [
           'red'
         ],
@@ -68,8 +68,8 @@
     };
 
     // render init block
-    var myChart = new Chart(
-      document.getElementById('myChart'),
+    var mediaPermanencia = new Chart(
+      document.getElementById('mediaPermanencia'),
       config
     );
 </script>

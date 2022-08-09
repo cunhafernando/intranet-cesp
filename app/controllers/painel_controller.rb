@@ -11,6 +11,93 @@ class PainelController < ApplicationController
 
   def censo_setors
     @censo_setors = CensoSetor.all
+    @clinica_medica = (CensoSetor.where(secao: 'CLINICA MEDICA').sum(:mpe)).ceil(2)
+    @clinica_cirurgica = (CensoSetor.where(secao: 'CLINICA CIRÚRGICA').sum(:mpe)).ceil(2)
+    @clinica_pediatrica = (CensoSetor.where(secao: 'CLINICA PEDIATRICA').sum(:mpe)).ceil(2)
+    @uti_ped = (CensoSetor.where(secao: 'UTI PED').sum(:mpe)).ceil(2)
+    @color_mpe_ctis = if @uti_ped <= 10
+      "success" 
+    else 
+      "danger" 
+    end
+    @meta_mpe_ctis =if @uti_ped <= 10
+      "Meta atingida"
+    else
+      "Meta não atingida"
+    end
+    
+    @mpe_ctis = ((CensoSetor.where(secao: 'CTI 1').sum(:mpe) + CensoSetor.where(secao: 'CTI 2').sum(:mpe) + CensoSetor.where(secao: 'CTI 3').sum(:mpe) + CensoSetor.where(secao: 'CTI 4').sum(:mpe)) / 4).ceil(2)
+    @color_mpe_ctis = if @mpe_ctis <= 7 
+      "success" 
+    else 
+      "danger" 
+    end
+    @meta_mpe_ctis =if @mpe_ctis <= 7
+      "Meta atingida"
+    else
+      "Meta não atingida"
+    end
+
+    @cti_1 = ((CensoSetor.where(secao: 'CTI 1').sum(:pacientes_dia) / CensoSetor.where(secao: 'CTI 1').sum(:leitos_dia)) * 100).ceil(2)
+    @color_cti_1 = if @cti_1 >= 90 
+      "success" 
+    else 
+      "danger" 
+    end
+    @meta_cti_1 =if @cti_1 >= 90
+      "Meta atingida"
+    else
+      "Meta não atingida"
+    end
+      
+    @cti_2 = ((CensoSetor.where(secao: 'CTI 2').sum(:pacientes_dia) / CensoSetor.where(secao: 'CTI 2').sum(:leitos_dia)) * 100).ceil(2)
+    @color_cti_2 = if @cti_2 >= 90 
+      "success" 
+    else 
+      "danger" 
+    end
+    @meta_cti_2 =if @cti_2 >= 90
+      "Meta atingida"
+    else
+      "Meta não atingida"
+    end
+
+    @cti_3 = ((CensoSetor.where(secao: 'CTI 3').sum(:pacientes_dia) / CensoSetor.where(secao: 'CTI 3').sum(:leitos_dia)) * 100).ceil(2)
+    @color_cti_3 = if @cti_3 >= 90 
+      "success" 
+    else 
+      "danger" 
+    end
+    @meta_cti_3 =if @cti_3 >= 90
+      "Meta atingida"
+    else
+      "Meta não atingida"
+    end
+
+    @cti_4 = ((CensoSetor.where(secao: 'CTI 4').sum(:pacientes_dia) / CensoSetor.where(secao: 'CTI 4').sum(:leitos_dia)) * 100).ceil(2)
+    @color_cti_4 = if @cti_4 >= 90 
+      "success" 
+    else 
+      "danger" 
+    end
+    @meta_cti_4 =if @cti_4 >= 90
+      "Meta atingida"
+    else
+      "Meta não atingida"
+    end
+
+    @uti_ped = (CensoSetor.where(secao: 'UTI PED').sum(:pacientes_dia) / CensoSetor.where(secao: 'UTI PED').sum(:leitos_dia)) * 100
+    @color_uti_ped = if @uti_ped >= 90 
+      "success" 
+    else 
+      "danger" 
+    end
+    @meta_uti_ped =if @uti_ped >= 90
+      "Meta atingida"
+    else
+      "Meta não atingida"
+    end
+      
   end
 
   def consolidados
@@ -29,10 +116,20 @@ class PainelController < ApplicationController
     else 
       "danger" 
     end
+    @meta_consolidado_perm =if @taxa_ocupacao_operacional >= 85
+      "Meta Atingida"
+    else
+      "Abaixo da meta"
+    end
     @color_consolidado_mpe = if @media_permanencia_geral <= 7
       "success" 
     else 
       "danger" 
+    end
+    @meta_consolidado_mpe =if @media_permanencia_geral <= 7
+      "Meta Atingida"
+    else
+      "Abaixo da meta"
     end
   end
 
