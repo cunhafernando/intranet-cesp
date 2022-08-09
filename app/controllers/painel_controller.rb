@@ -11,20 +11,31 @@ class PainelController < ApplicationController
 
   def censo_setors
     @censo_setors = CensoSetor.all
-    @clinica_medica = (CensoSetor.where(secao: 'CLINICA MEDICA').sum(:mpe)).ceil(2)
-    @clinica_cirurgica = (CensoSetor.where(secao: 'CLINICA CIRÚRGICA').sum(:mpe)).ceil(2)
-    @clinica_pediatrica = (CensoSetor.where(secao: 'CLINICA PEDIATRICA').sum(:mpe)).ceil(2)
-    @uti_ped = (CensoSetor.where(secao: 'UTI PED').sum(:mpe)).ceil(2)
-    @color_mpe_ctis = if @uti_ped <= 10
+    @mpe_clinica_medica = (CensoSetor.where(secao: 'CLINICA MEDICA').sum(:mpe)).ceil(2)
+    @color_mpe_clinica_medica = if @mpe_clinica_medica <= 7 
       "success" 
     else 
       "danger" 
     end
-    @meta_mpe_ctis =if @uti_ped <= 10
+    @meta_mpe_clinica_medica =if @mpe_clinica_medica <= 7
       "Meta atingida"
     else
       "Meta não atingida"
     end
+    @clinica_cirurgica = (CensoSetor.where(secao: 'CLINICA CIRÚRGICA').sum(:mpe)).ceil(2)
+    @clinica_pediatrica = (CensoSetor.where(secao: 'CLINICA PEDIATRICA').sum(:mpe)).ceil(2)
+    @mpe_uti_ped = (CensoSetor.where(secao: 'UTI PED').sum(:mpe)).ceil(2)
+    @color_mpe_uti_ped = if @mpe_uti_ped <= 7 
+      "success" 
+    else 
+      "danger" 
+    end
+    @meta_mpe_uti_ped =if @mpe_uti_ped <= 7
+      "Meta atingida"
+    else
+      "Meta não atingida"
+    end
+    
     
     @mpe_ctis = ((CensoSetor.where(secao: 'CTI 1').sum(:mpe) + CensoSetor.where(secao: 'CTI 2').sum(:mpe) + CensoSetor.where(secao: 'CTI 3').sum(:mpe) + CensoSetor.where(secao: 'CTI 4').sum(:mpe)) / 4).ceil(2)
     @color_mpe_ctis = if @mpe_ctis <= 7 
