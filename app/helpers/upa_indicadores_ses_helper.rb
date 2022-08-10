@@ -1,0 +1,2 @@
+module UpaIndicadoresSesHelper
+end

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  
      
   
   get 'welcome/index'
@@ -6,6 +7,12 @@ Rails.application.routes.draw do
   root "painel#show"
 
   resources :painel
+
+  resources :upa_indicadores_ses do
+    collection do
+      get 'remove_all'
+    end
+  end
 
   resources :censo_setors do
     collection do
@@ -38,6 +45,7 @@ Rails.application.routes.draw do
   post 'import_amount_of_upa_services' => "amount_of_upa_services#import_amount_of_upa_services"
   post 'import_consolidados' => "consolidados#import_consolidados"
   post 'import_censo_setors' => "censo_setors#import_censo_setors"
+  post 'import_upa_indicadores_ses' => "upa_indicadores_ses#import_upa_indicadores_ses"
 
   # Defines the root path route ("/")
   # root "articles#index"

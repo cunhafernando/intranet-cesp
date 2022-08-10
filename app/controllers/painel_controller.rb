@@ -4,6 +4,178 @@ class PainelController < ApplicationController
   before_action :amount_of_upa_services
   before_action :consolidados
   before_action :censo_setors
+  before_action :upa_indicadores_ses
+
+  def upa_indicadores_ses
+    @upa_indicadores_ses = UpaIndicadoresSe.all
+    @d1 = ((((UpaIndicadoresSe.where(descricao: 'Numerador D1').pluck(:variavel)).to_sentence).to_f) / (((UpaIndicadoresSe.where(descricao: 'Denominador D1').pluck(:variavel)).to_sentence).to_f)).ceil(1)
+    @color_d1 = if @d1 <= 30 
+      "success" 
+    else 
+      "danger" 
+    end
+    @meta_d1 =if @d1 <= 30
+      "Meta atingida"
+    else
+      "Meta não atingida"
+    end
+    
+    @d2 = ((((UpaIndicadoresSe.where(descricao: 'Numerador D2').pluck(:variavel)).to_sentence).to_f) / (((UpaIndicadoresSe.where(descricao: 'Denominador D2').pluck(:variavel)).to_sentence).to_f)).ceil(1)
+    @color_d2 = if @d2 <= 120 
+      "success" 
+    else 
+      "danger" 
+    end
+    @meta_d2 =if @d2 <= 120
+      "Meta atingida"
+    else
+      "Meta não atingida"
+    end
+
+    @d5 = ((((UpaIndicadoresSe.where(descricao: 'Numerador D5').pluck(:variavel)).to_sentence).to_f) / (((UpaIndicadoresSe.where(descricao: 'Denominador D5').pluck(:variavel)).to_sentence).to_f)).ceil(1)
+    @color_d5 = if @d5 <= 15 
+      "success" 
+    else 
+      "danger" 
+    end
+    @meta_d5 =if @d5 <= 15
+      "Meta atingida"
+    else
+      "Meta não atingida"
+    end
+
+    @d6 = (((((UpaIndicadoresSe.where(descricao: 'Numerador D6').pluck(:variavel)).to_sentence).to_f) / (((UpaIndicadoresSe.where(descricao: 'Denominador D6').pluck(:variavel)).to_sentence).to_f)) * 100).ceil(2)
+    @color_d6 = if @d6 <= 5 
+      "success" 
+    else 
+      "danger" 
+    end
+    @meta_d6 =if @d6 <= 5
+      "Meta atingida"
+    else
+      "Meta não atingida"
+    end
+
+    @d7 = (((((UpaIndicadoresSe.where(descricao: 'Numerador D7').pluck(:variavel)).to_sentence).to_f) / (((UpaIndicadoresSe.where(descricao: 'Denominador D7').pluck(:variavel)).to_sentence).to_f)) * 100).ceil(2)
+    @color_d7 = if @d7 >= 90 
+      "success" 
+    else 
+      "danger" 
+    end
+    @meta_d7 =if @d7 >= 90
+      "Meta atingida"
+    else
+      "Meta não atingida"
+    end
+
+    @d8 = (((((UpaIndicadoresSe.where(descricao: 'Numerador D8').pluck(:variavel)).to_sentence).to_f) / (((UpaIndicadoresSe.where(descricao: 'Denominador D8').pluck(:variavel)).to_sentence).to_f)) * 100).ceil(2)
+    @color_d8 = if @d8 >= 90 
+      "success" 
+    else 
+      "danger" 
+    end
+    @meta_d8 =if @d8 >= 90
+      "Meta atingida"
+    else
+      "Meta não atingida"
+    end
+
+    @d9 = (((((UpaIndicadoresSe.where(descricao: 'Numerador D9').pluck(:variavel)).to_sentence).to_f) / (((UpaIndicadoresSe.where(descricao: 'Denominador D9').pluck(:variavel)).to_sentence).to_f)) * 100).ceil(2)
+    @color_d9 = if @d9 <= 3 
+      "success" 
+    else 
+      "danger" 
+    end
+    @meta_d9 =if @d9 <= 3
+      "Meta atingida"
+    else
+      "Meta não atingida"
+    end
+
+    @d10 = (((((UpaIndicadoresSe.where(descricao: 'Numerador D10').pluck(:variavel)).to_sentence).to_f) / (((UpaIndicadoresSe.where(descricao: 'Denominador D10').pluck(:variavel)).to_sentence).to_f)) * 100).ceil(2)
+    @color_d10 = if @d10 <= 8 
+      "success" 
+    else 
+      "danger" 
+    end
+    @meta_d10 =if @d10 <= 8
+      "Meta atingida"
+    else
+      "Meta não atingida"
+    end
+
+    @d11 = (((((UpaIndicadoresSe.where(descricao: 'Numerador D11').pluck(:variavel)).to_sentence).to_f) / (((UpaIndicadoresSe.where(descricao: 'Denominador D11').pluck(:variavel)).to_sentence).to_f)) * 100).ceil(2)
+    @color_d11 = if @d11 >= 100 
+      "success" 
+    else 
+      "danger" 
+    end
+    @meta_d11 =if @d11 >= 100
+      "Meta atingida"
+    else
+      "Meta não atingida"
+    end
+
+    @d12 = ((((UpaIndicadoresSe.where(descricao: 'Numerador D12').pluck(:variavel)).to_sentence).to_f) / (((UpaIndicadoresSe.where(descricao: 'Denominador D12').pluck(:variavel)).to_sentence).to_f)).ceil(1)
+    @color_d12 = if @d12 <= 60 
+      "success" 
+    else 
+      "danger" 
+    end
+    @meta_d12 =if @d12 <= 60
+      "Meta atingida"
+    else
+      "Meta não atingida"
+    end
+
+    @d13 = ((((UpaIndicadoresSe.where(descricao: 'Numerador D13').pluck(:variavel)).to_sentence).to_f) / (((UpaIndicadoresSe.where(descricao: 'Denominador D13').pluck(:variavel)).to_sentence).to_f)).ceil(1)
+    @color_d13 = if @d13 <= 30 
+      "success" 
+    else 
+      "danger" 
+    end
+    @meta_d13 =if @d13 <= 30
+      "Meta atingida"
+    else
+      "Meta não atingida"
+    end
+
+    @d14 = (((((UpaIndicadoresSe.where(descricao: 'Numerador D14').pluck(:variavel)).to_sentence).to_f) / (((UpaIndicadoresSe.where(descricao: 'Denominador D14').pluck(:variavel)).to_sentence).to_f)) * 100).ceil(2)
+    @color_d14 = if @d14 >= 90 
+      "success" 
+    else 
+      "danger" 
+    end
+    @meta_d14 =if @d14 >= 90
+      "Meta atingida"
+    else
+      "Meta não atingida"
+    end
+
+    @g1 = (((((UpaIndicadoresSe.where(descricao: 'Numerador G1').pluck(:variavel)).to_sentence).to_f) / (((UpaIndicadoresSe.where(descricao: 'Denominador G1').pluck(:variavel)).to_sentence).to_f)) * 100).ceil(2)
+    @color_g1 = if @g1 >= 90 
+      "success" 
+    else 
+      "danger" 
+    end
+    @meta_g1 =if @g1 >= 90
+      "Meta atingida"
+    else
+      "Meta não atingida"
+    end
+
+    @g2 = (((((UpaIndicadoresSe.where(descricao: 'Numerador G2').pluck(:variavel)).to_sentence).to_f) / (((UpaIndicadoresSe.where(descricao: 'Denominador G2').pluck(:variavel)).to_sentence).to_f)) * 100).ceil(2)
+    @color_g2 = if @g2 >= 80 
+      "success" 
+    else 
+      "danger" 
+    end
+    @meta_g2 =if @g2 >= 80
+      "Meta atingida"
+    else
+      "Meta não atingida"
+    end
+  end
 
   def production_by_specialties
     @production_by_specialties = ProductionBySpecialty.all    

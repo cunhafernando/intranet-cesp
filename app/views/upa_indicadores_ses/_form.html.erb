@@ -1,0 +1,54 @@
+<%= form_with(model: upa_indicadores_se) do |form| %>
+  <% if upa_indicadores_se.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(upa_indicadores_se.errors.count, "error") %> proibiu que esta lista fosse salva:</h2>
+
+      <ul>
+        <% upa_indicadores_se.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row justify-content-center">
+    <div class="col-3">
+      <%= form.label :codigo, style: "display: block", class: "form-label" %>
+      <%= form.text_field :codigo, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :indicador, style: "display: block", class: "form-label" %>
+      <%= form.text_field :indicador, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :meta, style: "display: block", class: "form-label" %>
+      <%= form.text_field :meta, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :variavel, style: "display: block", class: "form-label" %>
+      <%= form.text_field :variavel, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :descricao, style: "display: block", class: "form-label" %>
+      <%= form.text_field :descricao, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :medida, style: "display: block", class: "form-label" %>
+      <%= form.text_field :medida, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :status, style: "display: block", class: "form-label" %>
+      <%= form.text_field :status, class: "form-label" %>
+    </div>
+
+    <div>
+      <%= form.submit %>
+    </div>
+  </div>
+<% end %>

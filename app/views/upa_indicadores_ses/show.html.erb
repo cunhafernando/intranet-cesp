@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<%= render @upa_indicadores_se %>
+
+
+<div>
+  <%= link_to "Editar", edit_upa_indicadores_se_path(@upa_indicadores_se) %> |
+  <%= link_to "Voltar para lista", upa_indicadores_ses_path %>
+
+  <%= button_to "Apagar", @upa_indicadores_se, method: :delete %>
+</div>

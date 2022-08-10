@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  codigo: MyString
+  indicador: MyString
+  meta: MyString
+  variavel: MyString
+  descricao: MyString
+  medida: MyString
+  status: MyString
+
+two:
+  codigo: MyString
+  indicador: MyString
+  meta: MyString
+  variavel: MyString
+  descricao: MyString
+  medida: MyString
+  status: MyString
