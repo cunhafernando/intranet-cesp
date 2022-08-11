@@ -9,6 +9,7 @@
     </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
 <script>
     // setup 
     var data = {
@@ -19,6 +20,10 @@
         backgroundColor: [
           '#3b7ddd'
         ],
+        datalabels: {
+        align: 'center',
+        anchor: 'center'
+      },
         borderColor: [
           '#3b7ddd'
         ],
@@ -41,6 +46,7 @@
     var config = {
       type: 'bar',
       data,
+      plugins: [ChartDataLabels],
       options: {
         maintainAspectRatio: false,
         legend: {

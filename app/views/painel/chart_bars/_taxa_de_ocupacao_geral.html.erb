@@ -9,6 +9,7 @@
     </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.1.0/chartjs-plugin-datalabels.min.js" integrity="sha512-Tfw6etYMUhL4RTki37niav99C6OHwMDB2iBT5S5piyHO+ltK2YX8Hjy9TXxhE1Gm/TmAV0uaykSpnHKFIAif/A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
     // setup 
     var data = {
@@ -22,7 +23,14 @@
         borderColor: [
           '#3b7ddd'
         ],
-        borderWidth: 0
+        borderWidth: 0,
+        datalabels: {
+          align: 'center',
+          anchor: 'center',
+          color: 'white'
+        },
+        barPercentage: 2,
+				categoryPercentage: .5
       },
       {
         label: 'Leitos/Dia',
@@ -33,7 +41,15 @@
         borderColor: [
           'red'
         ],
-        borderWidth: 0
+        borderWidth: 0,
+        datalabels: {
+            align: 'end',
+            anchor: 'end',
+            color: 'black'
+
+        },
+        barPercentage: 1.5,
+				categoryPercentage: .5
       }]
     };
 
@@ -42,7 +58,16 @@
       type: 'bar',
       data,
       options: {
-        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            display: false
+          }
+        },
+        
+      },
+      plugins: [ChartDataLabels],
+        options: {
+          maintainAspectRatio: false,
         legend: {
             display: true
         },
@@ -64,9 +89,10 @@
                 }
             }]
         }
+        
       }
     };
-
+    
     // render init block
     var myChart = new Chart(
       document.getElementById('myChart'),
