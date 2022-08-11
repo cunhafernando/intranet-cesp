@@ -3,7 +3,7 @@
         <h5 class="card-title fs-4 mb-0 text-secondary"><strong>Operacional Mensal</strong></h5>
     </div>
     <div class="card-body py-3">
-        <div class="chart chart-sm" style="height:475px" >
+        <div class="chart chart-sm" style="height:475px; width: 550px;" >
             <canvas id="myChart"></canvas>
         </div>
     </div>
@@ -48,7 +48,7 @@
             color: 'black'
 
         },
-        barPercentage: 1.5,
+        barPercentage: 2,
 				categoryPercentage: .5
       }]
     };
@@ -79,7 +79,7 @@
                 },
                 stacked: false,
                 ticks: {
-                    stepSize: 150
+                    stepSize: 50
                 }
             }],
             xAxes: [{
