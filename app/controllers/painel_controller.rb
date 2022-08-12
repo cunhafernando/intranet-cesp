@@ -316,7 +316,7 @@ class PainelController < ApplicationController
       "Meta não atingida"
     end
 
-    @uti_ped = (CensoSetor.where(secao: 'UTI PED').sum(:pacientes_dia) / CensoSetor.where(secao: 'UTI PED').sum(:leitos_dia)) * 100
+    @uti_ped = ((CensoSetor.where(secao: 'UTI PED').sum(:pacientes_dia) / CensoSetor.where(secao: 'UTI PED').sum(:leitos_dia)) * 100).ceil(2)
     @color_uti_ped = if @uti_ped >= 90 
       "success" 
     else 
