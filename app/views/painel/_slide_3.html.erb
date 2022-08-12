@@ -4,7 +4,7 @@
 			<div class="col-12 col-lg-3">
 				<div class="mb-0">
 					<h1 class="h3 d-inline align-middle"><%= image_tag("logos/logo_upa_penha.jpg", :alt => "rss feed", :width => "70") %></h1>
-					<a class="badge bg-dark text-white ms-2" href="upgrade-to-pro.html">Slide 1</a>
+					<a class="badge bg-dark text-white ms-2" href="upgrade-to-pro.html">Slide 3</a>
 				</div>
 			</div>
             <div class="col-12 col-lg-6">
@@ -19,53 +19,44 @@
 			</div>
 		</div>
         <div class="row">
-            <h3 class="d-inline align-middle text-secondary"><strong>Taxa de Ocupação</strong></h3>
+            <h3 class="d-inline align-middle text-secondary"><strong>Indicadores UPA</strong></h3>
             <div class="col-xl-6 col-xxl-5 d-flex">
                 <div class="w-100">
                     <div class="row">
                         <div class="col-sm-6">
-                            <%= render 'painel/cards/taxa_ocupacao/taxa_de_ocupacao_geral' %>
-                            <%= render 'painel/cards/taxa_ocupacao/taxa_de_ocupacao_clinica_cirurgica' %>
+                            <%= render 'painel/cards/upa/quantidade_atendimento_upa' %>
+                            <%= render 'painel/cards/upa/d1' %>
+                            <%= render 'painel/cards/upa/d5' %>
+                            <%= render 'painel/cards/upa/d11' %>
                         </div>
                         <div class="col-sm-6">
-                            <%= render 'painel/cards/taxa_ocupacao/taxa_de_ocupacao_clinica_medica' %>
-                            <%= render 'painel/cards/taxa_ocupacao/taxa_de_ocupacao_clinica_pediatrica' %>
+                            <%= render 'painel/cards/upa/quantidade_atendimento_upa_hoje' %>
+                            <%= render 'painel/cards/upa/d2' %>
+                            <%= render 'painel/cards/upa/d6' %>
+                            <%= render 'painel/cards/upa/d12' %>
                         </div>
                     </div>
                 </div>
             </div>
 
             <div class="col-xl-6 col-xxl-7">
-                <%= render 'painel/chart_doughnut/producao_assistencial_hospitalar_doughnut' %>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xl-6 col-xxl-5 d-flex">
-                <div class="w-100">
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <%= render 'painel/cards/quantidade_atendimento_upa' %> 
-                        </div>
-                        <div class="col-sm-6">
-                            <%= render 'painel/cards/taxa_ocupacao/taxa_de_ocupacao_cti_2' %>
-                            
-                        </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <%= render 'painel/cards/upa/quantidade_atendimento_upa' %>
+                        <%= render 'painel/cards/upa/d7' %>
+                        <%= render 'painel/cards/upa/d9' %>
+                        <%= render 'painel/cards/upa/d13' %>
                     </div>
-                </div>
-            </div>
-            <div class="col-xl-6 col-xxl-5 d-flex">
-                <div class="w-100">
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <%= render 'painel/cards/taxa_ocupacao/taxa_de_ocupacao_cti_3' %> 
-                        </div>
-                        <div class="col-sm-6">
-                            <%= render 'painel/cards/taxa_ocupacao/taxa_de_ocupacao_cti_4' %>
-                        </div>
+                    <div class="col-sm-6">
+                        <%= render 'painel/cards/upa/quantidade_atendimento_upa_hoje' %>
+                        <%= render 'painel/cards/upa/d8' %>
+                        <%= render 'painel/cards/upa/d10' %>
+                        <%= render 'painel/cards/upa/d14' %>
                     </div>
                 </div>
             </div>
         </div>
+        
     </div>
 </main>
 

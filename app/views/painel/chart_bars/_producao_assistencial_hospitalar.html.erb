@@ -1,15 +1,15 @@
-<div class="card flex-fill w-100">
+<div class="card flex-fill w-100 mb-2">
     <div class="card-header">
         <h5 class="card-title fs-4 mb-0 text-secondary"><strong>Produção Assistencial Hospitalar</strong></h5>
     </div>
     <div class="card-body py-3">
-        <div class="chart chart-sm" >
+        <div class="chart chart-sm" style="height:330px;" >
             <canvas id="prodHosp"></canvas>
         </div>
     </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-doughnutlabel/2.0.3/chartjs-plugin-doughnutlabel.js" integrity="sha512-tqhJttGunGgQiVVp8pTNIwV39kpz8scVMRVpkBYyxrWFhsUQPP91a22+EYtxofO9eh1acFb+vIisxyPXg7Ll1g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.1.0/chartjs-plugin-datalabels.min.js" integrity="sha512-Tfw6etYMUhL4RTki37niav99C6OHwMDB2iBT5S5piyHO+ltK2YX8Hjy9TXxhE1Gm/TmAV0uaykSpnHKFIAif/A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
     // setup 
     var data = {
@@ -20,14 +20,17 @@
         backgroundColor: [
           '#3b7ddd'
         ],
-        datalabels: {
-        align: 'center',
-        anchor: 'center'
-      },
         borderColor: [
           '#3b7ddd'
         ],
-        borderWidth: 0
+        borderWidth: 0,
+        datalabels: {
+          align: 'start',
+          anchor: 'end',
+          color: 'white'
+        },
+        barPercentage: 1,
+				categoryPercentage: .5
       },
       {
         label: 'Realizadas',
@@ -38,7 +41,14 @@
         borderColor: [
           '#dc3545'
         ],
-        borderWidth: 0
+        borderWidth: 0,
+        datalabels: {
+          align: 'start',
+          anchor: 'end',
+          color: 'white'
+        },
+        barPercentage: 1,
+				categoryPercentage: .5
       }]
     };
 
@@ -52,7 +62,7 @@
         legend: {
             display: true
         },
-        indexAxis: 'y',
+        indexAxis: 'x',
         scales: {
           yAxes: [{
                 gridLines: {
@@ -60,7 +70,7 @@
                 },
                 stacked: false,
                 ticks: {
-                    stepSize: 20
+                    stepSize: 100
                 }
             }],
             xAxes: [{
