@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
   
-     
-  
   get 'welcome/index'
-  get 'welcome/bi_hegv'
+  get 'welcome/show'
+  get 'painel/index'
   root "painel#show"
 
-  resources :painel
+  resources :welcome
+  resources :painel do
+  end
 
   resources :upa_indicadores_ses do
     collection do

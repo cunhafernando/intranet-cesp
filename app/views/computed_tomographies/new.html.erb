@@ -1,25 +1,70 @@
-<h1>Nova lista de tomografia computadorizada</h1>
+<div class="wrapper">
+		<%= render 'welcome/layout/side_bar' %>
 
-<div class="row align-items-center mt-5 mb-5">
-    <div class="col-6">
-    <h3>Importar lista</h3>
-      <%= form_tag import_computed_tomographies_path, multipart: true do %>
-        <%= file_field_tag :file %>
-        <%= submit_tag "Importar", :class=> "btn btn-success" %>
-      <% end %>
-    </div>
-    <div class="col-6">
-      <h3>Limpar lista de ramais</h3>
-      <%= link_to "Limpar lista", remove_all_computed_tomographies_path, :method => :get, class: "btn btn-danger" %>
-    </div>
-  </div>
-<div>
+			<main class="content">
+				<div class="container-fluid p-0">
 
-<%= render "form", computed_tomography: @computed_tomography %>
+					<div class="mb-3">
+						<h1 class="h1 d-inline align-middle">Tomografia Computadorizada</h1>
+					</div>
+					<div class="row">
+						<h3>Nova lista Tomografia Computadorizada</h3>
+            <div class="row align-items-center mt-5 mb-5">
+                <div class="col-6">
+                  <h3>Importar lista</h3>
+                    <p class="text-secondary">Para exportar a planilha, você deverá acessar o TI Med - HEGV, em seguida clicar na aba relatórios, internação, produção por especialidades, em período selecionar "MÊS", clicar em "APLICAR" e exportar Excel.</p>
+                    <%= form_tag import_computed_tomographies_path, multipart: true do %>
+                      <%= file_field_tag :file %>
+                      <%= submit_tag "Importar", :class=> "btn btn-success" %>
+                    <% end %>
+                </div>
+                <div class="col-6">
+                  <h3>Limpar lista de Tomografias Computadorizadas</h3>
+                    <p class="text-secondary">Antes de importar a lista você deverá limpar a lista existente.</p>
+                    <%= link_to "Limpar lista", remove_all_computed_tomographies_path, :method => :get, class: "btn btn-danger" %>
+                </div>
+              </div>
+            <div>
+            <%= render "form", computed_tomography: @computed_tomography %>
+            <br>
+            <div>
+              <%= link_to "Ir para a lista", computed_tomographies_path, class: "btn btn-warning" %>
+            </div>
 
-<br>
+						
+					</div>
 
-<div>
-  <%= link_to "Voltar", computed_tomographies_path, class: "btn btn-warning" %>
-</div>
+				</div>
+			</main>
+
+			<footer class="footer">
+				<div class="container-fluid">
+					<div class="row text-muted">
+						<div class="col-6 text-start">
+							<p class="mb-0">
+								<a class="text-muted" href="http://intranet.cesp" target="_blank"><strong>HEGV</strong></a> &copy;
+							</p>
+						</div>
+						<div class="col-6 text-end">
+							<!--<ul class="list-inline">
+								<li class="list-inline-item">
+									<a class="text-muted" href="https://adminkit.io/" target="_blank">Suporte</a>
+								</li>
+								<li class="list-inline-item">
+									<a class="text-muted" href="https://adminkit.io/" target="_blank">Help Center</a>
+								</li>
+								<li class="list-inline-item">
+									<a class="text-muted" href="https://adminkit.io/" target="_blank">Privacy</a>
+								</li>
+								<li class="list-inline-item">
+									<a class="text-muted" href="https://adminkit.io/" target="_blank">Terms</a>
+								</li>
+							</ul>-->
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+	</div>
+
 
