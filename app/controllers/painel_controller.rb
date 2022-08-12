@@ -390,12 +390,12 @@ class PainelController < ApplicationController
     @amount_of_upa_services = AmountOfUpaService.all
     @total_atendimento = AmountOfUpaService.all.sum(:attended).to_i
     @media_atendimento = ((((@total_atendimento.to_f) / 6400) * 100).to_i) - 100
-    @color_media_atendimento = if @media_atendimento >= 0 
+    @color_total_atendimento = if @total_atendimento >= 0 
       "success" 
     else 
       "danger" 
     end
-    @text_media_atendimento = if @media_atendimento >= 0 
+    @text_total_atendimento = if @total_atendimento >= 0 
       "Meta atingida" 
     else 
       "Meta não atingida" 
