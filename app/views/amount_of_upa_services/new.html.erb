@@ -1,25 +1,88 @@
-<h1>nova lista de atendimento mensal UPA </h1>
+<div class="wrapper">
+	<%= render 'welcome/layout/side_bar' %>
 
-<div class="row align-items-center mt-5 mb-5">
-    <div class="col-6">
-    <h3>Importar lista</h3>
-      <%= form_tag import_amount_of_upa_services_path, multipart: true do %>
-        <%= file_field_tag :file %>
-        <%= submit_tag "Importar", :class=> "btn btn-success" %>
-      <% end %>
-    </div>
-    <div class="col-6">
-      <h3>Limpar lista de ramais</h3>
-      <%= link_to "Limpar lista", remove_all_amount_of_upa_services_path, :method => :get, class: "btn btn-danger" %>
-    </div>
-  </div>
-<div>
+	<div class="main">
+		<%= render 'welcome/layout/nav' %>
 
-<%= render "form", amount_of_upa_service: @amount_of_upa_service %>
+		<main class="content">
+			<div class="container-fluid p-0">
+				<% flash.each do |key, message| %>
+				<div class="alert <%= flash_class(key) %> alert-dismissible fade show text-center" role="alert">
+					<%= message %>
+					<button type="button" class="btn-close" data-dismiss="alert" aria-label="Close">
+					<span aria-hidden="true"></span>
+					</button>
+				</div>
+				<% end %>
 
+				<div class="mb-3">
+					<h1 class="h1 d-inline align-middle">Quantidade de Atendimentos UPA</h1>
+				</div>
+				<div class="row">
+					<h3>Nova lista Quantidade de Atendimentos UPA</h3>
+					<div class="row align-items-center mt-5 mb-5">
+						<div class="col-6">
+						<h3>Limpar lista Quantidade de Atendimentos UPA</h3>
+						<p class="text-secondary">Antes de importar a lista você deverá limpar a lista existente.</p>
+              <%= link_to "Limpar lista", remove_all_amount_of_upa_services_path, :method => :get, class: "btn btn-danger" %>
+						</div>
+						<div class="col-6">
+							<h3>Importar lista</h3>
+							<p class="text-secondary">Para exportar a planilha, você deverá acessar o TI Med - UPA, em seguida clicar na aba relatórios <strong>-></strong> EMERGÊNCIA <strong>-></strong> Quantidade de Atendimentos <strong>-></strong> em período selecionar "MÊS ATUAL" <strong>-></strong> clicar em "APLICAR" <strong>-></strong> exportar Excel.</p>
+							<%= form_tag import_amount_of_upa_services_path, multipart: true do %>
+                <%= file_field_tag :file %>
+                <%= submit_tag "Importar", :class=> "btn btn-success" %>
+              <% end %>
+						</div>
+					</div>
+				<div>
+				<table class="table table-hover my-0">
+          <thead>
+            <tr>
+              <th class="d-none d-xl-table-cell">Ano e mês</th>
+              <th class="d-none d-xl-table-cell">Regist</th>
+              <th class="d-none d-xl-table-cell">Classific</th>
+              <th class="d-none d-xl-table-cell">Atendidos</th>
+              <th class="d-none d-xl-table-cell">Acolhidos</th>
+              <th class="d-none d-xl-table-cell">TM Atend</th>
+              <th class="d-none d-xl-table-cell">TM Verde</th>
+              <th class="d-none d-xl-table-cell">Verde na meta</th>
+              <th class="d-none d-xl-table-cell">Verde fora da meta</th>
+              <th class="d-none d-xl-table-cell">TM Amarelo</th>
+              <th class="d-none d-xl-table-cell">Amarelo na meta</th>
+              <th class="d-none d-xl-table-cell">Amarelo fora da meta</th>
+              <th class="d-none d-xl-table-cell">Vermelho na meta</th>
+              <th class="d-none d-xl-table-cell">Vermelho fora da meta</th>
+            </tr>
+          </thead>
 
-<br>
-
-<div>
-  <%= link_to "Back to amount of upa services", amount_of_upa_services_path, class: "btn btn-warning" %>
+          <tbody>
+          <% @amount_of_upa_services.each do |amount_of_upa_service| %>
+              <tr>
+                <td><%= amount_of_upa_service.year_month %></td>
+                <td><%= amount_of_upa_service.registered %></td>
+                <td><%= amount_of_upa_service.classified %></td>
+                <td><%= amount_of_upa_service.attended %></td>
+                <td><%= amount_of_upa_service.welcomed %></td>
+                <td><%= amount_of_upa_service.service_time %></td>
+                <td><%= amount_of_upa_service.green_time %></td>
+                <td><%= amount_of_upa_service.green_in_the_goal %></td>
+                <td><%= amount_of_upa_service.green_off_target %></td>
+                <td><%= amount_of_upa_service.yellow_time %></td>
+                <td><%= amount_of_upa_service.yellow_in_the_goal %></td>
+                <td><%= amount_of_upa_service.yellow_off_target %></td>
+                <td><%= amount_of_upa_service.red_in_the_goal %></td>
+                <td><%= amount_of_upa_service.red_off_target %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+				<br>
+			<div>
+				
+			</div>
+		</main>
+		<%= render 'welcome/layout/footer' %>
+	</div>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

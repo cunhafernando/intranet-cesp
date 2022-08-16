@@ -8,8 +8,8 @@ class CensoSetorsController < ApplicationController
 
   def remove_all
     CensoSetor.delete_all
-    flash[:notice] = "Lista removida com sucesso"
-    redirect_to censo_setors_path
+    flash[:warn] = "Lista removida com sucesso"
+    redirect_to new_censo_setor_path
   end
 
   def import_censo_setors
@@ -23,11 +23,11 @@ class CensoSetorsController < ApplicationController
       (3..spreadsheet.last_row-1).each do |i|
         CensoSetor.create(secao: spreadsheet.row(i)[0], leitos: spreadsheet.row(i)[1], leitos_extra: spreadsheet.row(i)[2], leitos_dia: spreadsheet.row(i)[3], pacientes_dia: spreadsheet.row(i)[4], internados: spreadsheet.row(i)[5], transf_interna_entradas: spreadsheet.row(i)[6], total_de_entradas: spreadsheet.row(i)[7], altas: spreadsheet.row(i)[8], transf_externa: spreadsheet.row(i)[9], obito_maior: spreadsheet.row(i)[10], obito_menor: spreadsheet.row(i)[11], transf_interna_saida: spreadsheet.row(i)[12], total_de_saidas: spreadsheet.row(i)[13], mpd: spreadsheet.row(i)[14], toco: spreadsheet.row(i)[15], toch: spreadsheet.row(i)[16], mpe: spreadsheet.row(i)[17], tmg: spreadsheet.row(i)[18], tmi: spreadsheet.row(i)[19], ir: spreadsheet.row(i)[20])
       end
-      flash[:notice] = "Lista Importada"
-      redirect_to censo_setors_path 
+      flash[:success] = "Planilha importada com sucesso"
+      redirect_to new_censo_setor_path 
     rescue Exception => e
-      flash[:notice] = "Problemas com seu arquivo"
-      redirect_to censo_setors_path 
+      flash[:error] = "Problema com o arquivo"
+      redirect_to new_censo_setor_path 
     end
   end
 
@@ -37,7 +37,7 @@ class CensoSetorsController < ApplicationController
 
   # GET /censo_setors/new
   def new
-    @censo_setor = CensoSetor.new
+    @censo_setors = CensoSetor.all
   end
 
   # GET /censo_setors/1/edit

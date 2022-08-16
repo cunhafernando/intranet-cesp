@@ -8,8 +8,8 @@ class AmountOfUpaServicesController < ApplicationController
 
   def remove_all
     AmountOfUpaService.delete_all
-    flash[:notice] = "Lista removida com sucesso"
-    redirect_to amount_of_upa_services_path
+    flash[:warn] = "Lista removida com sucesso"
+    redirect_to new_amount_of_upa_service_path
   end
 
   def import_amount_of_upa_services
@@ -23,11 +23,11 @@ class AmountOfUpaServicesController < ApplicationController
       (2..spreadsheet.last_row).each do |i|
         AmountOfUpaService.create(year_month: spreadsheet.row(i)[0], registered: spreadsheet.row(i)[1], classified: spreadsheet.row(i)[2], attended: spreadsheet.row(i)[3], welcomed: spreadsheet.row(i)[4], service_time: spreadsheet.row(i)[5], green_time: spreadsheet.row(i)[6], green_in_the_goal: spreadsheet.row(i)[7], green_off_target: spreadsheet.row(i)[8], yellow_time: spreadsheet.row(i)[9], yellow_in_the_goal: spreadsheet.row(i)[10], yellow_off_target: spreadsheet.row(i)[11], red_in_the_goal: spreadsheet.row(i)[12], red_off_target: spreadsheet.row(i)[13])
       end
-      flash[:notice] = "Records Imported"
-      redirect_to amount_of_upa_services_path 
+      flash[:success] = "Lista Importada"
+      redirect_to new_amount_of_upa_service_path 
     rescue Exception => e
-      flash[:notice] = "Issues with file"
-      redirect_to amount_of_upa_services_path 
+      flash[:error] = "Problemas com seu arquivo"
+      redirect_to new_amount_of_upa_service_path 
     end
   end
 
@@ -37,7 +37,7 @@ class AmountOfUpaServicesController < ApplicationController
 
   # GET /amount_of_upa_services/new
   def new
-    @amount_of_upa_service = AmountOfUpaService.new
+    @amount_of_upa_services = AmountOfUpaService.all
   end
 
   # GET /amount_of_upa_services/1/edit

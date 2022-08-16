@@ -1,70 +1,81 @@
 <div class="wrapper">
-		<%= render 'welcome/layout/side_bar' %>
+	<%= render 'welcome/layout/side_bar' %>
 
-			<main class="content">
-				<div class="container-fluid p-0">
+	<div class="main">
+		<%= render 'welcome/layout/nav' %>
 
-					<div class="mb-3">
-						<h1 class="h1 d-inline align-middle">Tomografia Computadorizada</h1>
-					</div>
-					<div class="row">
-						<h3>Nova lista Tomografia Computadorizada</h3>
-            <div class="row align-items-center mt-5 mb-5">
-                <div class="col-6">
-                  <h3>Importar lista</h3>
-                    <p class="text-secondary">Para exportar a planilha, você deverá acessar o TI Med - HEGV, em seguida clicar na aba relatórios, internação, produção por especialidades, em período selecionar "MÊS", clicar em "APLICAR" e exportar Excel.</p>
-                    <%= form_tag import_computed_tomographies_path, multipart: true do %>
-                      <%= file_field_tag :file %>
-                      <%= submit_tag "Importar", :class=> "btn btn-success" %>
-                    <% end %>
-                </div>
-                <div class="col-6">
-                  <h3>Limpar lista de Tomografias Computadorizadas</h3>
-                    <p class="text-secondary">Antes de importar a lista você deverá limpar a lista existente.</p>
-                    <%= link_to "Limpar lista", remove_all_computed_tomographies_path, :method => :get, class: "btn btn-danger" %>
-                </div>
-              </div>
-            <div>
-            <%= render "form", computed_tomography: @computed_tomography %>
-            <br>
-            <div>
-              <%= link_to "Ir para a lista", computed_tomographies_path, class: "btn btn-warning" %>
-            </div>
-
-						
-					</div>
-
+		<main class="content">
+			<div class="container-fluid p-0">
+				<% flash.each do |key, message| %>
+				<div class="alert <%= flash_class(key) %> alert-dismissible fade show text-center" role="alert">
+					<%= message %>
+					<button type="button" class="btn-close" data-dismiss="alert" aria-label="Close">
+					<span aria-hidden="true"></span>
+					</button>
 				</div>
-			</main>
+				<% end %>
 
-			<footer class="footer">
-				<div class="container-fluid">
-					<div class="row text-muted">
-						<div class="col-6 text-start">
-							<p class="mb-0">
-								<a class="text-muted" href="http://intranet.cesp" target="_blank"><strong>HEGV</strong></a> &copy;
-							</p>
+				<div class="mb-3">
+					<h1 class="h1 d-inline align-middle">Tomografias Computadorizadas</h1>
+				</div>
+				<div class="row">
+					<h3>Nova lista de Tomografias Computadorizadas</h3>
+					<div class="row align-items-center mt-5 mb-5">
+						<div class="col-6">
+						<h3>Limpar lista de Tomografias Computadorizadas</h3>
+						<p class="text-secondary">Antes de importar a lista você deverá limpar a lista existente.</p>
+                  		<%= link_to "Limpar lista", remove_all_computed_tomographies_path, :method => :get, class: "btn btn-danger" %>
 						</div>
-						<div class="col-6 text-end">
-							<!--<ul class="list-inline">
-								<li class="list-inline-item">
-									<a class="text-muted" href="https://adminkit.io/" target="_blank">Suporte</a>
-								</li>
-								<li class="list-inline-item">
-									<a class="text-muted" href="https://adminkit.io/" target="_blank">Help Center</a>
-								</li>
-								<li class="list-inline-item">
-									<a class="text-muted" href="https://adminkit.io/" target="_blank">Privacy</a>
-								</li>
-								<li class="list-inline-item">
-									<a class="text-muted" href="https://adminkit.io/" target="_blank">Terms</a>
-								</li>
-							</ul>-->
+						<div class="col-6">
+							<h3>Importar lista</h3>
+							<p class="text-secondary">Para exportar a planilha, você deverá acessar o TI Med - HEGV, em seguida clicar na aba "RELATÓRIOS" <strong>-></strong> SADT <strong>-></strong> Produtividade de Exames <strong>-></strong> em período selecionar "MÊS ATUAL" <strong>-></strong> em Tipo selecionar "Realização" <strong>-></strong> em Tipo de Exame selecionar "Exame de Imagem" <strong>-></strong> em Categoria de Exame selecionar "TOMOGRAFIA" <strong>-></strong> clicar em "Aplicar" <strong>-></strong> exportar Excel.</p>
+							<%= form_tag import_computed_tomographies_path, multipart: true do %>
+								<%= file_field_tag :file %>
+								<%= submit_tag "Importar", :class=> "btn btn-success" %>
+							<% end %>
 						</div>
 					</div>
-				</div>
-			</footer>
-		</div>
+				<div>
+				<table class="table table-hover my-0">
+					<thead>
+						<tr>
+						<th class="d-none d-xl-table-cell">DATA</th>
+						<th class="d-none d-xl-table-cell">EXAME</th>
+						<th class="d-none d-xl-table-cell">CÓD. SIGTAP</th>
+						<th class="d-none d-xl-table-cell">LIBERADOR POR:</th>
+						<th class="d-none d-xl-table-cell">DATA DA LIBERAÇÃO</th>
+						<th class="d-none d-xl-table-cell">SEÇÃO SOLICITANTE</th>
+						<th class="d-none d-xl-table-cell">QTD.</th>
+						<th class="d-none d-xl-table-cell">QTD. REVISÕES</th>
+						<th class="d-none d-xl-table-cell">PROCED.</th>
+						<th class="d-none d-xl-table-cell">VALOR</th>
+						</tr>
+					</thead>
+
+					<tbody>
+					<% @computed_tomographies.each do |computed_tomography| %>
+						<tr>
+							<td class="d-none d-xl-table-cell"><%= computed_tomography.date %></td>
+							<td class="d-none d-xl-table-cell"><%= computed_tomography.exam %></td>
+							<td class="d-none d-xl-table-cell"><%= computed_tomography.sigtap_code %></td>
+							<td class="d-none d-xl-table-cell"><%= computed_tomography.released_by %></td>
+							<td class="d-none d-xl-table-cell"><%= computed_tomography.release_date %></td>
+							<td class="d-none d-xl-table-cell"><%= computed_tomography.requesting_section %></td>
+							<td class="d-none d-xl-table-cell"><%= computed_tomography.amount %></td>
+							<td class="d-none d-xl-table-cell"><%= computed_tomography.number_of_reviews %></td>
+							<td class="d-none d-xl-table-cell"><%= computed_tomography.procedure %></td>
+							<td class="d-none d-xl-table-cell"><%= computed_tomography.value %></td>
+						</tr>
+						<% end %>
+					</tbody>
+				</table>
+				<br>
+			<div>
+				
+			</div>
+		</main>
+		<%= render 'welcome/layout/footer' %>
 	</div>
-
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 

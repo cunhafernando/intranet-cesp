@@ -8,8 +8,8 @@ class UpaIndicadoresSesController < ApplicationController
 
   def remove_all
     UpaIndicadoresSe.delete_all
-    flash[:notice] = "Lista removida com sucesso"
-    redirect_to upa_indicadores_ses_path
+    flash[:warn] = "Lista removida com sucesso"
+    redirect_to new_upa_indicadores_se_path
   end
 
   def import_upa_indicadores_ses
@@ -23,11 +23,11 @@ class UpaIndicadoresSesController < ApplicationController
       (2..spreadsheet.last_row).each do |i|
         UpaIndicadoresSe.create(codigo: spreadsheet.row(i)[0], indicador: spreadsheet.row(i)[1], meta: spreadsheet.row(i)[2], variavel: spreadsheet.row(i)[3], descricao: spreadsheet.row(i)[4], medida: spreadsheet.row(i)[5], status: spreadsheet.row(i)[6])
       end
-      flash[:notice] = "Lista Importada"
-      redirect_to upa_indicadores_ses_path 
+      flash[:success] = "Lista Importada"
+      redirect_to new_upa_indicadores_se_path 
     rescue Exception => e
-      flash[:notice] = "Problemas com seu arquivo"
-      redirect_to upa_indicadores_ses_path 
+      flash[:error] = "Problemas com seu arquivo"
+      redirect_to new_upa_indicadores_se_path 
     end
   end
 
@@ -37,7 +37,7 @@ class UpaIndicadoresSesController < ApplicationController
 
   # GET /upa_indicadores_ses/new
   def new
-    @upa_indicadores_se = UpaIndicadoresSe.new
+    @upa_indicadores_ses = UpaIndicadoresSe.all
   end
 
   # GET /upa_indicadores_ses/1/edit

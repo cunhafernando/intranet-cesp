@@ -8,8 +8,8 @@ class ConsolidadosController < ApplicationController
   
   def remove_all
     Consolidado.delete_all
-    flash[:notice] = "Lista removida com sucesso"
-    redirect_to consolidados_path
+    flash[:warn] = "Lista removida com sucesso"
+    redirect_to new_consolidado_path
   end
 
   def import_consolidados
@@ -23,11 +23,11 @@ class ConsolidadosController < ApplicationController
       (3..spreadsheet.last_row-1).each do |i|
         Consolidado.create(leitos: spreadsheet.row(i)[0], leitos_extra: spreadsheet.row(i)[1], leitos_dia: spreadsheet.row(i)[2], pacientes_dia: spreadsheet.row(i)[3], internados: spreadsheet.row(i)[4], total_de_entradas: spreadsheet.row(i)[5], altas: spreadsheet.row(i)[6], transf_externa: spreadsheet.row(i)[7], obito_maior: spreadsheet.row(i)[8], obito_menor: spreadsheet.row(i)[9], total_de_saidas: spreadsheet.row(i)[10], mpd: spreadsheet.row(i)[11], toco: spreadsheet.row(i)[12], toch: spreadsheet.row(i)[13], mpe: spreadsheet.row(i)[14], tmg: spreadsheet.row(i)[15], tmi: spreadsheet.row(i)[16], ir: spreadsheet.row(i)[17])
       end
-      flash[:notice] = "Records Imported"
-      redirect_to consolidados_path 
+      flash[:success] = "Planilha importada com sucesso"
+      redirect_to new_consolidado_path 
     rescue Exception => e
-      flash[:notice] = "Issues with file"
-      redirect_to consolidados_path 
+      flash[:error] = "Problema com o arquivo"
+      redirect_to new_consolidado_path 
     end
   end
 
@@ -37,7 +37,7 @@ class ConsolidadosController < ApplicationController
 
   # GET /consolidados/new
   def new
-    @consolidado = Consolidado.new
+    @consolidados = Consolidado.all
   end
 
   # GET /consolidados/1/edit

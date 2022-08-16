@@ -8,8 +8,8 @@ class ProductionBySpecialtiesController < ApplicationController
 
   def remove_all
     ProductionBySpecialty.delete_all
-    flash[:notice] = "Lista removida com sucesso"
-    redirect_to production_by_specialties_path
+    flash[:warn] = "Lista removida com sucesso"
+    redirect_to new_production_by_specialty_path
   end
 
   def import_production_by_specialties
@@ -23,11 +23,11 @@ class ProductionBySpecialtiesController < ApplicationController
       (2..spreadsheet.last_row).each do |i|
         ProductionBySpecialty.create(specialty: spreadsheet.row(i)[0], foreseen: spreadsheet.row(i)[1], accomplished: spreadsheet.row(i)[2], performed_per_cent: spreadsheet.row(i)[3])
       end
-      flash[:notice] = "Records Imported"
-      redirect_to production_by_specialties_path 
+      flash[:success] = "Planilha importada com sucesso"
+      redirect_to new_production_by_specialty_path 
     rescue Exception => e
-      flash[:notice] = "Issues with file"
-      redirect_to production_by_specialties_path 
+      flash[:error] = "Problema com o arquivo"
+      redirect_to new_production_by_specialty_path 
     end
   end
 
@@ -37,7 +37,7 @@ class ProductionBySpecialtiesController < ApplicationController
 
   # GET /production_by_specialties/new
   def new
-    @production_by_specialty = ProductionBySpecialty.new
+    @production_by_specialties = ProductionBySpecialty.all
   end
 
   # GET /production_by_specialties/1/edit

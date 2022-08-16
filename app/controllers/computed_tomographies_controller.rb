@@ -8,8 +8,8 @@ class ComputedTomographiesController < ApplicationController
 
   def remove_all
     ComputedTomography.delete_all
-    flash[:notice] = "Lista removida com sucesso"
-    redirect_to computed_tomographies_path
+    flash[:warn] = "Lista removida com sucesso"
+    redirect_to new_computed_tomography_path
   end
 
   def import_computed_tomographies
@@ -23,11 +23,11 @@ class ComputedTomographiesController < ApplicationController
       (2..spreadsheet.last_row).each do |i|
         ComputedTomography.create(date: spreadsheet.row(i)[0], exam: spreadsheet.row(i)[1], sigtap_code: spreadsheet.row(i)[2], released_by: spreadsheet.row(i)[3], release_date: spreadsheet.row(i)[4], requesting_section: spreadsheet.row(i)[5], amount: spreadsheet.row(i)[6], number_of_reviews: spreadsheet.row(i)[7], procedure: spreadsheet.row(i)[8], value: spreadsheet.row(i)[9])
       end
-      flash[:notice] = "Records Imported"
-      redirect_to computed_tomographies_path 
+      flash[:success] = "Planilha importada com sucesso"
+      redirect_to new_computed_tomography_path 
     rescue Exception => e
-      flash[:notice] = "Issues with file"
-      redirect_to computed_tomographies_path 
+      flash[:error] = "Problema com o arquivo"
+      redirect_to new_computed_tomography_path
     end
   end
 
@@ -38,7 +38,7 @@ class ComputedTomographiesController < ApplicationController
 
   # GET /computed_tomographies/new
   def new
-    @computed_tomography = ComputedTomography.new
+    @computed_tomographies = ComputedTomography.all
   end
 
   # GET /computed_tomographies/1/edit

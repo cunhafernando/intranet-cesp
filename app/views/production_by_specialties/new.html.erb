@@ -1,68 +1,69 @@
 <div class="wrapper">
-		<%= render 'welcome/layout/side_bar' %>
+	<%= render 'welcome/layout/side_bar' %>
 
-			<main class="content">
-				<div class="container-fluid p-0">
+	<div class="main">
+		<%= render 'welcome/layout/nav' %>
 
-					<div class="mb-3">
-						<h1 class="h1 d-inline align-middle">Produção por Especialidades</h1>
-					</div>
-					<div class="row">
-						<h3>Nova lista Produção por Especialidades</h3>
-            <div class="row align-items-center mt-5 mb-5">
-                <div class="col-6">
-                  <h3>Limpar lista Produção por Especialidades</h3>
-                  <p class="text-secondary">Antes de importar a lista você deverá limpar a lista existente.</p>
-                  <%= link_to "Limpar lista", remove_all_production_by_specialties_path, :method => :get, class: "btn btn-danger" %>
-                </div>
-                <div class="col-6">
-                <h3>Importar lista</h3>
-                  <p class="text-secondary">Para exportar a planilha, você deverá acessar o TI Med - HEGV, em seguida clicar na aba relatórios, internação, produção por especialidades, em período selecionar "MÊS", clicar em "APLICAR" e exportar Excel.</p>
-                  <%= form_tag import_production_by_specialties_path, multipart: true do %>
-                    <%= file_field_tag :file %>
-                    <%= submit_tag "Importar", :class=> "btn btn-success" %>
-                  <% end %>
-                </div>
-              </div>
-            <div>
-            <%= render "form", production_by_specialty: @production_by_specialty %>
-            <br>
-            <div>
-              <%= link_to "Ir para Lista", production_by_specialties_path, class: "btn btn-warning" %>
-            </div>
-
-						
-					</div>
-
+		<main class="content">
+			<div class="container-fluid p-0">
+				<% flash.each do |key, message| %>
+				<div class="alert <%= flash_class(key) %> alert-dismissible fade show text-center" role="alert">
+					<%= message %>
+					<button type="button" class="btn-close" data-dismiss="alert" aria-label="Close">
+					<span aria-hidden="true"></span>
+					</button>
 				</div>
-			</main>
+				<% end %>
 
-			<footer class="footer">
-				<div class="container-fluid">
-					<div class="row text-muted">
-						<div class="col-6 text-start">
-							<p class="mb-0">
-								<a class="text-muted" href="http://intranet.cesp" target="_blank"><strong>HEGV</strong></a> &copy;
-							</p>
+				<div class="mb-3">
+					<h1 class="h1 d-inline align-middle">Produção por Especialidades</h1>
+				</div>
+				<div class="row">
+					<h3>Nova lista Produção por Especialidades</h3>
+					<div class="row align-items-center mt-5 mb-5">
+						<div class="col-6">
+						<h3>Limpar lista Produção por Especialidades</h3>
+						<p class="text-secondary">Antes de importar a lista você deverá limpar a lista existente.</p>
+                  		<%= link_to "Limpar lista", remove_all_production_by_specialties_path, :method => :get, class: "btn btn-danger" %>
 						</div>
-						<div class="col-6 text-end">
-							<!--<ul class="list-inline">
-								<li class="list-inline-item">
-									<a class="text-muted" href="https://adminkit.io/" target="_blank">Suporte</a>
-								</li>
-								<li class="list-inline-item">
-									<a class="text-muted" href="https://adminkit.io/" target="_blank">Help Center</a>
-								</li>
-								<li class="list-inline-item">
-									<a class="text-muted" href="https://adminkit.io/" target="_blank">Privacy</a>
-								</li>
-								<li class="list-inline-item">
-									<a class="text-muted" href="https://adminkit.io/" target="_blank">Terms</a>
-								</li>
-							</ul>-->
+						<div class="col-6">
+							<h3>Importar lista</h3>
+							<p class="text-secondary">Para exportar a planilha, você deverá acessar o TI Med - HEGV, em seguida clicar na aba relatórios, internação, produção por especialidades, em período selecionar "MÊS", clicar em "APLICAR" e exportar Excel.</p>
+							<%= form_tag import_production_by_specialties_path, multipart: true do %>
+								<%= file_field_tag :file %>
+								<%= submit_tag "Importar", :class=> "btn btn-success" %>
+							<% end %>
 						</div>
 					</div>
-				</div>
-			</footer>
-		</div>
+				<div>
+				<table class="table table-hover my-0">
+					<thead>
+						<tr>
+						<th class="d-none d-xl-table-cell">ESPECIALIDADE</th>
+						<th class="d-none d-xl-table-cell">PREVISTO</th>
+						<th class="d-none d-xl-table-cell">REALIZADO</th>
+						<th class="d-none d-xl-table-cell">%REALIZADO </th>
+						</tr>
+					</thead>
+
+					<tbody>
+					<% @production_by_specialties.each do |production_by_specialty| %>
+						<tr>
+							<td class="d-none d-xl-table-cell"><%= production_by_specialty.specialty %></td>
+							<td class="d-none d-xl-table-cell"><%= production_by_specialty.foreseen %></td>
+							<td class="d-none d-xl-table-cell"><%= production_by_specialty.accomplished %></td>
+							<td class="d-none d-xl-table-cell"><%= production_by_specialty.performed_per_cent %></td>
+						</tr>
+						<% end %>
+					</tbody>
+				</table>
+				<br>
+			<div>
+				
+			</div>
+		</main>
+		<%= render 'welcome/layout/footer' %>
 	</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
