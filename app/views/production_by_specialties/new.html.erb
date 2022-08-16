@@ -28,7 +28,7 @@
 						</div>
 						<div class="col-6">
 							<h3>Importar lista</h3>
-							<p class="text-secondary">Para exportar a planilha, você deverá acessar o TI Med - HEGV, em seguida clicar na aba relatórios, internação, produção por especialidades, em período selecionar "MÊS", clicar em "APLICAR" e exportar Excel.</p>
+							<p class="text-secondary">Para exportar a planilha, você deverá acessar o TI Med - HEGV, em seguida clicar na aba "RELATÓRIOS" <strong>-></strong> "Internação" <strong>-></strong> "Produção por Especialidades" <strong>-></strong> em período selecionar "MÊS ATUAL" <strong>-></strong> clicar em "APLICAR" <strong>-></strong> exportar Excel.</p>
 							<%= form_tag import_production_by_specialties_path, multipart: true do %>
 								<%= file_field_tag :file %>
 								<%= submit_tag "Importar", :class=> "btn btn-success" %>
