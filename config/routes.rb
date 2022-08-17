@@ -19,6 +19,13 @@ Rails.application.routes.draw do
       get 'remove_all'
     end
   end
+
+  resources :censo_diarios do
+    collection do
+      get 'remove_all'
+    end
+  end
+  
   resources :amount_of_upa_services do
     collection do
       get 'remove_all'
@@ -45,6 +52,7 @@ Rails.application.routes.draw do
   post 'import_amount_of_upa_services' => "amount_of_upa_services#import_amount_of_upa_services"
   post 'import_consolidados' => "consolidados#import_consolidados"
   post 'import_censo_setors' => "censo_setors#import_censo_setors"
+  post 'import_censo_diarios' => "censo_diarios#import_censo_diarios"
   post 'import_upa_indicadores_ses' => "upa_indicadores_ses#import_upa_indicadores_ses"
 
   # Defines the root path route ("/")

@@ -5,6 +5,26 @@ class PainelController < ApplicationController
   before_action :consolidados
   before_action :censo_setors
   before_action :upa_indicadores_ses
+  before_action :censo_diario
+
+  def censo_diario
+    @censo_diarios = CensoDiario.all
+    @leitos_ocupados = ((CensoDiario.where.not(boletim:[nil, ""])).and(CensoDiario.where.not("leito LIKE ?", "%EXTRA%"))).count(:leito)
+    @leitos_extras = CensoDiario.where("leito LIKE ?", "%EXTRA%").count(:leito)
+    @leitos_extras_ocupados = ((CensoDiario.where.not(boletim:[nil, ""])).and(CensoDiario.where("leito LIKE ?", "%EXTRA%"))).count(:leito)
+    @leitos_total = CensoDiario.where.not("leito LIKE ?", "%EXTRA%").count(:leito)
+    @media_leitos_ocupados = ((@leitos_ocupados.to_f / @leitos_total.to_f) * 100).to_i
+    @color_meta_leitos_ocupados = if @media_leitos_ocupados <= 85 
+      "success" 
+    else 
+      "danger" 
+    end
+    @meta_leitos_ocupados =if @media_leitos_ocupados <= 85
+      "Meta atingida"
+    else
+      "Meta não atingida"
+    end
+  end
 
   def upa_indicadores_ses
     @upa_indicadores_ses = UpaIndicadoresSe.all

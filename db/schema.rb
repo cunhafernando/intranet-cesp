@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_10_123019) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_17_125001) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -29,6 +29,21 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_10_123019) do
     t.float "yellow_off_target"
     t.float "red_in_the_goal"
     t.float "red_off_target"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "censo_diarios", force: :cascade do |t|
+    t.string "secao"
+    t.string "leito"
+    t.string "boletim"
+    t.string "pulseira"
+    t.string "prontuario"
+    t.string "paciente"
+    t.string "sexo"
+    t.string "nascimento"
+    t.string "convenio"
+    t.string "internacao"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

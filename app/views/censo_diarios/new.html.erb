@@ -1,0 +1,100 @@
+<div class="wrapper">
+	<%= render 'welcome/layout/side_bar' %>
+
+	<div class="main">
+		<%= render 'welcome/layout/nav' %>
+
+		<main class="content">
+			<div class="container-fluid p-0">
+				<% flash.each do |key, message| %>
+				<div class="alert <%= flash_class(key) %> alert-dismissible fade show text-center" role="alert">
+					<%= message %>
+					<button type="button" class="btn-close" data-dismiss="alert" aria-label="Close">
+					<span aria-hidden="true"></span>
+					</button>
+				</div>
+				<% end %>
+
+				<div class="mb-3">
+					<h1 class="h1 d-inline align-middle">Censo Diário</h1>
+				</div>
+				<div class="row">
+					<h3>Nova lista Censo Diário</h3>
+					<div class="row align-items-center mt-5 mb-5">
+						<div class="col-6">
+						<h3>Limpar lista Censo Diário</h3>
+						<p class="text-secondary">Antes de importar a lista você deverá limpar a lista existente.</p>
+						<%= link_to "Limpar lista", remove_all_censo_diarios_path, :method => :get, class: "btn btn-danger" %>
+						</div>
+						<div class="col-6">
+							<h3>Importar lista</h3>
+							<p class="text-secondary">Para exportar a planilha, você deverá acessar o TI Med - HEGV, em seguida clicar na aba "CENSO" <strong>-></strong> Estatística <strong>-></strong> em período selecionar "MÊS ATUAL" <strong>-></strong> em Tipo de Censo selecionar "SETOR" <strong>-></strong> clicar em "Pesquisar" <strong>-></strong> exportar Excel.</p>
+							<%= form_tag import_censo_diarios_path, multipart: true do %>
+								<%= file_field_tag :file %>
+								<%= submit_tag "Importar", :class=> "btn btn-success" %>
+							<% end %>
+						</div>
+					</div>
+				<div>
+				<table class="table table-hover my-0">
+					<thead>
+						<tr>
+						<th class="d-none d-xl-table-cell">Seção</th>
+						<th class="d-none d-xl-table-cell">Leito</th>
+						<th class="d-none d-xl-table-cell">Boletim</th>
+						<th class="d-none d-xl-table-cell">Pulseira</th>
+						<th class="d-none d-xl-table-cell">Prontuário</th>
+						<th class="d-none d-xl-table-cell">Paciente</th>
+						<th class="d-none d-xl-table-cell">Sexo</th>
+						<th class="d-none d-xl-table-cell">Nascimento</th>
+						<th class="d-none d-xl-table-cell">Convênio</th>
+						<th class="d-none d-xl-table-cell">Internação</th>
+						</tr>
+					</thead>
+
+					<tbody>
+					<% @censo_diarios.each do |censo_diario| %>
+						<tr>
+							<td class="d-none d-xl-table-cell"><%= censo_diario.secao %></td>
+							<td class="d-none d-xl-table-cell"><%= censo_diario.leito %></td>
+							<td class="d-none d-xl-table-cell"><%= censo_diario.boletim %></td>
+							<td class="d-none d-xl-table-cell"><%= censo_diario.pulseira %></td>
+							<td class="d-none d-xl-table-cell"><%= censo_diario.prontuario %></td>
+							<td class="d-none d-xl-table-cell"><%= censo_diario.paciente %></td>
+							<td class="d-none d-xl-table-cell"><%= censo_diario.sexo %></td>
+							<td class="d-none d-xl-table-cell"><%= censo_diario.nascimento %></td>
+							<td class="d-none d-xl-table-cell"><%= censo_diario.convenio %></td>
+							<td class="d-none d-xl-table-cell"><%= censo_diario.internacao %></td>
+						</tr>
+						<% end %>
+					</tbody>
+				</table>
+				<br>
+			<div>
+				
+			</div>
+		</main>
+		<%= render 'welcome/layout/footer' %>
+	</div>
+</div>
+
+
+
+
+
+	
+
+
+
+
+
+<h1>New censo diario</h1>
+
+<%= render "form", censo_diario: @censo_diario %>
+
+
+<br>
+
+<div>
+  <%= link_to "Back to censo diarios", censo_diarios_path %>
+</div>

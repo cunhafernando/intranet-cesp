@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<%= render @censo_diario %>
+
+
+<div>
+  <%= link_to "Editar", edit_censo_diario_path(@censo_diario) %> |
+  <%= link_to "Voltar", censo_diarios_path %>
+
+  <%= button_to "Apagar", @censo_diario, method: :delete %>
+</div>

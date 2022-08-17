@@ -1,0 +1,69 @@
+<%= form_with(model: censo_diario) do |form| %>
+  <% if censo_diario.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(censo_diario.errors.count, "error") %> proibiu que esta lista fosse salva:</h2>
+
+      <ul>
+        <% censo_diario.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row justify-content-center">
+    <div class="col-3">
+      <%= form.label :secao, style: "display: block", class: "form-label" %>
+      <%= form.text_field :secao, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :leito, style: "display: block", class: "form-label" %>
+      <%= form.text_field :leito, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :boletim, style: "display: block", class: "form-label" %>
+      <%= form.text_field :boletim, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :pulseira, style: "display: block", class: "form-label" %>
+      <%= form.text_field :pulseira, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :prontuario, style: "display: block", class: "form-label" %>
+      <%= form.text_field :prontuario, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :paciente, style: "display: block", class: "form-label" %>
+      <%= form.text_field :paciente, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :sexo, style: "display: block", class: "form-label" %>
+      <%= form.text_field :sexo, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :nascimento, style: "display: block", class: "form-label" %>
+      <%= form.text_field :nascimento, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :convenio, style: "display: block", class: "form-label" %>
+      <%= form.text_field :convenio, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :internacao, style: "display: block", class: "form-label" %>
+      <%= form.text_field :internacao, class: "form-label" %>
+    </div>
+
+    <div>
+      <%= form.submit 'Enviar', :class => 'btn btn-primary' %>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Censo Diário</h1>
+<%= link_to "Nova lista Censo Diário", new_censo_diario_path, :class=> "btn btn-success" %>
+
+<table class="table table-hover my-0">
+  <thead>
+    <tr>
+      <th>Seção</th>
+      <th>Leito</th>
+      <th>Boletim</th>
+      <th>Pulseira</th>
+      <th>Prontuário</th>
+      <th>Paciente</th>
+      <th>Sexo</th>
+      <th>Nascimento</th>
+      <th>Convênio</th>
+      <th>Internação</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @censo_diarios.each do |censo_diario| %>
+      <tr>
+        <td><%= censo_diario.secao %></td>
+        <td><%= censo_diario.leito %></td>
+        <td><%= censo_diario.boletim %></td>
+        <td><%= censo_diario.pulseira %></td>
+        <td><%= censo_diario.prontuario %></td>
+        <td><%= censo_diario.paciente %></td>
+        <td><%= censo_diario.sexo %></td>
+        <td><%= censo_diario.nascimento %></td>
+        <td><%= censo_diario.convenio %></td>
+        <td><%= censo_diario.internacao %></td>
+        <td><%= link_to 'Mostrar', censo_diario, class: "btn btn-success" %></td>
+        <td><%= link_to 'Editar', edit_censo_diario_path(censo_diario), class: "btn btn-warning" %></td>
+        <td><%= link_to 'Apagar', censo_diario, method: :delete, data: { confirm: 'Você está certo disso?' }, class: "btn btn-danger" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
