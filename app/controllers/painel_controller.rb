@@ -13,7 +13,7 @@ class PainelController < ApplicationController
     @leitos_extras = CensoDiario.where("leito LIKE ?", "%EXTRA%").count(:leito)
     @leitos_extras_ocupados = ((CensoDiario.where.not(boletim:[nil, ""])).and(CensoDiario.where("leito LIKE ?", "%EXTRA%"))).count(:leito)
     @leitos_total = CensoDiario.where.not("leito LIKE ?", "%EXTRA%").count(:leito)
-    @media_leitos_ocupados = (@leitos_ocupados * 100) / @leitos_total # ((@leitos_ocupados.to_f / @leitos_total.to_f) * 100).to_i
+    @media_leitos_ocupados = @leitos_ocupados * 100 # ((@leitos_ocupados.to_f / @leitos_total.to_f) * 100).to_i
     @color_meta_leitos_ocupados = if @media_leitos_ocupados <= 85 
       "success" 
     else 
