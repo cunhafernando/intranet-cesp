@@ -398,6 +398,8 @@ class PainelController < ApplicationController
       "Meta não atingida"
     end
 
+    @qtd_internacoes = Consolidado.all.sum(:internados)
+
     @taxa_ocupacao_operacional = ((Consolidado.all.sum(:pacientes_dia) / Consolidado.all.sum(:leitos_dia)) * 100)
     @media_permanencia_geral = (Consolidado.all.sum(:pacientes_dia) / Consolidado.all.sum(:total_de_saidas))
     @diferenca_da_meta = 85 - @taxa_ocupacao_operacional
