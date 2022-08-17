@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   get 'painel/index'
   root "painel#show"
 
-  resources :welcome
   resources :painel do
   end
 

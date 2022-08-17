@@ -5,10 +5,10 @@ import * as bootstrap from "bootstrap"
 import "@adminkit/core/dist/js/app"
 import "bootstrap-table/dist/bootstrap-table"
 import "chartkick/chart.js"
-import "apexcharts/dist/apexcharts"
 import "chartjs-plugin-datalabels/dist/chartjs-plugin-datalabels"
+import "bootstrap/dist/js/bootstrap.bundle"
 
-let popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))  
-let popoverList = popoverTriggerList.map(function (popoverTriggerEl) {  
-  return new bootstrap.Popover(popoverTriggerEl)  
-})  
+var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+  return new bootstrap.Popover(popoverTriggerEl)
+})
