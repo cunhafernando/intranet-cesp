@@ -200,12 +200,12 @@ class PainelController < ApplicationController
     end
 
     @g2 = (((((UpaIndicadoresSe.where(descricao: 'Numerador G2').pluck(:variavel)).to_sentence).to_f) / (((UpaIndicadoresSe.where(descricao: 'Denominador G2').pluck(:variavel)).to_sentence).to_f)) * 100).ceil(2)
-    @color_g2 = if @g2 >= 80 
+    @color_g2 = if @g2 >= 95 
       "success" 
     else 
       "danger" 
     end
-    @meta_g2 =if @g2 >= 80
+    @meta_g2 =if @g2 >= 95
       "Meta atingida"
     else
       "Meta não atingida"
