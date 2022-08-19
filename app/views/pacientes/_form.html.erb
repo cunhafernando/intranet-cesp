@@ -1,0 +1,165 @@
+<%= form_with(model: paciente) do |form| %>
+  <% if paciente.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(paciente.errors.count, "error") %> proibiu que esta lista fosse salva:</h2>
+
+      <ul>
+        <% paciente.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="row justify-content-center">
+    <div class="col-3">
+      <%= form.label :risco, style: "display: block", class: "form-label" %>
+      <%= form.text_field :risco, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :tipo_entrada, style: "display: block", class: "form-label" %>
+      <%= form.text_field :tipo_entrada, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :profissional, style: "display: block", class: "form-label" %>
+      <%= form.text_field :profissional, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :especialidade, style: "display: block", class: "form-label" %>
+      <%= form.text_field :especialidade, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :linha_cuidado, style: "display: block", class: "form-label" %>
+      <%= form.text_field :linha_cuidado, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :boletim, style: "display: block", class: "form-label" %>
+      <%= form.text_field :boletim, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :entrada, style: "display: block", class: "form-label" %>
+      <%= form.text_field :entrada, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :classificacao, style: "display: block", class: "form-label" %>
+      <%= form.text_field :classificacao, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :encaminhamento, style: "display: block", class: "form-label" %>
+      <%= form.text_field :encaminhamento, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :atendimento_primeira, style: "display: block", class: "form-label" %>
+      <%= form.text_field :atendimento_primeira, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :inicio_atendimento, style: "display: block", class: "form-label" %>
+      <%= form.text_field :inicio_atendimento, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :fim_atendimento, style: "display: block", class: "form-label" %>
+      <%= form.text_field :fim_atendimento, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :alta, style: "display: block", class: "form-label" %>
+      <%= form.text_field :alta, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :nome, style: "display: block", class: "form-label" %>
+      <%= form.text_field :nome, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :idade, style: "display: block", class: "form-label" %>
+      <%= form.text_field :idade, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :sexo, style: "display: block", class: "form-label" %>
+      <%= form.text_field :sexo, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :raca, style: "display: block", class: "form-label" %>
+      <%= form.text_field :raca, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :tm_atendimento, style: "display: block", class: "form-label" %>
+      <%= form.text_field :tm_atendimento, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :tm_cr, style: "display: block", class: "form-label" %>
+      <%= form.text_field :tm_cr, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :tm_classxatend, style: "display: block", class: "form-label" %>
+      <%= form.text_field :tm_classxatend, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :meta, style: "display: block", class: "form-label" %>
+      <%= form.text_field :meta, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :cod_diag, style: "display: block", class: "form-label" %>
+      <%= form.text_field :cod_diag, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :diagnostico, style: "display: block", class: "form-label" %>
+      <%= form.text_field :diagnostico, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :tipo_problema, style: "display: block", class: "form-label" %>
+      <%= form.text_field :tipo_problema, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :motivo_alta, style: "display: block", class: "form-label" %>
+      <%= form.text_field :motivo_alta, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :bairro, style: "display: block", class: "form-label" %>
+      <%= form.text_field :bairro, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :municipio, style: "display: block", class: "form-label" %>
+      <%= form.text_field :municipio, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :convenio, style: "display: block", class: "form-label" %>
+      <%= form.text_field :convenio, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :numero_sisreg, style: "display: block", class: "form-label" %>
+      <%= form.text_field :numero_sisreg, class: "form-label" %>
+    </div>
+
+    <div>
+      <%= form.submit 'Enviar', :class => 'btn btn-primary' %>
+    </div>
+  </div>
+<% end %>

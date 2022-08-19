@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+      
   get 'welcome/index'
   get 'welcome/show'
   get 'painel/index'
@@ -21,6 +21,12 @@ Rails.application.routes.draw do
   end
 
   resources :censo_diarios do
+    collection do
+      get 'remove_all'
+    end
+  end
+
+  resources :pacientes do
     collection do
       get 'remove_all'
     end
@@ -54,6 +60,7 @@ Rails.application.routes.draw do
   post 'import_censo_setors' => "censo_setors#import_censo_setors"
   post 'import_censo_diarios' => "censo_diarios#import_censo_diarios"
   post 'import_upa_indicadores_ses' => "upa_indicadores_ses#import_upa_indicadores_ses"
+  post 'import_pacientes' => "pacientes#import_pacientes"
 
   # Defines the root path route ("/")
   # root "articles#index"

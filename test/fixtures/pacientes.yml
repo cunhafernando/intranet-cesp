@@ -1,0 +1,63 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  risco: MyString
+  tipo_entrada: MyString
+  profissional: MyString
+  especialidade: MyString
+  linha_cuidado: MyString
+  boletim: MyString
+  entrada: MyString
+  classificacao: MyString
+  encaminhamento: MyString
+  atendimento_primeira: MyString
+  inicio_atendimento: MyString
+  fim_atendimento: MyString
+  alta: MyString
+  nome: MyString
+  idade: MyString
+  sexo: MyString
+  raca: MyString
+  tm_atendimento: 1.5
+  tm_cr: 1.5
+  tm_classxatend: 1.5
+  meta: MyString
+  cod_diag: MyString
+  diagnostico: MyString
+  tipo_problema: MyString
+  motivo_alta: MyString
+  bairro: MyString
+  municipio: MyString
+  convenio: MyString
+  numero_sisreg: MyString
+
+two:
+  risco: MyString
+  tipo_entrada: MyString
+  profissional: MyString
+  especialidade: MyString
+  linha_cuidado: MyString
+  boletim: MyString
+  entrada: MyString
+  classificacao: MyString
+  encaminhamento: MyString
+  atendimento_primeira: MyString
+  inicio_atendimento: MyString
+  fim_atendimento: MyString
+  alta: MyString
+  nome: MyString
+  idade: MyString
+  sexo: MyString
+  raca: MyString
+  tm_atendimento: 1.5
+  tm_cr: 1.5
+  tm_classxatend: 1.5
+  meta: MyString
+  cod_diag: MyString
+  diagnostico: MyString
+  tipo_problema: MyString
+  motivo_alta: MyString
+  bairro: MyString
+  municipio: MyString
+  convenio: MyString
+  numero_sisreg: MyString

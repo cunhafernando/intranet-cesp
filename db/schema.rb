@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_17_125001) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_19_115504) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -108,6 +108,40 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_17_125001) do
     t.float "tmg"
     t.float "tmi"
     t.float "ir"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "pacientes", force: :cascade do |t|
+    t.string "risco"
+    t.string "tipo_entrada"
+    t.string "profissional"
+    t.string "especialidade"
+    t.string "linha_cuidado"
+    t.string "boletim"
+    t.string "entrada"
+    t.string "classificacao"
+    t.string "encaminhamento"
+    t.string "atendimento_primeira"
+    t.string "inicio_atendimento"
+    t.string "fim_atendimento"
+    t.string "alta"
+    t.string "nome"
+    t.string "idade"
+    t.string "sexo"
+    t.string "raca"
+    t.float "tm_atendimento"
+    t.float "tm_cr"
+    t.float "tm_classxatend"
+    t.string "meta"
+    t.string "cod_diag"
+    t.string "diagnostico"
+    t.string "tipo_problema"
+    t.string "motivo_alta"
+    t.string "bairro"
+    t.string "municipio"
+    t.string "convenio"
+    t.string "numero_sisreg"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

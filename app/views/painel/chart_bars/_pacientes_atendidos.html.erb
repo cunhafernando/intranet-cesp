@@ -1,0 +1,83 @@
+<div class="card flex-fill w-100">
+    <div class="card-header">
+        <h5 class="card-title fs-4 mb-0 text-secondary"><strong>Quantidade de Pacientes Atendidos</strong></h5>
+    </div>
+    <div class="card-body py-3">
+        <div class="chart chart-sm" style="height:475px" >
+            <canvas id="pacientes"></canvas>
+        </div>
+    </div>
+</div>
+
+<script>
+    // setup 
+    var data = {
+      labels: ["Clinica Médica", "Cirurgia Geral", "Cirurgia Vascular", "Neurocirurgia", "Ortopedia", "Pediatria", "Comissão de Curativos", "Bucomaxilofacial" ],
+      datasets: [
+      {
+        label: 'Pacientes atendidos',
+        data: [<%= @clinica_medica %>, <%= @cirurgia_geral %>, <%= @cirurgia_vascular %>, <%= @neuro_cirurgia %>, <%= @ortopedia %>, <%= @pediatria %>, <%= @comissao_curativos %>, <%= @bucomaxilofacial %>],
+        backgroundColor: [
+          '#3b7ddd'
+        ],
+        borderColor: [
+          '#3b7ddd'
+        ],
+        borderWidth: 0,
+        datalabels: {
+            align: 'center',
+            anchor: 'end',
+            color: 'black'
+
+        },
+        barPercentage: 1.2,
+        categoryPercentage: .5
+      }]
+    };
+
+    // config 
+    var config = {
+      type: 'bar',
+      data,
+      options: {
+        plugins: {
+          legend: {
+            display: false
+          }
+        },
+        
+      },
+      plugins: [ChartDataLabels],
+        options: {
+          maintainAspectRatio: false,
+        legend: {
+            display: true
+        },
+        indexAxis: 'y',
+        scales: {
+          yAxes: [{
+                gridLines: {
+                    display: false
+                },
+                stacked: false,
+                ticks: {
+                    stepSize: 20
+                }
+            }],
+            xAxes: [{
+                stacked: false,
+                gridLines: {
+                    color: "blue"
+                }
+            }]
+        }
+        
+      }
+    };
+
+    // render init block
+    var pacientes = new Chart(
+      document.getElementById('pacientes'),
+      config
+    );
+</script>

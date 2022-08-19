@@ -5,9 +5,10 @@ class PainelController < ApplicationController
   before_action :consolidados
   before_action :censo_setors
   before_action :upa_indicadores_ses
-  before_action :censo_diario
+  before_action :censo_diarios
+  before_action :pacientes
 
-  def censo_diario
+  def censo_diarios
     @censo_diarios = CensoDiario.all
     @leitos_ocupados = ((CensoDiario.where.not(boletim:[nil, ""])).and(CensoDiario.where.not("leito LIKE ?", "%EXTRA%"))).count(:leito)
     @leitos_extras = CensoDiario.where("leito LIKE ?", "%EXTRA%").count(:leito)
@@ -25,6 +26,18 @@ class PainelController < ApplicationController
     else
       "Meta não atingida"
     end
+  end
+
+  def pacientes
+    @pacientes = Paciente.all
+    @clinica_medica = (Paciente.where(especialidade: 'CLINICA MEDICA').count(:tipo_entrada))
+    @cirurgia_geral = (Paciente.where(especialidade: 'CIRURGIA GERAL').count(:tipo_entrada))
+    @cirurgia_vascular = (Paciente.where(especialidade: 'CIRURGIA VASCULAR').count(:tipo_entrada))
+    @neuro_cirurgia = (Paciente.where(especialidade: 'NEUROCIRURGIA').count(:tipo_entrada))
+    @ortopedia = (Paciente.where(especialidade: 'ORTOPEDIA').count(:tipo_entrada))
+    @pediatria = (Paciente.where(especialidade: 'PEDIATRIA').count(:tipo_entrada))
+    @comissao_curativos = (Paciente.where(especialidade: 'COMISSÃO DE CURATIVOS').count(:tipo_entrada))
+    @bucomaxilofacial = (Paciente.where(especialidade: 'BUCOMAXILOFACIAL').count(:tipo_entrada))
   end
 
   def upa_indicadores_ses

@@ -1,0 +1,118 @@
+<div class="wrapper">
+	<%= render 'welcome/layout/side_bar' %>
+
+	<div class="main">
+		<%= render 'welcome/layout/nav' %>
+
+		<main class="content">
+			<div class="container-fluid p-0">
+				<% flash.each do |key, message| %>
+				<div class="alert <%= flash_class(key) %> alert-dismissible fade show text-center" role="alert">
+					<%= message %>
+					<button type="button" class="btn-close" data-dismiss="alert" aria-label="Close">
+					<span aria-hidden="true"></span>
+					</button>
+				</div>
+				<% end %>
+
+				<div class="mb-3">
+					<h1 class="h1 d-inline align-middle">Pacientes Atendidos</h1>
+				</div>
+				<div class="row">
+					<h3>Nova lista de Pacientes Atendidos</h3>
+					<div class="row align-items-center mt-5 mb-5">
+						<div class="col-6">
+						<h3>Limpar lista de Pacientes Atendidos</h3>
+						<p class="text-secondary">Antes de importar a lista você deverá limpar a lista existente.</p>
+						<%= link_to "Limpar lista", remove_all_pacientes_path, :method => :get, class: "btn btn-danger" %>
+						</div>
+						<div class="col-6">
+							<h3>Importar lista</h3>
+							<p class="text-secondary">Para exportar a planilha, você deverá acessar o TI Med - HEGV, em seguida clicar na aba "CENSO" <strong>-></strong> "Estatísticas" <strong>-></strong> em período selecionar "MÊS ATUAL" <strong>-></strong> tipo de Censo selecionar "CONSOLIDADO" <strong>-></strong> clicar em "Pesquisar" <strong>-></strong> exportar Excel.</p>
+							<%= form_tag import_pacientes_path, multipart: true do %>
+								<%= file_field_tag :file %>
+								<%= submit_tag "Importar", :class=> "btn btn-success" %>
+							<% end %>
+						</div>
+					</div>
+				<div>
+				<table class="table table-hover my-0">
+					<thead>
+						<tr>
+						<th class="d-none d-xl-table-cell">Risco</th>
+            <th class="d-none d-xl-table-cell">Tipo Entrada</th>
+            <th class="d-none d-xl-table-cell">Profissional</th>
+            <th class="d-none d-xl-table-cell">Especialidade</th>
+            <th class="d-none d-xl-table-cell">Linha de Cuidado</th>
+            <th class="d-none d-xl-table-cell">Boletim</th>
+            <th class="d-none d-xl-table-cell">Entrada</th>
+            <th class="d-none d-xl-table-cell">Classificação</th>
+            <th class="d-none d-xl-table-cell">Encaminhamento</th>
+            <th class="d-none d-xl-table-cell">Atendimento (primeira chamada)</th>
+            <th class="d-none d-xl-table-cell">Início Atendimento</th>
+            <th class="d-none d-xl-table-cell">Alta</th>
+            <th class="d-none d-xl-table-cell">Nome</th>
+            <th class="d-none d-xl-table-cell">Idade</th>
+            <th class="d-none d-xl-table-cell">Sexo</th>
+            <th class="d-none d-xl-table-cell">Raça</th>
+            <th class="d-none d-xl-table-cell">TM Atend.</th>      
+            <th class="d-none d-xl-table-cell">TM CR</th>
+            <th class="d-none d-xl-table-cell">TM ClassxAtend</th>
+            <th class="d-none d-xl-table-cell">Meta</th>
+            <th class="d-none d-xl-table-cell">Cod.Diagnóstico</th>
+            <th class="d-none d-xl-table-cell">Diagnóstico</th>
+            <th class="d-none d-xl-table-cell">Tipo de Problema</th>
+            <th class="d-none d-xl-table-cell">Motivo de Alta</th>
+            <th class="d-none d-xl-table-cell">Bairro</th>
+            <th class="d-none d-xl-table-cell">Município</th>
+            <th class="d-none d-xl-table-cell">Convênio</th>
+            <th class="d-none d-xl-table-cell">Número Sisreg</th>
+						</tr>
+					</thead>
+
+					<tbody>
+					<% @pacientes.each do |paciente| %>
+						<tr>
+							<td class="d-none d-xl-table-cell"><%= paciente.risco %></td>
+              <td class="d-none d-xl-table-cell"><%= paciente.tipo_entrada %></td>
+              <td class="d-none d-xl-table-cell"><%= paciente.profissional %></td>
+              <td class="d-none d-xl-table-cell"><%= paciente.especialidade %></td>
+              <td class="d-none d-xl-table-cell"><%= paciente.linha_cuidado %></td>
+              <td class="d-none d-xl-table-cell"><%= paciente.boletim %></td>
+              <td class="d-none d-xl-table-cell"><%= paciente.entrada.to_datetime %></td>
+              <td class="d-none d-xl-table-cell"><%= paciente.classificacao.to_datetime %></td>
+              <td class="d-none d-xl-table-cell"><%= paciente.encaminhamento %></td>
+              <td class="d-none d-xl-table-cell"><%= paciente.atendimento_primeira %></td>
+              <td class="d-none d-xl-table-cell"><%= paciente.inicio_atendimento %></td>
+              <td class="d-none d-xl-table-cell"><%= paciente.fim_atendimento %></td>
+              <td class="d-none d-xl-table-cell"><%= paciente.alta %></td>
+              <td class="d-none d-xl-table-cell"><%= paciente.nome %></td>
+              <td class="d-none d-xl-table-cell"><%= paciente.idade %></td>
+              <td class="d-none d-xl-table-cell"><%= paciente.sexo %></td>
+              <td class="d-none d-xl-table-cell"><%= paciente.raca %></td>
+              <td class="d-none d-xl-table-cell"><%= paciente.tm_atendimento %></td>
+              <td class="d-none d-xl-table-cell"><%= paciente.tm_cr %></td>
+              <td class="d-none d-xl-table-cell"><%= paciente.tm_classxatend %></td>
+              <td class="d-none d-xl-table-cell"><%= paciente.meta %></td>
+              <td class="d-none d-xl-table-cell"><%= paciente.cod_diag %></td>
+              <td class="d-none d-xl-table-cell"><%= paciente.diagnostico %></td>
+              <td class="d-none d-xl-table-cell"><%= paciente.tipo_problema %></td>
+              <td class="d-none d-xl-table-cell"><%= paciente.motivo_alta %></td>
+              <td class="d-none d-xl-table-cell"><%= paciente.bairro %></td>
+              <td class="d-none d-xl-table-cell"><%= paciente.municipio %></td>
+              <td class="d-none d-xl-table-cell"><%= paciente.convenio %></td>
+              <td class="d-none d-xl-table-cell"><%= paciente.numero_sisreg %></td>
+						</tr>
+						<% end %>
+					</tbody>
+				</table>
+				<br>
+			<div>
+				
+			</div>
+		</main>
+
+		<%= render 'welcome/layout/footer' %>
+	</div>
+</div>
+

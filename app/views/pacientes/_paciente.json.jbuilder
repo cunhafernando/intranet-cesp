@@ -1,0 +1,2 @@
+json.extract! paciente, :id, :risco, :tipo_entrada, :profissional, :especialidade, :linha_cuidado, :boletim, :entrada, :classificacao, :encaminhamento, :atendimento_primeira, :inicio_atendimento, :fim_atendimento, :alta, :nome, :idade, :sexo, :raca, :tm_atendimento, :tm_cr, :tm_classxatend, :meta, :cod_diag, :diagnostico, :tipo_problema, :motivo_alta, :bairro, :municipio, :convenio, :numero_sisreg, :created_at, :updated_at
+json.url paciente_url(paciente, format: :json)

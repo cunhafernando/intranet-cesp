@@ -35,7 +35,6 @@ class CensoDiariosController < ApplicationController
   def show
   end
 
-
   # GET /censo_diarios/new
   def new
     @censo_diarios = CensoDiario.all
