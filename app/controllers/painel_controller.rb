@@ -38,6 +38,7 @@ class PainelController < ApplicationController
     @pediatria = (Paciente.where(especialidade: 'PEDIATRIA').count(:tipo_entrada))
     @comissao_curativos = (Paciente.where(especialidade: 'COMISSÃO DE CURATIVOS').count(:tipo_entrada))
     @bucomaxilofacial = (Paciente.where(especialidade: 'BUCOMAXILOFACIAL').count(:tipo_entrada))
+    @pacientes_total = Paciente.all.count(:especialidade)
   end
 
   def upa_indicadores_ses
