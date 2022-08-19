@@ -1,18 +1,18 @@
-<div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+<div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-pause="false">
   <div class="carousel-inner">
-    <div class="carousel-item active" data-bs-interval="20000">
+    <div class="carousel-item active" data-bs-interval="1000" >
       <%= render 'slide_1' %>
     </div>
-    <div class="carousel-item" data-bs-interval="20000">
+    <div class="carousel-item" data-bs-interval="20000" >
       <%= render 'slide_2' %>
     </div>
-    <div class="carousel-item" data-bs-interval="20000">
+    <div class="carousel-item" data-bs-interval="20000" >
       <%= render 'slide_3' %>
     </div>
-	  <div class="carousel-item" data-bs-interval="20000">
+	  <div class="carousel-item" data-bs-interval="20000" >
       <%= render 'slide_4' %>
     </div>
-	  <div class="carousel-item" data-bs-interval="20000">
+	  <div class="carousel-item" data-bs-interval="20000" >
       <%= render 'slide_5' %>
     </div>
   </div>
@@ -25,6 +25,3 @@
     <span class="visually-hidden">Next</span>
   </button>
 </div>
-<script>$('.carousel').carousel(
-  data-pause="false"
-)</script>
