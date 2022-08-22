@@ -28,6 +28,7 @@ class PainelController < ApplicationController
     end
   end
 
+  
   def pacientes
     @pacientes = Paciente.all
     @clinica_medica = (Paciente.where(especialidade: 'CLINICA MEDICA').count(:tipo_entrada))
