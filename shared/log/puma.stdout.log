@@ -26254,3 +26254,32 @@
 [164376] - Worker 1 (PID: 164419) booted in 2.33s, phase: 0
 [164376] - Worker 0 (PID: 164418) booted in 2.34s, phase: 0
 [164376] - Worker 3 (PID: 164423) booted in 2.38s, phase: 0
+[164376] === puma shutdown: 2022-08-26 17:07:04 +0000 ===
+[164376] - Goodbye!
+[164376] - Gracefully shutting down workers...
+=== puma startup: 2022-08-26 17:07:06 +0000 ===
+[164468] * Starting control server on unix:///tmp/puma-status-1661533626137-164468
+[164513] WARNING hook before_worker_boot failed with exception (Psych::BadAlias) Unknown alias: default
+[164511] WARNING hook before_worker_boot failed with exception (Psych::BadAlias) Unknown alias: default
+[164510] WARNING hook before_worker_boot failed with exception (Psych::BadAlias) Unknown alias: default
+[164515] WARNING hook before_worker_boot failed with exception (Psych::BadAlias) Unknown alias: default
+[164468] - Worker 2 (PID: 164513) booted in 1.95s, phase: 0
+[164468] - Worker 1 (PID: 164511) booted in 2.32s, phase: 0
+[164468] - Worker 0 (PID: 164510) booted in 2.32s, phase: 0
+[164468] - Worker 3 (PID: 164515) booted in 2.32s, phase: 0
+[164468] === puma shutdown: 2022-08-26 17:08:35 +0000 ===
+[164468] - Goodbye!
+[164468] - Gracefully shutting down workers...
+=== puma startup: 2022-08-26 17:08:36 +0000 ===
+[164564] * Starting control server on unix:///tmp/puma-status-1661533716927-164564
+[164609] WARNING hook before_worker_boot failed with exception (Psych::BadAlias) Unknown alias: default
+[164607] WARNING hook before_worker_boot failed with exception (Psych::BadAlias) Unknown alias: default
+[164606] WARNING hook before_worker_boot failed with exception (Psych::BadAlias) Unknown alias: default
+[164611] WARNING hook before_worker_boot failed with exception (Psych::BadAlias) Unknown alias: default
+[164564] - Worker 2 (PID: 164609) booted in 1.97s, phase: 0
+[164564] - Worker 1 (PID: 164607) booted in 2.3s, phase: 0
+[164564] - Worker 0 (PID: 164606) booted in 2.34s, phase: 0
+[164564] - Worker 3 (PID: 164611) booted in 2.47s, phase: 0
+[164564] === puma shutdown: 2022-08-26 17:09:24 +0000 ===
+[164564] - Goodbye!
+[164564] - Gracefully shutting down workers...
