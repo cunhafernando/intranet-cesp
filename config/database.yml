@@ -81,6 +81,10 @@ test:
 #
 production:
   <<: *default
+  host: localhost
+  adapter: postgresql
+  encoding: utf8
   database: intranetcesp_production
-  username: intranet_cesp
-  password: <%= ENV["INTRANET_CESP_DATABASE_PASSWORD"] %>
+  pool: 5
+  username: <%= ENV['INTRANET_CESP_DATABASE_USER'] %>
+  password: <%= ENV['INTRANET_CESP_DATABASE_PASSWORD'] %>
