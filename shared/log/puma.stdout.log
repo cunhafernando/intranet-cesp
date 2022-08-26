@@ -26228,3 +26228,16 @@
 [164187] - Worker 1 (PID: 164230) booted in 2.29s, phase: 0
 [164187] - Worker 2 (PID: 164232) booted in 2.3s, phase: 0
 [164187] - Worker 0 (PID: 164229) booted in 2.32s, phase: 0
+[164187] === puma shutdown: 2022-08-26 17:04:03 +0000 ===
+[164187] - Goodbye!
+[164187] - Gracefully shutting down workers...
+=== puma startup: 2022-08-26 17:04:04 +0000 ===
+[164277] * Starting control server on unix:///tmp/puma-status-1661533444644-164277
+[164322] WARNING hook before_worker_boot failed with exception (Psych::BadAlias) Unknown alias: default
+[164320] WARNING hook before_worker_boot failed with exception (Psych::BadAlias) Unknown alias: default
+[164319] WARNING hook before_worker_boot failed with exception (Psych::BadAlias) Unknown alias: default
+[164324] WARNING hook before_worker_boot failed with exception (Psych::BadAlias) Unknown alias: default
+[164277] - Worker 2 (PID: 164322) booted in 1.98s, phase: 0
+[164277] - Worker 0 (PID: 164319) booted in 2.3s, phase: 0
+[164277] - Worker 1 (PID: 164320) booted in 2.31s, phase: 0
+[164277] - Worker 3 (PID: 164324) booted in 2.5s, phase: 0
