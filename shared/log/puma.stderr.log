@@ -1047,3 +1047,23 @@ Please report a bug if this causes problems.
 === puma startup: 2022-08-25 12:08:40 +0000 ===
 === puma startup: 2022-08-25 12:10:11 +0000 ===
 === puma startup: 2022-08-25 12:11:41 +0000 ===
+=== puma startup: 2022-08-26 11:53:21 -0300 ===
+DEBUGGER: Attaching after process 14429 fork to child process 14530
+DEBUGGER[bin/rails#14532]: Attaching after process 14429 fork to child process 14532
+DEBUGGER[bin/rails#14536]: Attaching after process 14429 fork to child process 14536
+DEBUGGER[bin/rails#14538]: Attaching after process 14429 fork to child process 14538
+=== puma startup: 2022-08-26 11:57:04 -0300 ===
+DEBUGGER: Attaching after process 14872 fork to child process 14948
+DEBUGGER[bin/rails#14951]: Attaching after process 14872 fork to child process 14951
+DEBUGGER[bin/rails#14952]: Attaching after process 14872 fork to child process 14952
+DEBUGGER[bin/rails#14955]: Attaching after process 14872 fork to child process 14955
+=== puma startup: 2022-08-26 12:01:26 -0300 ===
+DEBUGGER: Attaching after process 15222 fork to child process 15300
+DEBUGGER[bin/rails#15303]: Attaching after process 15222 fork to child process 15303
+DEBUGGER[bin/rails#15306]: Attaching after process 15222 fork to child process 15306
+DEBUGGER[bin/rails#15309]: Attaching after process 15222 fork to child process 15309
+=== puma startup: 2022-08-26 13:45:00 -0300 ===
+DEBUGGER: Attaching after process 16356 fork to child process 16469
+DEBUGGER[bin/rails#16472]: Attaching after process 16356 fork to child process 16472
+DEBUGGER[bin/rails#16473]: Attaching after process 16356 fork to child process 16473
+DEBUGGER[bin/rails#16476]: Attaching after process 16356 fork to child process 16476
