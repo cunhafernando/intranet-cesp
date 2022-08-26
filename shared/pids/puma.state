@@ -1,5 +1,5 @@
 ---
-pid: 67441
-control_url: unix:///tmp/puma-status-1661429501871-67441
-control_auth_token: 315de025da64676de61f2935a4089c10
+pid: 163350
+control_url: unix:///tmp/puma-status-1661532537374-163350
+control_auth_token: 266fc620f73bc649e649be6ef771235b
 running_from: "/home/administrator/intranet/intranet-cesp"
