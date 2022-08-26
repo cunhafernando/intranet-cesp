@@ -1,5 +1,12 @@
 ---
+<<<<<<< HEAD
 pid: 16356
 control_url: unix:///tmp/puma-status-1661532300545-16356
 control_auth_token: 7e0943805dcf93db664d7b29abc7699d
 running_from: "/home/fernandocunha/hegv/intranet/intranet-cesp"
+=======
+pid: 163350
+control_url: unix:///tmp/puma-status-1661532537374-163350
+control_auth_token: 266fc620f73bc649e649be6ef771235b
+running_from: "/home/administrator/intranet/intranet-cesp"
+>>>>>>> 2efd3fbedd974b6dd31851333758a2bcb287f3db
