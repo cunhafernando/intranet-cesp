@@ -35,3 +35,6 @@
 
 /node_modules
 .rbenv-vars
+
+shared/log/puma.stderr.log
+shared/log/puma.stdout.log
