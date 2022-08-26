@@ -1,12 +1,5 @@
 ---
-<<<<<<< HEAD
-pid: 166193
-control_url: unix:///tmp/puma-status-1661535758900-166193
-control_auth_token: acdbdff1d32db62821ecc1d23b91443d
+pid: 167218
+control_url: unix:///tmp/puma-status-1661536982631-167218
+control_auth_token: fba3446645f7db5d89b59bb444b8aeab
 running_from: "/home/administrator/intranet/intranet-cesp"
-=======
-pid: 17573
-control_url: unix:///tmp/puma-status-1661535454047-17573
-control_auth_token: 376a9993d7ac02cf7ed069a1ec8a3cba
-running_from: "/home/fernandocunha/hegv/intranet/intranet-cesp"
->>>>>>> origin
