@@ -2215,6 +2215,7 @@ DEBUGGER[bin/rails#16476]: Attaching after process 16356 fork to child process 1
 === puma startup: 2022-08-26 17:08:36 +0000 ===
 === puma startup: 2022-08-26 17:13:20 +0000 ===
 === puma startup: 2022-08-26 17:14:50 +0000 ===
+<<<<<<< HEAD
 =======
 >>>>>>> 2efd3fbedd974b6dd31851333758a2bcb287f3db
 >>>>>>> origin/main
@@ -2248,3 +2249,7 @@ DEBUGGER[bin/rails#17669]: Attaching after process 17573 fork to child process 1
 === puma startup: 2022-08-26 18:00:01 +0000 ===
 === puma startup: 2022-08-26 18:01:31 +0000 ===
 === puma startup: 2022-08-26 18:03:02 +0000 ===
+=======
+=== puma startup: 2022-08-26 18:14:04 +0000 ===
+=== puma startup: 2022-08-26 18:15:35 +0000 ===
+>>>>>>> prod

@@ -1,5 +1,11 @@
 ---
+<<<<<<< HEAD
 pid: 167218
 control_url: unix:///tmp/puma-status-1661536982631-167218
 control_auth_token: fba3446645f7db5d89b59bb444b8aeab
+=======
+pid: 167597
+control_url: unix:///tmp/puma-status-1661537735200-167597
+control_auth_token: b580ac6878c5855093fd4374723347a9
+>>>>>>> prod
 running_from: "/home/administrator/intranet/intranet-cesp"
