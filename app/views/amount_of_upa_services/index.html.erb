@@ -7,44 +7,44 @@
 <table class="table table-hover my-0">
   <thead>
     <tr>
-      <th>Ano e mês</th>
-      <th>Regist</th>
-      <th>Classific</th>
-      <th>Atendidos</th>
-      <th>Acolhidos</th>
-      <th>TM Atend</th>
-      <th>TM Verde</th>
-      <th>Verde na meta</th>
-      <th>Verde fora da meta</th>
-      <th>TM Amarelo</th>
-      <th>Amarelo na meta</th>
-      <th>Amarelo fora da meta</th>
-      <th>Vermelho na meta</th>
-      <th>Vermelho fora da meta</th>
-      <th colspan="3"></th>
+      <th class="d-none d-xl-table-cell">Ano e mês</th>
+      <th class="d-none d-xl-table-cell">Regist</th>
+      <th class="d-none d-xl-table-cell">Classific</th>
+      <th class="d-none d-xl-table-cell">Atendidos</th>
+      <th class="d-none d-xl-table-cell">Acolhidos</th>
+      <th class="d-none d-xl-table-cell">TM Atend</th>
+      <th class="d-none d-xl-table-cell">TM Verde</th>
+      <th class="d-none d-xl-table-cell">Verde na meta</th>
+      <th class="d-none d-xl-table-cell">Verde fora da meta</th>
+      <th class="d-none d-xl-table-cell">TM Amarelo</th>
+      <th class="d-none d-xl-table-cell">Amarelo na meta</th>
+      <th class="d-none d-xl-table-cell">Amarelo fora da meta</th>
+      <th class="d-none d-xl-table-cell">Vermelho na meta</th>
+      <th class="d-none d-xl-table-cell">Vermelho fora da meta</th>
+      <th class="d-none d-xl-table-cell" colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
   <% @amount_of_upa_services.each do |amount_of_upa_service| %>
       <tr>
-        <td><%= amount_of_upa_service.year_month %></td>
-        <td><%= amount_of_upa_service.registered %></td>
-        <td><%= amount_of_upa_service.classified %></td>
-        <td><%= amount_of_upa_service.attended %></td>
-        <td><%= amount_of_upa_service.welcomed %></td>
-        <td><%= amount_of_upa_service.service_time %></td>
-        <td><%= amount_of_upa_service.green_time %></td>
-        <td><%= amount_of_upa_service.green_in_the_goal %></td>
-        <td><%= amount_of_upa_service.green_off_target %></td>
-        <td><%= amount_of_upa_service.yellow_time %></td>
-        <td><%= amount_of_upa_service.yellow_in_the_goal %></td>
-        <td><%= amount_of_upa_service.yellow_off_target %></td>
-        <td><%= amount_of_upa_service.red_in_the_goal %></td>
-        <td><%= amount_of_upa_service.red_off_target %></td>
-        <td><%= link_to 'Show', amount_of_upa_service, class: "btn btn-success" %></td>
-        <td><%= link_to 'Edit', edit_amount_of_upa_service_path(amount_of_upa_service), class: "btn btn-warning" %></td>
-        <td><%= link_to 'Destroy', amount_of_upa_service, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+        <td class="d-none d-xl-table-cell"><%= amount_of_upa_service.year_month %></td>
+        <td class="d-none d-xl-table-cell"><%= amount_of_upa_service.registered %></td>
+        <td class="d-none d-xl-table-cell"><%= amount_of_upa_service.classified %></td>
+        <td class="d-none d-xl-table-cell"><%= amount_of_upa_service.attended %></td>
+        <td class="d-none d-xl-table-cell"><%= amount_of_upa_service.welcomed %></td>
+        <td class="d-none d-xl-table-cell"><%= amount_of_upa_service.service_time %></td>
+        <td class="d-none d-xl-table-cell"><%= amount_of_upa_service.green_time %></td>
+        <td class="d-none d-xl-table-cell"><%= amount_of_upa_service.green_in_the_goal %></td>
+        <td class="d-none d-xl-table-cell"><%= amount_of_upa_service.green_off_target %></td>
+        <td class="d-none d-xl-table-cell"><%= amount_of_upa_service.yellow_time %></td>
+        <td class="d-none d-xl-table-cell"><%= amount_of_upa_service.yellow_in_the_goal %></td>
+        <td class="d-none d-xl-table-cell"><%= amount_of_upa_service.yellow_off_target %></td>
+        <td class="d-none d-xl-table-cell"><%= amount_of_upa_service.red_in_the_goal %></td>
+        <td class="d-none d-xl-table-cell"><%= amount_of_upa_service.red_off_target %></td>
+        <td class="d-none d-xl-table-cell"><%= link_to 'Show', amount_of_upa_service, class: "btn btn-success" %></td>
+        <td class="d-none d-xl-table-cell"><%= link_to 'Edit', edit_amount_of_upa_service_path(amount_of_upa_service), class: "btn btn-warning" %></td>
+        <td class="d-none d-xl-table-cell"><%= link_to 'Destroy', amount_of_upa_service, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
       </tr>
     <% end %>
   </tbody>

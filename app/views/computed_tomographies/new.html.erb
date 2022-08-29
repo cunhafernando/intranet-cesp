@@ -36,39 +36,7 @@
 						</div>
 					</div>
 				<div>
-				<table class="table table-hover my-0">
-					<thead>
-						<tr>
-						<th class="d-none d-xl-table-cell">DATA</th>
-						<th class="d-none d-xl-table-cell">EXAME</th>
-						<th class="d-none d-xl-table-cell">CÓD. SIGTAP</th>
-						<th class="d-none d-xl-table-cell">LIBERADOR POR:</th>
-						<th class="d-none d-xl-table-cell">DATA DA LIBERAÇÃO</th>
-						<th class="d-none d-xl-table-cell">SEÇÃO SOLICITANTE</th>
-						<th class="d-none d-xl-table-cell">QTD.</th>
-						<th class="d-none d-xl-table-cell">QTD. REVISÕES</th>
-						<th class="d-none d-xl-table-cell">PROCED.</th>
-						<th class="d-none d-xl-table-cell">VALOR</th>
-						</tr>
-					</thead>
-
-					<tbody>
-					<% @computed_tomographies.each do |computed_tomography| %>
-						<tr>
-							<td class="d-none d-xl-table-cell"><%= computed_tomography.date %></td>
-							<td class="d-none d-xl-table-cell"><%= computed_tomography.exam %></td>
-							<td class="d-none d-xl-table-cell"><%= computed_tomography.sigtap_code %></td>
-							<td class="d-none d-xl-table-cell"><%= computed_tomography.released_by %></td>
-							<td class="d-none d-xl-table-cell"><%= computed_tomography.release_date %></td>
-							<td class="d-none d-xl-table-cell"><%= computed_tomography.requesting_section %></td>
-							<td class="d-none d-xl-table-cell"><%= computed_tomography.amount %></td>
-							<td class="d-none d-xl-table-cell"><%= computed_tomography.number_of_reviews %></td>
-							<td class="d-none d-xl-table-cell"><%= computed_tomography.procedure %></td>
-							<td class="d-none d-xl-table-cell"><%= computed_tomography.value %></td>
-						</tr>
-						<% end %>
-					</tbody>
-				</table>
+				
 				<br>
 			<div>
 				

@@ -36,27 +36,7 @@
 						</div>
 					</div>
 				<div>
-				<table class="table table-hover my-0">
-					<thead>
-						<tr>
-						<th class="d-none d-xl-table-cell">ESPECIALIDADE</th>
-						<th class="d-none d-xl-table-cell">PREVISTO</th>
-						<th class="d-none d-xl-table-cell">REALIZADO</th>
-						<th class="d-none d-xl-table-cell">%REALIZADO </th>
-						</tr>
-					</thead>
-
-					<tbody>
-					<% @production_by_specialties.each do |production_by_specialty| %>
-						<tr>
-							<td class="d-none d-xl-table-cell"><%= production_by_specialty.specialty %></td>
-							<td class="d-none d-xl-table-cell"><%= production_by_specialty.foreseen %></td>
-							<td class="d-none d-xl-table-cell"><%= production_by_specialty.accomplished %></td>
-							<td class="d-none d-xl-table-cell"><%= production_by_specialty.performed_per_cent %></td>
-						</tr>
-						<% end %>
-					</tbody>
-				</table>
+				
 				<br>
 			<div>
 				

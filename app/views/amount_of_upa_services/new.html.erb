@@ -36,47 +36,7 @@
 						</div>
 					</div>
 				<div>
-				<table class="table table-hover my-0">
-          <thead>
-            <tr>
-              <th class="d-none d-xl-table-cell">Ano e mês</th>
-              <th class="d-none d-xl-table-cell">Regist</th>
-              <th class="d-none d-xl-table-cell">Classific</th>
-              <th class="d-none d-xl-table-cell">Atendidos</th>
-              <th class="d-none d-xl-table-cell">Acolhidos</th>
-              <th class="d-none d-xl-table-cell">TM Atend</th>
-              <th class="d-none d-xl-table-cell">TM Verde</th>
-              <th class="d-none d-xl-table-cell">Verde na meta</th>
-              <th class="d-none d-xl-table-cell">Verde fora da meta</th>
-              <th class="d-none d-xl-table-cell">TM Amarelo</th>
-              <th class="d-none d-xl-table-cell">Amarelo na meta</th>
-              <th class="d-none d-xl-table-cell">Amarelo fora da meta</th>
-              <th class="d-none d-xl-table-cell">Vermelho na meta</th>
-              <th class="d-none d-xl-table-cell">Vermelho fora da meta</th>
-            </tr>
-          </thead>
-
-          <tbody>
-          <% @amount_of_upa_services.each do |amount_of_upa_service| %>
-              <tr>
-                <td><%= amount_of_upa_service.year_month %></td>
-                <td><%= amount_of_upa_service.registered %></td>
-                <td><%= amount_of_upa_service.classified %></td>
-                <td><%= amount_of_upa_service.attended %></td>
-                <td><%= amount_of_upa_service.welcomed %></td>
-                <td><%= amount_of_upa_service.service_time %></td>
-                <td><%= amount_of_upa_service.green_time %></td>
-                <td><%= amount_of_upa_service.green_in_the_goal %></td>
-                <td><%= amount_of_upa_service.green_off_target %></td>
-                <td><%= amount_of_upa_service.yellow_time %></td>
-                <td><%= amount_of_upa_service.yellow_in_the_goal %></td>
-                <td><%= amount_of_upa_service.yellow_off_target %></td>
-                <td><%= amount_of_upa_service.red_in_the_goal %></td>
-                <td><%= amount_of_upa_service.red_off_target %></td>
-              </tr>
-            <% end %>
-          </tbody>
-        </table>
+				
 				<br>
 			<div>
 				

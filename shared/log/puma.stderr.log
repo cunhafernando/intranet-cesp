@@ -2297,3 +2297,8 @@ DEBUGGER: Attaching after process 30699 fork to child process 30780
 DEBUGGER[bin/rails#30783]: Attaching after process 30699 fork to child process 30783
 DEBUGGER[bin/rails#30786]: Attaching after process 30699 fork to child process 30786
 DEBUGGER[bin/rails#30789]: Attaching after process 30699 fork to child process 30789
+=== puma startup: 2022-08-29 11:15:53 -0300 ===
+DEBUGGER: Attaching after process 31849 fork to child process 31928
+DEBUGGER[bin/rails#31931]: Attaching after process 31849 fork to child process 31931
+DEBUGGER[bin/rails#31934]: Attaching after process 31849 fork to child process 31934
+DEBUGGER[bin/rails#31937]: Attaching after process 31849 fork to child process 31937

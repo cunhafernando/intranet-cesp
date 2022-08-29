@@ -6,30 +6,30 @@
 <table class="table table-hover my-0">
   <thead>
     <tr>
-      <th>Código</th>
-      <th>Indicador</th>
-      <th>Meta</th>
-      <th>Variável</th>
-      <th>Descrição</th>
-      <th>Medida</th>
-      <th>Status</th>
-      <th colspan="3"></th>
+      <th class="d-none d-xl-table-cell">Código</th>
+      <th class="d-none d-xl-table-cell">Indicador</th>
+      <th class="d-none d-xl-table-cell">Meta</th>
+      <th class="d-none d-xl-table-cell">Variável</th>
+      <th class="d-none d-xl-table-cell">Descrição</th>
+      <th class="d-none d-xl-table-cell">Medida</th>
+      <th class="d-none d-xl-table-cell">Status</th>
+      <th class="d-none d-xl-table-cell" colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
   <% @upa_indicadores_ses.each do |upa_indicadores_se| %>
       <tr>
-        <td><%= upa_indicadores_se.codigo %></td>
-        <td><%= upa_indicadores_se.indicador %></td>
-        <td><%= upa_indicadores_se.meta %></td>
-        <td><%= upa_indicadores_se.variavel %></td>
-        <td><%= upa_indicadores_se.descricao %></td>
-        <td><%= upa_indicadores_se.medida %></td>
-        <td><%= upa_indicadores_se.status %></td>
-        <td><%= link_to 'Mostrar', upa_indicadores_se, class: "btn btn-success" %></td>
-        <td><%= link_to 'Editar', edit_upa_indicadores_se_path(upa_indicadores_se), class: "btn btn-warning" %></td>
-        <td><%= link_to 'Apagar', upa_indicadores_se, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+        <td class="d-none d-xl-table-cell"><%= upa_indicadores_se.codigo %></td>
+        <td class="d-none d-xl-table-cell"><%= upa_indicadores_se.indicador %></td>
+        <td class="d-none d-xl-table-cell"><%= upa_indicadores_se.meta %></td>
+        <td class="d-none d-xl-table-cell"><%= upa_indicadores_se.variavel %></td>
+        <td class="d-none d-xl-table-cell"><%= upa_indicadores_se.descricao %></td>
+        <td class="d-none d-xl-table-cell"><%= upa_indicadores_se.medida %></td>
+        <td class="d-none d-xl-table-cell"><%= upa_indicadores_se.status %></td>
+        <td class="d-none d-xl-table-cell"><%= link_to 'Mostrar', upa_indicadores_se, class: "btn btn-success" %></td>
+        <td class="d-none d-xl-table-cell"><%= link_to 'Editar', edit_upa_indicadores_se_path(upa_indicadores_se), class: "btn btn-warning" %></td>
+        <td class="d-none d-xl-table-cell"><%= link_to 'Apagar', upa_indicadores_se, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
       </tr>
     <% end %>
   </tbody>

@@ -7,24 +7,24 @@
 <table class="table table-hover my-0">
   <thead>
     <tr>
-      <th>ESPECIALIDADE</th>
-      <th>PREVISTO</th>
-      <th>REALIZADO</th>
-      <th>%REALIZADO </th>
-      <th colspan="3"></th>
+      <th class="d-none d-xl-table-cell" class="d-none d-xl-table-cell">ESPECIALIDADE</th>
+      <th class="d-none d-xl-table-cell" class="d-none d-xl-table-cell">PREVISTO</th>
+      <th class="d-none d-xl-table-cell" class="d-none d-xl-table-cell">REALIZADO</th>
+      <th class="d-none d-xl-table-cell" class="d-none d-xl-table-cell">%REALIZADO </th>
+      <th class="d-none d-xl-table-cell" class="d-none d-xl-table-cell" colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
   <% @production_by_specialties.each do |production_by_specialty| %>
       <tr>
-        <td><%= production_by_specialty.specialty %></td>
-        <td><%= production_by_specialty.foreseen %></td>
-        <td><%= production_by_specialty.accomplished %></td>
-        <td><%= production_by_specialty.performed_per_cent %></td>
-        <td><%= link_to 'Show', production_by_specialty, class: "btn btn-success" %></td>
-        <td><%= link_to 'Edit', edit_production_by_specialty_path(production_by_specialty), class: "btn btn-warning" %></td>
-        <td><%= link_to 'Destroy', production_by_specialty, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+        <td class="d-none d-xl-table-cell"><%= production_by_specialty.specialty %></td>
+        <td class="d-none d-xl-table-cell"><%= production_by_specialty.foreseen %></td>
+        <td class="d-none d-xl-table-cell"><%= production_by_specialty.accomplished %></td>
+        <td class="d-none d-xl-table-cell"><%= production_by_specialty.performed_per_cent %></td>
+        <td class="d-none d-xl-table-cell"><%= link_to 'Show', production_by_specialty, class: "btn btn-success" %></td>
+        <td class="d-none d-xl-table-cell"><%= link_to 'Edit', edit_production_by_specialty_path(production_by_specialty), class: "btn btn-warning" %></td>
+        <td class="d-none d-xl-table-cell"><%= link_to 'Destroy', production_by_specialty, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
       </tr>
     <% end %>
   </tbody>
