@@ -1,5 +1,5 @@
 ---
-pid: 4138
-control_url: unix:///tmp/puma-status-1661792100444-4138
-control_auth_token: ad5355bfc8e1f9b47877a8e92e6dc592
+pid: 5167
+control_url: unix:///tmp/puma-status-1661797229576-5167
+control_auth_token: ec68be4c89986a19673752d2310c98f3
 running_from: "/home/fernandocunha/hegv/intranet/intranet-cesp"

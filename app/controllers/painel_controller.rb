@@ -18,7 +18,7 @@ class PainelController < ApplicationController
     else 
       "danger" 
     end
-    @text_total_atendimento = if @total_atendimento_hoje >= 210 
+    @text_total_atendimento_hoje = if @total_atendimento_hoje >= 210 
       "Meta atingida" 
     else 
       "Meta não atingida" 

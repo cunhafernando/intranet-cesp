@@ -44908,3 +44908,13 @@ Completed 200 OK in 485ms (Views: 211.3ms | ActiveRecord: 60.4ms | Allocations: 
 [4138] === puma shutdown: 2022-08-29 14:04:09 -0300 ===
 [4138] - Goodbye!
 Exiting
+=== puma startup: 2022-08-29 15:20:29 -0300 ===
+[5167] * Starting control server on unix:///tmp/puma-status-1661797229576-5167
+[5167] - Worker 3 (PID: 5257) booted in 0.53s, phase: 0
+[5167] - Worker 2 (PID: 5254) booted in 0.54s, phase: 0
+[5167] - Worker 0 (PID: 5248) booted in 0.55s, phase: 0
+[5167] - Worker 1 (PID: 5249) booted in 0.55s, phase: 0
+[5167] - Gracefully shutting down workers...
+[5167] === puma shutdown: 2022-08-29 15:22:34 -0300 ===
+[5167] - Goodbye!
+Exiting
