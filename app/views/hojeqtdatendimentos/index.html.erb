@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+
+<h1>Quantidade de atendimentos Hoje</h1>
+
+
+
+<%= link_to "Nova lista", new_hojeqtdatendimento_path, :class=> "btn btn-success" %>
+
+<table class="table table-hover my-0">
+  <thead>
+    <tr>
+      <th class="d-none d-xl-table-cell">Ano e mês</th>
+      <th class="d-none d-xl-table-cell">Registrados</th>
+      <th class="d-none d-xl-table-cell">Classificados</th>
+      <th class="d-none d-xl-table-cell">Atendidos</th>
+      <th class="d-none d-xl-table-cell">Acolhidos</th>
+      <th class="d-none d-xl-table-cell">TM Atend</th>
+      <th class="d-none d-xl-table-cell">TM Verde</th>
+      <th class="d-none d-xl-table-cell">Verde na meta</th>
+      <th class="d-none d-xl-table-cell">Verde fora da meta</th>
+      <th class="d-none d-xl-table-cell">TM Amarelo</th>
+      <th class="d-none d-xl-table-cell">Amarelo na meta</th>
+      <th class="d-none d-xl-table-cell">Amarelo fora da meta</th>
+      <th class="d-none d-xl-table-cell">Vermelho na meta</th>
+      <th class="d-none d-xl-table-cell">Vermelho fora da meta</th>
+      <th class="d-none d-xl-table-cell" colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @hojeqtdatendimentos.each do |hojeqtdatendimento| %>
+      <tr>
+        <td class="d-none d-xl-table-cell"><%= hojeqtdatendimento.ano_mes %></td>
+        <td class="d-none d-xl-table-cell"><%= hojeqtdatendimento.registrados %></td>
+        <td class="d-none d-xl-table-cell"><%= hojeqtdatendimento.classificados %></td>
+        <td class="d-none d-xl-table-cell"><%= hojeqtdatendimento.atendidos %></td>
+        <td class="d-none d-xl-table-cell"><%= hojeqtdatendimento.acolhidos %></td>
+        <td class="d-none d-xl-table-cell"><%= hojeqtdatendimento.tm_atendimento %></td>
+        <td class="d-none d-xl-table-cell"><%= hojeqtdatendimento.tm_verde %></td>
+        <td class="d-none d-xl-table-cell"><%= hojeqtdatendimento.verde_meta %></td>
+        <td class="d-none d-xl-table-cell"><%= hojeqtdatendimento.verde_fora_meta %></td>
+        <td class="d-none d-xl-table-cell"><%= hojeqtdatendimento.tm_amarelo %></td>
+        <td class="d-none d-xl-table-cell"><%= hojeqtdatendimento.amarelo_meta %></td>
+        <td class="d-none d-xl-table-cell"><%= hojeqtdatendimento.amarelo_fora_meta %></td>
+        <td class="d-none d-xl-table-cell"><%= hojeqtdatendimento.vermelho_meta %></td>
+        <td class="d-none d-xl-table-cell"><%= hojeqtdatendimento.vermelho_fora_meta %></td>
+        <td class="d-none d-xl-table-cell"><%= link_to 'Mostar', hojeqtdatendimento, class: "btn btn-success" %></td>
+        <td class="d-none d-xl-table-cell"><%= link_to 'Editar', edit_hojeqtdatendimento_path(hojeqtdatendimento), class: "btn btn-warning" %></td>
+        <td class="d-none d-xl-table-cell"><%= link_to 'Apagar', hojeqtdatendimento, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

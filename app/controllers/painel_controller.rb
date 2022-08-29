@@ -7,6 +7,24 @@ class PainelController < ApplicationController
   before_action :upa_indicadores_ses
   before_action :censo_diarios
   before_action :pacientes
+  before_action :hojeqtdatendimentos
+
+  def hojeqtdatendimentos
+    @hojeqtdatendimentos = Hojeqtdatendimento.all
+    @total_atendimento_hoje = Hojeqtdatendimento.all.sum(:atendidos).to_i
+    @media_atendimento_hoje = ((((@total_atendimento_hoje.to_f) / 6400) * 100).to_i) - 100
+    @color_total_atendimento_hoje = if @total_atendimento_hoje >= 210 
+      "success" 
+    else 
+      "danger" 
+    end
+    @text_total_atendimento = if @total_atendimento_hoje >= 210 
+      "Meta atingida" 
+    else 
+      "Meta não atingida" 
+    end
+
+  end
 
   def censo_diarios
     @censo_diarios = CensoDiario.all

@@ -86,6 +86,6 @@ production:
   adapter: postgresql
   encoding: utf8
   database: intranetcesp_production
-  pool: 5
+  pool: 10
   username: <%= ENV['INTRANET_CESP_DATABASE_USER'] %>
   password: <%= ENV['INTRANET_CESP_DATABASE_PASSWORD'] %>

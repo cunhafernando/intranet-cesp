@@ -1,0 +1,33 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ano_mes: MyString
+  registrados: 1.5
+  classificados: 1.5
+  atendidos: 1.5
+  acolhidos: 1.5
+  tm_atendimento: 1.5
+  tm_verde: 1.5
+  verde_meta: 1.5
+  verde_fora_meta: 1.5
+  tm_amarelo: 1.5
+  amarelo_meta: 1.5
+  amarelo_fora_meta: 1.5
+  vermelho_meta: 1.5
+  vermelho_fora_meta: 1.5
+
+two:
+  ano_mes: MyString
+  registrados: 1.5
+  classificados: 1.5
+  atendidos: 1.5
+  acolhidos: 1.5
+  tm_atendimento: 1.5
+  tm_verde: 1.5
+  verde_meta: 1.5
+  verde_fora_meta: 1.5
+  tm_amarelo: 1.5
+  amarelo_meta: 1.5
+  amarelo_fora_meta: 1.5
+  vermelho_meta: 1.5
+  vermelho_fora_meta: 1.5

@@ -43871,3 +43871,1040 @@ Exiting
 [421458] === puma shutdown: 2022-08-29 15:36:40 +0000 ===
 [421458] - Goodbye!
 [421458] - Gracefully shutting down workers...
+=== puma startup: 2022-08-29 13:01:42 -0300 ===
+[2130] * Starting control server on unix:///tmp/puma-status-1661788902768-2130
+[2130] - Worker 0 (PID: 2202) booted in 0.41s, phase: 0
+[2130] - Worker 2 (PID: 2208) booted in 0.4s, phase: 0
+[2130] - Worker 3 (PID: 2211) booted in 0.4s, phase: 0
+[2130] - Worker 1 (PID: 2205) booted in 0.42s, phase: 0
+Started GET "/" for ::1 at 2022-08-29 13:01:50 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PainelController#show as HTML
+  [1m[36mComputedTomography Sum (10.6ms)[0m  [1m[34mSELECT SUM("computed_tomographies"."amount") FROM "computed_tomographies"[0m
+  ↳ app/controllers/painel_controller.rb:447:in `computed_tomographies'
+  [1m[36mAmountOfUpaService Sum (1.2ms)[0m  [1m[34mSELECT SUM("amount_of_upa_services"."attended") FROM "amount_of_upa_services"[0m
+  ↳ app/controllers/painel_controller.rb:463:in `amount_of_upa_services'
+  [1m[36mConsolidado Sum (1.7ms)[0m  [1m[34mSELECT SUM("consolidados"."obito_maior") FROM "consolidados"[0m
+  ↳ app/controllers/painel_controller.rb:405:in `consolidados'
+  [1m[36mConsolidado Sum (0.2ms)[0m  [1m[34mSELECT SUM("consolidados"."total_de_saidas") FROM "consolidados"[0m
+  ↳ app/controllers/painel_controller.rb:405:in `consolidados'
+  [1m[36mConsolidado Sum (0.2ms)[0m  [1m[34mSELECT SUM("consolidados"."internados") FROM "consolidados"[0m
+  ↳ app/controllers/painel_controller.rb:417:in `consolidados'
+  [1m[36mConsolidado Sum (0.2ms)[0m  [1m[34mSELECT SUM("consolidados"."pacientes_dia") FROM "consolidados"[0m
+  ↳ app/controllers/painel_controller.rb:419:in `consolidados'
+  [1m[36mConsolidado Sum (0.2ms)[0m  [1m[34mSELECT SUM("consolidados"."leitos_dia") FROM "consolidados"[0m
+  ↳ app/controllers/painel_controller.rb:419:in `consolidados'
+  [1m[36mCACHE Consolidado Sum (0.0ms)[0m  [1m[34mSELECT SUM("consolidados"."pacientes_dia") FROM "consolidados"[0m
+  ↳ app/controllers/painel_controller.rb:420:in `consolidados'
+  [1m[36mCACHE Consolidado Sum (0.0ms)[0m  [1m[34mSELECT SUM("consolidados"."total_de_saidas") FROM "consolidados"[0m
+  ↳ app/controllers/painel_controller.rb:420:in `consolidados'
+  [1m[36mCensoSetor Sum (0.7ms)[0m  [1m[34mSELECT SUM("censo_setors"."mpe") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "ORTOPEDIA"]]
+  ↳ app/controllers/painel_controller.rb:222:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.2ms)[0m  [1m[34mSELECT SUM("censo_setors"."mpe") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "ENFERMARIA NEURO"]]
+  ↳ app/controllers/painel_controller.rb:234:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.2ms)[0m  [1m[34mSELECT SUM("censo_setors"."mpe") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CLINICA MEDICA"]]
+  ↳ app/controllers/painel_controller.rb:246:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.2ms)[0m  [1m[34mSELECT SUM("censo_setors"."mpe") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CLINICA CIRÚRGICA"]]
+  ↳ app/controllers/painel_controller.rb:258:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.2ms)[0m  [1m[34mSELECT SUM("censo_setors"."mpe") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CLINICA PEDIATRICA"]]
+  ↳ app/controllers/painel_controller.rb:270:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.2ms)[0m  [1m[34mSELECT SUM("censo_setors"."mpe") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "UTI PED"]]
+  ↳ app/controllers/painel_controller.rb:282:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.2ms)[0m  [1m[34mSELECT SUM("censo_setors"."mpe") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CTI 1"]]
+  ↳ app/controllers/painel_controller.rb:295:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.2ms)[0m  [1m[34mSELECT SUM("censo_setors"."mpe") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CTI 2"]]
+  ↳ app/controllers/painel_controller.rb:295:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.2ms)[0m  [1m[34mSELECT SUM("censo_setors"."mpe") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CTI 3"]]
+  ↳ app/controllers/painel_controller.rb:295:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.2ms)[0m  [1m[34mSELECT SUM("censo_setors"."mpe") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CTI 4"]]
+  ↳ app/controllers/painel_controller.rb:295:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.3ms)[0m  [1m[34mSELECT SUM("censo_setors"."pacientes_dia") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CTI 1"]]
+  ↳ app/controllers/painel_controller.rb:308:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.3ms)[0m  [1m[34mSELECT SUM("censo_setors"."leitos_dia") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CTI 1"]]
+  ↳ app/controllers/painel_controller.rb:308:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.2ms)[0m  [1m[34mSELECT SUM("censo_setors"."pacientes_dia") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CTI 2"]]
+  ↳ app/controllers/painel_controller.rb:321:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.2ms)[0m  [1m[34mSELECT SUM("censo_setors"."leitos_dia") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CTI 2"]]
+  ↳ app/controllers/painel_controller.rb:321:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.2ms)[0m  [1m[34mSELECT SUM("censo_setors"."pacientes_dia") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CTI 3"]]
+  ↳ app/controllers/painel_controller.rb:334:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.2ms)[0m  [1m[34mSELECT SUM("censo_setors"."leitos_dia") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CTI 3"]]
+  ↳ app/controllers/painel_controller.rb:334:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.2ms)[0m  [1m[34mSELECT SUM("censo_setors"."pacientes_dia") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CTI 4"]]
+  ↳ app/controllers/painel_controller.rb:347:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.2ms)[0m  [1m[34mSELECT SUM("censo_setors"."leitos_dia") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CTI 4"]]
+  ↳ app/controllers/painel_controller.rb:347:in `censo_setors'
+  [1m[36mCACHE CensoSetor Sum (0.3ms)[0m  [1m[34mSELECT SUM("censo_setors"."pacientes_dia") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CTI 1"]]
+  ↳ app/controllers/painel_controller.rb:360:in `censo_setors'
+  [1m[36mCACHE CensoSetor Sum (0.0ms)[0m  [1m[34mSELECT SUM("censo_setors"."pacientes_dia") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CTI 2"]]
+  ↳ app/controllers/painel_controller.rb:360:in `censo_setors'
+  [1m[36mCACHE CensoSetor Sum (0.0ms)[0m  [1m[34mSELECT SUM("censo_setors"."pacientes_dia") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CTI 3"]]
+  ↳ app/controllers/painel_controller.rb:360:in `censo_setors'
+  [1m[36mCACHE CensoSetor Sum (0.0ms)[0m  [1m[34mSELECT SUM("censo_setors"."pacientes_dia") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CTI 4"]]
+  ↳ app/controllers/painel_controller.rb:360:in `censo_setors'
+  [1m[36mCACHE CensoSetor Sum (0.0ms)[0m  [1m[34mSELECT SUM("censo_setors"."leitos_dia") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CTI 1"]]
+  ↳ app/controllers/painel_controller.rb:361:in `censo_setors'
+  [1m[36mCACHE CensoSetor Sum (0.0ms)[0m  [1m[34mSELECT SUM("censo_setors"."leitos_dia") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CTI 2"]]
+  ↳ app/controllers/painel_controller.rb:361:in `censo_setors'
+  [1m[36mCACHE CensoSetor Sum (0.0ms)[0m  [1m[34mSELECT SUM("censo_setors"."leitos_dia") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CTI 3"]]
+  ↳ app/controllers/painel_controller.rb:361:in `censo_setors'
+  [1m[36mCACHE CensoSetor Sum (0.0ms)[0m  [1m[34mSELECT SUM("censo_setors"."leitos_dia") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CTI 4"]]
+  ↳ app/controllers/painel_controller.rb:361:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.4ms)[0m  [1m[34mSELECT SUM("censo_setors"."pacientes_dia") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "UTI PED"]]
+  ↳ app/controllers/painel_controller.rb:375:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.2ms)[0m  [1m[34mSELECT SUM("censo_setors"."leitos_dia") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "UTI PED"]]
+  ↳ app/controllers/painel_controller.rb:375:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.2ms)[0m  [1m[34mSELECT SUM("censo_setors"."pacientes_dia") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "UPO"]]
+  ↳ app/controllers/painel_controller.rb:388:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.2ms)[0m  [1m[34mSELECT SUM("censo_setors"."leitos_dia") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "UPO"]]
+  ↳ app/controllers/painel_controller.rb:388:in `censo_setors'
+  [1m[36mUpaIndicadoresSe Pluck (1.6ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Numerador D1"]]
+  ↳ app/controllers/painel_controller.rb:47:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.4ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Denominador D1"]]
+  ↳ app/controllers/painel_controller.rb:47:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Numerador D2"]]
+  ↳ app/controllers/painel_controller.rb:59:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Denominador D2"]]
+  ↳ app/controllers/painel_controller.rb:59:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Numerador D5"]]
+  ↳ app/controllers/painel_controller.rb:71:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Denominador D5"]]
+  ↳ app/controllers/painel_controller.rb:71:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Numerador D6"]]
+  ↳ app/controllers/painel_controller.rb:83:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Denominador D6"]]
+  ↳ app/controllers/painel_controller.rb:83:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.3ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Numerador D7"]]
+  ↳ app/controllers/painel_controller.rb:95:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Denominador D7"]]
+  ↳ app/controllers/painel_controller.rb:95:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Numerador D8"]]
+  ↳ app/controllers/painel_controller.rb:107:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Denominador D8"]]
+  ↳ app/controllers/painel_controller.rb:107:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Numerador D9"]]
+  ↳ app/controllers/painel_controller.rb:119:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Denominador D9"]]
+  ↳ app/controllers/painel_controller.rb:119:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Numerador D10"]]
+  ↳ app/controllers/painel_controller.rb:131:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Denominador D10"]]
+  ↳ app/controllers/painel_controller.rb:131:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Numerador D11"]]
+  ↳ app/controllers/painel_controller.rb:143:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Denominador D11"]]
+  ↳ app/controllers/painel_controller.rb:143:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Numerador D12"]]
+  ↳ app/controllers/painel_controller.rb:155:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Denominador D12"]]
+  ↳ app/controllers/painel_controller.rb:155:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Numerador D13"]]
+  ↳ app/controllers/painel_controller.rb:167:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Denominador D13"]]
+  ↳ app/controllers/painel_controller.rb:167:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Numerador D14"]]
+  ↳ app/controllers/painel_controller.rb:179:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Denominador D14"]]
+  ↳ app/controllers/painel_controller.rb:179:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Numerador G1"]]
+  ↳ app/controllers/painel_controller.rb:191:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Denominador G1"]]
+  ↳ app/controllers/painel_controller.rb:191:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.3ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Numerador G2"]]
+  ↳ app/controllers/painel_controller.rb:203:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Denominador G2"]]
+  ↳ app/controllers/painel_controller.rb:203:in `upa_indicadores_ses'
+  [1m[36mCensoDiario Count (5.7ms)[0m  [1m[34mSELECT COUNT("censo_diarios"."leito") FROM "censo_diarios" WHERE NOT (("censo_diarios"."boletim" = $1 OR "censo_diarios"."boletim" IS NULL)) AND NOT (leito LIKE '%EXTRA%')[0m  [["boletim", ""]]
+  ↳ app/controllers/painel_controller.rb:13:in `censo_diarios'
+  [1m[36mCensoDiario Count (0.3ms)[0m  [1m[34mSELECT COUNT("censo_diarios"."leito") FROM "censo_diarios" WHERE (leito LIKE '%EXTRA%')[0m
+  ↳ app/controllers/painel_controller.rb:14:in `censo_diarios'
+  [1m[36mCensoDiario Count (0.3ms)[0m  [1m[34mSELECT COUNT("censo_diarios"."leito") FROM "censo_diarios" WHERE NOT (("censo_diarios"."boletim" = $1 OR "censo_diarios"."boletim" IS NULL)) AND (leito LIKE '%EXTRA%')[0m  [["boletim", ""]]
+  ↳ app/controllers/painel_controller.rb:15:in `censo_diarios'
+  [1m[36mCensoDiario Count (0.3ms)[0m  [1m[34mSELECT COUNT("censo_diarios"."leito") FROM "censo_diarios" WHERE NOT (leito LIKE '%EXTRA%')[0m
+  ↳ app/controllers/painel_controller.rb:16:in `censo_diarios'
+  [1m[36mPaciente Count (236.7ms)[0m  [1m[34mSELECT COUNT("pacientes"."tipo_entrada") FROM "pacientes" WHERE "pacientes"."especialidade" = $1[0m  [["especialidade", "CLINICA MEDICA"]]
+  ↳ app/controllers/painel_controller.rb:34:in `pacientes'
+  [1m[36mPaciente Count (1.6ms)[0m  [1m[34mSELECT COUNT("pacientes"."tipo_entrada") FROM "pacientes" WHERE "pacientes"."especialidade" = $1[0m  [["especialidade", "CIRURGIA GERAL"]]
+  ↳ app/controllers/painel_controller.rb:35:in `pacientes'
+  [1m[36mPaciente Count (0.9ms)[0m  [1m[34mSELECT COUNT("pacientes"."tipo_entrada") FROM "pacientes" WHERE "pacientes"."especialidade" = $1[0m  [["especialidade", "CIRURGIA VASCULAR"]]
+  ↳ app/controllers/painel_controller.rb:36:in `pacientes'
+  [1m[36mPaciente Count (1.4ms)[0m  [1m[34mSELECT COUNT("pacientes"."tipo_entrada") FROM "pacientes" WHERE "pacientes"."especialidade" = $1[0m  [["especialidade", "NEUROCIRURGIA"]]
+  ↳ app/controllers/painel_controller.rb:37:in `pacientes'
+  [1m[36mPaciente Count (1.6ms)[0m  [1m[34mSELECT COUNT("pacientes"."tipo_entrada") FROM "pacientes" WHERE "pacientes"."especialidade" = $1[0m  [["especialidade", "ORTOPEDIA"]]
+  ↳ app/controllers/painel_controller.rb:38:in `pacientes'
+  [1m[36mPaciente Count (1.3ms)[0m  [1m[34mSELECT COUNT("pacientes"."tipo_entrada") FROM "pacientes" WHERE "pacientes"."especialidade" = $1[0m  [["especialidade", "PEDIATRIA"]]
+  ↳ app/controllers/painel_controller.rb:39:in `pacientes'
+  [1m[36mPaciente Count (1.0ms)[0m  [1m[34mSELECT COUNT("pacientes"."tipo_entrada") FROM "pacientes" WHERE "pacientes"."especialidade" = $1[0m  [["especialidade", "COMISSÃO DE CURATIVOS"]]
+  ↳ app/controllers/painel_controller.rb:40:in `pacientes'
+  [1m[36mPaciente Count (0.9ms)[0m  [1m[34mSELECT COUNT("pacientes"."tipo_entrada") FROM "pacientes" WHERE "pacientes"."especialidade" = $1[0m  [["especialidade", "BUCOMAXILOFACIAL"]]
+  ↳ app/controllers/painel_controller.rb:41:in `pacientes'
+  [1m[36mPaciente Count (1.1ms)[0m  [1m[34mSELECT COUNT("pacientes"."especialidade") FROM "pacientes"[0m
+  ↳ app/controllers/painel_controller.rb:42:in `pacientes'
+  Rendering layout layouts/application.html.erb
+  Rendering painel/show.html.erb within layouts/application
+  Rendered painel/cards/taxa_ocupacao/_taxa_de_ocupacao_geral.html.erb (Duration: 1.0ms | Allocations: 205)
+  Rendered painel/cards/taxa_ocupacao/_taxa_de_ocupacao_cti_1.html.erb (Duration: 1.0ms | Allocations: 189)
+  Rendered painel/cards/taxa_ocupacao/_taxa_de_ocupacao_cti_3.html.erb (Duration: 0.6ms | Allocations: 188)
+  Rendered painel/cards/taxa_ocupacao/_taxa_de_ocupacao_uti_ped.html.erb (Duration: 0.6ms | Allocations: 188)
+  Rendered painel/cards/taxa_ocupacao/_taxa_de_ocupacao_cti_geral.html.erb (Duration: 0.5ms | Allocations: 188)
+  Rendered painel/cards/taxa_ocupacao/_taxa_de_ocupacao_cti_2.html.erb (Duration: 0.7ms | Allocations: 188)
+  Rendered painel/cards/taxa_ocupacao/_taxa_de_ocupacao_cti_4.html.erb (Duration: 0.5ms | Allocations: 188)
+  Rendered painel/cards/taxa_ocupacao/_taxa_de_ocupacao_upo.html.erb (Duration: 0.6ms | Allocations: 188)
+  [1m[36mCensoSetor Load (0.6ms)[0m  [1m[34mSELECT "censo_setors".* FROM "censo_setors"[0m
+  ↳ app/views/painel/chart_bars/_taxa_de_ocupacao_geral.html.erb:15
+  Rendered painel/chart_bars/_taxa_de_ocupacao_geral.html.erb (Duration: 21.7ms | Allocations: 12837)
+  Rendered painel/_slide_1.html.erb (Duration: 642.7ms | Allocations: 41734)
+  Rendered painel/cards/media_permanencia/_media_permanencia_geral.html.erb (Duration: 0.5ms | Allocations: 188)
+  Rendered painel/cards/media_permanencia/_media_permanencia_uti_ped.html.erb (Duration: 0.5ms | Allocations: 188)
+  Rendered painel/cards/media_permanencia/_media_permanencia_clinica_pediatrica.html.erb (Duration: 0.7ms | Allocations: 188)
+  Rendered painel/cards/media_permanencia/_media_permanencia_ortopedia.html.erb (Duration: 0.6ms | Allocations: 187)
+  Rendered painel/cards/media_permanencia/_media_permanencia_ctis.html.erb (Duration: 0.6ms | Allocations: 190)
+  Rendered painel/cards/media_permanencia/_media_permanencia_clinica_medica.html.erb (Duration: 0.5ms | Allocations: 188)
+  Rendered painel/cards/media_permanencia/_media_permanencia_clinica_cirurgica.html.erb (Duration: 0.5ms | Allocations: 188)
+  Rendered painel/cards/media_permanencia/_media_permanencia_enfermaria_neuro.html.erb (Duration: 0.4ms | Allocations: 187)
+  Rendered painel/chart_bars/_media_permanencia_geral.html.erb (Duration: 0.7ms | Allocations: 396)
+  Rendered painel/_slide_2.html.erb (Duration: 9.1ms | Allocations: 4077)
+  Rendered painel/cards/upa/_quantidade_atendimento_upa.html.erb (Duration: 0.5ms | Allocations: 188)
+  Rendered painel/cards/upa/_d1.html.erb (Duration: 0.8ms | Allocations: 188)
+  Rendered painel/cards/upa/_d5.html.erb (Duration: 0.7ms | Allocations: 188)
+  Rendered painel/cards/upa/_d11.html.erb (Duration: 0.8ms | Allocations: 187)
+  Rendered painel/cards/upa/_quantidade_atendimento_upa_hoje.html.erb (Duration: 0.5ms | Allocations: 188)
+  Rendered painel/cards/upa/_d2.html.erb (Duration: 0.5ms | Allocations: 187)
+  Rendered painel/cards/upa/_d6.html.erb (Duration: 0.6ms | Allocations: 188)
+  Rendered painel/cards/upa/_d12.html.erb (Duration: 0.7ms | Allocations: 187)
+  Rendered painel/cards/upa/_g1.html.erb (Duration: 0.8ms | Allocations: 187)
+  Rendered painel/cards/upa/_d7.html.erb (Duration: 0.7ms | Allocations: 188)
+  Rendered painel/cards/upa/_d9.html.erb (Duration: 0.7ms | Allocations: 187)
+  Rendered painel/cards/upa/_d13.html.erb (Duration: 0.6ms | Allocations: 187)
+  Rendered painel/cards/upa/_g2.html.erb (Duration: 0.5ms | Allocations: 187)
+  Rendered painel/cards/upa/_d8.html.erb (Duration: 0.6ms | Allocations: 188)
+  Rendered painel/cards/upa/_d10.html.erb (Duration: 0.7ms | Allocations: 187)
+  Rendered painel/cards/upa/_d14.html.erb (Duration: 0.7ms | Allocations: 188)
+  Rendered painel/_slide_3.html.erb (Duration: 18.0ms | Allocations: 6498)
+  Rendered painel/cards/_tomografias.html.erb (Duration: 0.5ms | Allocations: 190)
+  Rendered painel/cards/taxa_ocupacao/_taxa_de_ocupacao_geral.html.erb (Duration: 0.0ms | Allocations: 20)
+  Rendered painel/cards/media_permanencia/_qtd_internados.html.erb (Duration: 0.5ms | Allocations: 149)
+  Rendered painel/cards/taxa_ocupacao/_taxa_de_ocupacao_leitos.html.erb (Duration: 0.5ms | Allocations: 205)
+  Rendered painel/cards/taxa_ocupacao/_taxa_mortalidade_institucional.html.erb (Duration: 0.5ms | Allocations: 187)
+  Rendered painel/cards/media_permanencia/_media_permanencia_geral_2.html.erb (Duration: 0.5ms | Allocations: 188)
+  Rendered painel/cards/taxa_ocupacao/_pacientes_atendidos.html.erb (Duration: 0.8ms | Allocations: 149)
+  Rendered painel/cards/taxa_ocupacao/_taxa_de_ocupacao_leitos_extras.html.erb (Duration: 0.8ms | Allocations: 180)
+  [1m[36mProductionBySpecialty Load (0.9ms)[0m  [1m[34mSELECT "production_by_specialties".* FROM "production_by_specialties"[0m
+  ↳ app/views/painel/chart_bars/_producao_assistencial_hospitalar.html.erb:15
+  Rendered painel/chart_bars/_producao_assistencial_hospitalar.html.erb (Duration: 10.8ms | Allocations: 4078)
+  Rendered painel/_slide_4.html.erb (Duration: 18.6ms | Allocations: 7389)
+  Rendered painel/chart_bars/_quantidade_internacoes.html.erb (Duration: 0.7ms | Allocations: 393)
+  Rendered painel/chart_bars/_pacientes_atendidos.html.erb (Duration: 1.0ms | Allocations: 366)
+  Rendered painel/_slide_5.html.erb (Duration: 3.4ms | Allocations: 1840)
+  Rendered painel/show.html.erb within layouts/application (Duration: 694.7ms | Allocations: 62683)
+  Rendered layout layouts/application.html.erb (Duration: 704.1ms | Allocations: 65801)
+Completed 200 OK in 1142ms (Views: 702.0ms | ActiveRecord: 300.9ms | Allocations: 128497)
+
+
+Started GET "/hojeqtdatendimentos" for ::1 at 2022-08-29 13:02:11 -0300
+Processing by HojeqtdatendimentosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering hojeqtdatendimentos/index.html.erb within layouts/application
+  [1m[36mHojeqtdatendimento Load (3.2ms)[0m  [1m[34mSELECT "hojeqtdatendimentos".* FROM "hojeqtdatendimentos"[0m
+  ↳ app/views/hojeqtdatendimentos/index.html.erb:6
+  Rendered hojeqtdatendimentos/index.html.erb within layouts/application (Duration: 6.5ms | Allocations: 1421)
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | Allocations: 4046)
+Completed 200 OK in 14ms (Views: 8.0ms | ActiveRecord: 3.2ms | Allocations: 5340)
+
+
+Started GET "/hojeqtdatendimentos/new" for ::1 at 2022-08-29 13:02:14 -0300
+Processing by HojeqtdatendimentosController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering hojeqtdatendimentos/new.html.erb within layouts/application
+  Rendered hojeqtdatendimentos/_form.html.erb (Duration: 109.3ms | Allocations: 20777)
+  Rendered hojeqtdatendimentos/new.html.erb within layouts/application (Duration: 110.4ms | Allocations: 21115)
+  Rendered layout layouts/application.html.erb (Duration: 115.9ms | Allocations: 23672)
+Completed 200 OK in 142ms (Views: 116.5ms | ActiveRecord: 3.4ms | Allocations: 38943)
+
+
+Started GET "/rails/info/routes" for ::1 at 2022-08-29 13:10:38 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::InfoController#routes as HTML
+  Rendering layout /home/fernandocunha/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.3.1/lib/rails/templates/layouts/application.html.erb
+  Rendering /home/fernandocunha/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.3.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /home/fernandocunha/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actionpack-7.0.3.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [132 times] (Duration: 48.5ms | Allocations: 21517)
+  Rendered /home/fernandocunha/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actionpack-7.0.3.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (Duration: 3.3ms | Allocations: 1152)
+  Rendered /home/fernandocunha/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.3.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application (Duration: 66.0ms | Allocations: 36129)
+  Rendered layout /home/fernandocunha/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.3.1/lib/rails/templates/layouts/application.html.erb (Duration: 66.9ms | Allocations: 36482)
+Completed 200 OK in 79ms (Views: 70.9ms | ActiveRecord: 0.0ms | Allocations: 40085)
+
+
+Started GET "/rails/info/routes?path=hoje" for ::1 at 2022-08-29 13:10:43 -0300
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"hoje"}
+Completed 200 OK in 11ms (Views: 0.9ms | ActiveRecord: 0.0ms | Allocations: 4657)
+
+
+Started GET "/rails/info/routes?path=hojeqtd" for ::1 at 2022-08-29 13:10:46 -0300
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"hojeqtd"}
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 1597)
+
+
+Started GET "/rails/info/routes?path=hojeqtd" for ::1 at 2022-08-29 13:10:55 -0300
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"hojeqtd"}
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 0.0ms | Allocations: 1594)
+
+
+[2130] - Gracefully shutting down workers...
+[2130] === puma shutdown: 2022-08-29 13:13:44 -0300 ===
+[2130] - Goodbye!
+[2130] - Gracefully shutting down workers...
+Exiting
+=== puma startup: 2022-08-29 13:55:00 -0300 ===
+[4138] * Starting control server on unix:///tmp/puma-status-1661792100444-4138
+[4138] - Worker 2 (PID: 4216) booted in 0.43s, phase: 0
+[4138] - Worker 1 (PID: 4213) booted in 0.44s, phase: 0
+[4138] - Worker 0 (PID: 4210) booted in 0.45s, phase: 0
+[4138] - Worker 3 (PID: 4219) booted in 0.47s, phase: 0
+Started GET "/" for ::1 at 2022-08-29 13:55:23 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PainelController#show as HTML
+  [1m[36mComputedTomography Sum (1.9ms)[0m  [1m[34mSELECT SUM("computed_tomographies"."amount") FROM "computed_tomographies"[0m
+  ↳ app/controllers/painel_controller.rb:452:in `computed_tomographies'
+  [1m[36mAmountOfUpaService Sum (0.7ms)[0m  [1m[34mSELECT SUM("amount_of_upa_services"."attended") FROM "amount_of_upa_services"[0m
+  ↳ app/controllers/painel_controller.rb:468:in `amount_of_upa_services'
+  [1m[36mConsolidado Sum (0.5ms)[0m  [1m[34mSELECT SUM("consolidados"."obito_maior") FROM "consolidados"[0m
+  ↳ app/controllers/painel_controller.rb:410:in `consolidados'
+  [1m[36mConsolidado Sum (0.2ms)[0m  [1m[34mSELECT SUM("consolidados"."total_de_saidas") FROM "consolidados"[0m
+  ↳ app/controllers/painel_controller.rb:410:in `consolidados'
+  [1m[36mConsolidado Sum (0.2ms)[0m  [1m[34mSELECT SUM("consolidados"."internados") FROM "consolidados"[0m
+  ↳ app/controllers/painel_controller.rb:422:in `consolidados'
+  [1m[36mConsolidado Sum (0.2ms)[0m  [1m[34mSELECT SUM("consolidados"."pacientes_dia") FROM "consolidados"[0m
+  ↳ app/controllers/painel_controller.rb:424:in `consolidados'
+  [1m[36mConsolidado Sum (0.3ms)[0m  [1m[34mSELECT SUM("consolidados"."leitos_dia") FROM "consolidados"[0m
+  ↳ app/controllers/painel_controller.rb:424:in `consolidados'
+  [1m[36mCACHE Consolidado Sum (0.0ms)[0m  [1m[34mSELECT SUM("consolidados"."pacientes_dia") FROM "consolidados"[0m
+  ↳ app/controllers/painel_controller.rb:425:in `consolidados'
+  [1m[36mCACHE Consolidado Sum (0.0ms)[0m  [1m[34mSELECT SUM("consolidados"."total_de_saidas") FROM "consolidados"[0m
+  ↳ app/controllers/painel_controller.rb:425:in `consolidados'
+  [1m[36mCensoSetor Sum (0.7ms)[0m  [1m[34mSELECT SUM("censo_setors"."mpe") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "ORTOPEDIA"]]
+  ↳ app/controllers/painel_controller.rb:227:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.2ms)[0m  [1m[34mSELECT SUM("censo_setors"."mpe") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "ENFERMARIA NEURO"]]
+  ↳ app/controllers/painel_controller.rb:239:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.2ms)[0m  [1m[34mSELECT SUM("censo_setors"."mpe") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CLINICA MEDICA"]]
+  ↳ app/controllers/painel_controller.rb:251:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.2ms)[0m  [1m[34mSELECT SUM("censo_setors"."mpe") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CLINICA CIRÚRGICA"]]
+  ↳ app/controllers/painel_controller.rb:263:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.2ms)[0m  [1m[34mSELECT SUM("censo_setors"."mpe") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CLINICA PEDIATRICA"]]
+  ↳ app/controllers/painel_controller.rb:275:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.2ms)[0m  [1m[34mSELECT SUM("censo_setors"."mpe") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "UTI PED"]]
+  ↳ app/controllers/painel_controller.rb:287:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.2ms)[0m  [1m[34mSELECT SUM("censo_setors"."mpe") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CTI 1"]]
+  ↳ app/controllers/painel_controller.rb:300:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.2ms)[0m  [1m[34mSELECT SUM("censo_setors"."mpe") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CTI 2"]]
+  ↳ app/controllers/painel_controller.rb:300:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.2ms)[0m  [1m[34mSELECT SUM("censo_setors"."mpe") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CTI 3"]]
+  ↳ app/controllers/painel_controller.rb:300:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.2ms)[0m  [1m[34mSELECT SUM("censo_setors"."mpe") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CTI 4"]]
+  ↳ app/controllers/painel_controller.rb:300:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.2ms)[0m  [1m[34mSELECT SUM("censo_setors"."pacientes_dia") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CTI 1"]]
+  ↳ app/controllers/painel_controller.rb:313:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.3ms)[0m  [1m[34mSELECT SUM("censo_setors"."leitos_dia") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CTI 1"]]
+  ↳ app/controllers/painel_controller.rb:313:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.5ms)[0m  [1m[34mSELECT SUM("censo_setors"."pacientes_dia") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CTI 2"]]
+  ↳ app/controllers/painel_controller.rb:326:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.3ms)[0m  [1m[34mSELECT SUM("censo_setors"."leitos_dia") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CTI 2"]]
+  ↳ app/controllers/painel_controller.rb:326:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.2ms)[0m  [1m[34mSELECT SUM("censo_setors"."pacientes_dia") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CTI 3"]]
+  ↳ app/controllers/painel_controller.rb:339:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.2ms)[0m  [1m[34mSELECT SUM("censo_setors"."leitos_dia") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CTI 3"]]
+  ↳ app/controllers/painel_controller.rb:339:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.3ms)[0m  [1m[34mSELECT SUM("censo_setors"."pacientes_dia") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CTI 4"]]
+  ↳ app/controllers/painel_controller.rb:352:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.2ms)[0m  [1m[34mSELECT SUM("censo_setors"."leitos_dia") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CTI 4"]]
+  ↳ app/controllers/painel_controller.rb:352:in `censo_setors'
+  [1m[36mCACHE CensoSetor Sum (0.0ms)[0m  [1m[34mSELECT SUM("censo_setors"."pacientes_dia") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CTI 1"]]
+  ↳ app/controllers/painel_controller.rb:365:in `censo_setors'
+  [1m[36mCACHE CensoSetor Sum (0.0ms)[0m  [1m[34mSELECT SUM("censo_setors"."pacientes_dia") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CTI 2"]]
+  ↳ app/controllers/painel_controller.rb:365:in `censo_setors'
+  [1m[36mCACHE CensoSetor Sum (0.0ms)[0m  [1m[34mSELECT SUM("censo_setors"."pacientes_dia") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CTI 3"]]
+  ↳ app/controllers/painel_controller.rb:365:in `censo_setors'
+  [1m[36mCACHE CensoSetor Sum (0.0ms)[0m  [1m[34mSELECT SUM("censo_setors"."pacientes_dia") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CTI 4"]]
+  ↳ app/controllers/painel_controller.rb:365:in `censo_setors'
+  [1m[36mCACHE CensoSetor Sum (0.0ms)[0m  [1m[34mSELECT SUM("censo_setors"."leitos_dia") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CTI 1"]]
+  ↳ app/controllers/painel_controller.rb:366:in `censo_setors'
+  [1m[36mCACHE CensoSetor Sum (0.0ms)[0m  [1m[34mSELECT SUM("censo_setors"."leitos_dia") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CTI 2"]]
+  ↳ app/controllers/painel_controller.rb:366:in `censo_setors'
+  [1m[36mCACHE CensoSetor Sum (0.0ms)[0m  [1m[34mSELECT SUM("censo_setors"."leitos_dia") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CTI 3"]]
+  ↳ app/controllers/painel_controller.rb:366:in `censo_setors'
+  [1m[36mCACHE CensoSetor Sum (0.0ms)[0m  [1m[34mSELECT SUM("censo_setors"."leitos_dia") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CTI 4"]]
+  ↳ app/controllers/painel_controller.rb:366:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.2ms)[0m  [1m[34mSELECT SUM("censo_setors"."pacientes_dia") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "UTI PED"]]
+  ↳ app/controllers/painel_controller.rb:380:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.2ms)[0m  [1m[34mSELECT SUM("censo_setors"."leitos_dia") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "UTI PED"]]
+  ↳ app/controllers/painel_controller.rb:380:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.2ms)[0m  [1m[34mSELECT SUM("censo_setors"."pacientes_dia") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "UPO"]]
+  ↳ app/controllers/painel_controller.rb:393:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.2ms)[0m  [1m[34mSELECT SUM("censo_setors"."leitos_dia") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "UPO"]]
+  ↳ app/controllers/painel_controller.rb:393:in `censo_setors'
+  [1m[36mUpaIndicadoresSe Pluck (0.7ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Numerador D1"]]
+  ↳ app/controllers/painel_controller.rb:52:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Denominador D1"]]
+  ↳ app/controllers/painel_controller.rb:52:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Numerador D2"]]
+  ↳ app/controllers/painel_controller.rb:64:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Denominador D2"]]
+  ↳ app/controllers/painel_controller.rb:64:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Numerador D5"]]
+  ↳ app/controllers/painel_controller.rb:76:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Denominador D5"]]
+  ↳ app/controllers/painel_controller.rb:76:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Numerador D6"]]
+  ↳ app/controllers/painel_controller.rb:88:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Denominador D6"]]
+  ↳ app/controllers/painel_controller.rb:88:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Numerador D7"]]
+  ↳ app/controllers/painel_controller.rb:100:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Denominador D7"]]
+  ↳ app/controllers/painel_controller.rb:100:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Numerador D8"]]
+  ↳ app/controllers/painel_controller.rb:112:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Denominador D8"]]
+  ↳ app/controllers/painel_controller.rb:112:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Numerador D9"]]
+  ↳ app/controllers/painel_controller.rb:124:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Denominador D9"]]
+  ↳ app/controllers/painel_controller.rb:124:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Numerador D10"]]
+  ↳ app/controllers/painel_controller.rb:136:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Denominador D10"]]
+  ↳ app/controllers/painel_controller.rb:136:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Numerador D11"]]
+  ↳ app/controllers/painel_controller.rb:148:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Denominador D11"]]
+  ↳ app/controllers/painel_controller.rb:148:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Numerador D12"]]
+  ↳ app/controllers/painel_controller.rb:160:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Denominador D12"]]
+  ↳ app/controllers/painel_controller.rb:160:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Numerador D13"]]
+  ↳ app/controllers/painel_controller.rb:172:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Denominador D13"]]
+  ↳ app/controllers/painel_controller.rb:172:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Numerador D14"]]
+  ↳ app/controllers/painel_controller.rb:184:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Denominador D14"]]
+  ↳ app/controllers/painel_controller.rb:184:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Numerador G1"]]
+  ↳ app/controllers/painel_controller.rb:196:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Denominador G1"]]
+  ↳ app/controllers/painel_controller.rb:196:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Numerador G2"]]
+  ↳ app/controllers/painel_controller.rb:208:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Denominador G2"]]
+  ↳ app/controllers/painel_controller.rb:208:in `upa_indicadores_ses'
+  [1m[36mCensoDiario Count (1.6ms)[0m  [1m[34mSELECT COUNT("censo_diarios"."leito") FROM "censo_diarios" WHERE NOT (("censo_diarios"."boletim" = $1 OR "censo_diarios"."boletim" IS NULL)) AND NOT (leito LIKE '%EXTRA%')[0m  [["boletim", ""]]
+  ↳ app/controllers/painel_controller.rb:18:in `censo_diarios'
+  [1m[36mCensoDiario Count (0.3ms)[0m  [1m[34mSELECT COUNT("censo_diarios"."leito") FROM "censo_diarios" WHERE (leito LIKE '%EXTRA%')[0m
+  ↳ app/controllers/painel_controller.rb:19:in `censo_diarios'
+  [1m[36mCensoDiario Count (0.3ms)[0m  [1m[34mSELECT COUNT("censo_diarios"."leito") FROM "censo_diarios" WHERE NOT (("censo_diarios"."boletim" = $1 OR "censo_diarios"."boletim" IS NULL)) AND (leito LIKE '%EXTRA%')[0m  [["boletim", ""]]
+  ↳ app/controllers/painel_controller.rb:20:in `censo_diarios'
+  [1m[36mCensoDiario Count (0.3ms)[0m  [1m[34mSELECT COUNT("censo_diarios"."leito") FROM "censo_diarios" WHERE NOT (leito LIKE '%EXTRA%')[0m
+  ↳ app/controllers/painel_controller.rb:21:in `censo_diarios'
+  [1m[36mPaciente Count (18.5ms)[0m  [1m[34mSELECT COUNT("pacientes"."tipo_entrada") FROM "pacientes" WHERE "pacientes"."especialidade" = $1[0m  [["especialidade", "CLINICA MEDICA"]]
+  ↳ app/controllers/painel_controller.rb:39:in `pacientes'
+  [1m[36mPaciente Count (1.7ms)[0m  [1m[34mSELECT COUNT("pacientes"."tipo_entrada") FROM "pacientes" WHERE "pacientes"."especialidade" = $1[0m  [["especialidade", "CIRURGIA GERAL"]]
+  ↳ app/controllers/painel_controller.rb:40:in `pacientes'
+  [1m[36mPaciente Count (0.9ms)[0m  [1m[34mSELECT COUNT("pacientes"."tipo_entrada") FROM "pacientes" WHERE "pacientes"."especialidade" = $1[0m  [["especialidade", "CIRURGIA VASCULAR"]]
+  ↳ app/controllers/painel_controller.rb:41:in `pacientes'
+  [1m[36mPaciente Count (1.0ms)[0m  [1m[34mSELECT COUNT("pacientes"."tipo_entrada") FROM "pacientes" WHERE "pacientes"."especialidade" = $1[0m  [["especialidade", "NEUROCIRURGIA"]]
+  ↳ app/controllers/painel_controller.rb:42:in `pacientes'
+  [1m[36mPaciente Count (1.0ms)[0m  [1m[34mSELECT COUNT("pacientes"."tipo_entrada") FROM "pacientes" WHERE "pacientes"."especialidade" = $1[0m  [["especialidade", "ORTOPEDIA"]]
+  ↳ app/controllers/painel_controller.rb:43:in `pacientes'
+  [1m[36mPaciente Count (1.1ms)[0m  [1m[34mSELECT COUNT("pacientes"."tipo_entrada") FROM "pacientes" WHERE "pacientes"."especialidade" = $1[0m  [["especialidade", "PEDIATRIA"]]
+  ↳ app/controllers/painel_controller.rb:44:in `pacientes'
+  [1m[36mPaciente Count (1.1ms)[0m  [1m[34mSELECT COUNT("pacientes"."tipo_entrada") FROM "pacientes" WHERE "pacientes"."especialidade" = $1[0m  [["especialidade", "COMISSÃO DE CURATIVOS"]]
+  ↳ app/controllers/painel_controller.rb:45:in `pacientes'
+  [1m[36mPaciente Count (1.1ms)[0m  [1m[34mSELECT COUNT("pacientes"."tipo_entrada") FROM "pacientes" WHERE "pacientes"."especialidade" = $1[0m  [["especialidade", "BUCOMAXILOFACIAL"]]
+  ↳ app/controllers/painel_controller.rb:46:in `pacientes'
+  [1m[36mPaciente Count (1.5ms)[0m  [1m[34mSELECT COUNT("pacientes"."especialidade") FROM "pacientes"[0m
+  ↳ app/controllers/painel_controller.rb:47:in `pacientes'
+  Rendering layout layouts/application.html.erb
+  Rendering painel/show.html.erb within layouts/application
+  Rendered painel/cards/taxa_ocupacao/_taxa_de_ocupacao_geral.html.erb (Duration: 0.7ms | Allocations: 200)
+  Rendered painel/cards/taxa_ocupacao/_taxa_de_ocupacao_cti_1.html.erb (Duration: 0.5ms | Allocations: 189)
+  Rendered painel/cards/taxa_ocupacao/_taxa_de_ocupacao_cti_3.html.erb (Duration: 0.5ms | Allocations: 188)
+  Rendered painel/cards/taxa_ocupacao/_taxa_de_ocupacao_uti_ped.html.erb (Duration: 0.6ms | Allocations: 188)
+  Rendered painel/cards/taxa_ocupacao/_taxa_de_ocupacao_cti_geral.html.erb (Duration: 0.6ms | Allocations: 188)
+  Rendered painel/cards/taxa_ocupacao/_taxa_de_ocupacao_cti_2.html.erb (Duration: 0.5ms | Allocations: 188)
+  Rendered painel/cards/taxa_ocupacao/_taxa_de_ocupacao_cti_4.html.erb (Duration: 0.5ms | Allocations: 188)
+  Rendered painel/cards/taxa_ocupacao/_taxa_de_ocupacao_upo.html.erb (Duration: 0.5ms | Allocations: 188)
+  [1m[36mCensoSetor Load (0.6ms)[0m  [1m[34mSELECT "censo_setors".* FROM "censo_setors"[0m
+  ↳ app/views/painel/chart_bars/_taxa_de_ocupacao_geral.html.erb:15
+  Rendered painel/chart_bars/_taxa_de_ocupacao_geral.html.erb (Duration: 24.9ms | Allocations: 12837)
+  Rendered painel/_slide_1.html.erb (Duration: 317.9ms | Allocations: 41911)
+  Rendered painel/cards/media_permanencia/_media_permanencia_geral.html.erb (Duration: 1.0ms | Allocations: 188)
+  Rendered painel/cards/media_permanencia/_media_permanencia_uti_ped.html.erb (Duration: 0.7ms | Allocations: 188)
+  Rendered painel/cards/media_permanencia/_media_permanencia_clinica_pediatrica.html.erb (Duration: 0.6ms | Allocations: 188)
+  Rendered painel/cards/media_permanencia/_media_permanencia_ortopedia.html.erb (Duration: 0.8ms | Allocations: 187)
+  Rendered painel/cards/media_permanencia/_media_permanencia_ctis.html.erb (Duration: 0.5ms | Allocations: 190)
+  Rendered painel/cards/media_permanencia/_media_permanencia_clinica_medica.html.erb (Duration: 0.7ms | Allocations: 188)
+  Rendered painel/cards/media_permanencia/_media_permanencia_clinica_cirurgica.html.erb (Duration: 5.8ms | Allocations: 188)
+  Rendered painel/cards/media_permanencia/_media_permanencia_enfermaria_neuro.html.erb (Duration: 0.5ms | Allocations: 187)
+  Rendered painel/chart_bars/_media_permanencia_geral.html.erb (Duration: 2.5ms | Allocations: 396)
+  Rendered painel/_slide_2.html.erb (Duration: 33.7ms | Allocations: 4077)
+  Rendered painel/cards/upa/_quantidade_atendimento_upa.html.erb (Duration: 0.9ms | Allocations: 188)
+  Rendered painel/cards/upa/_d1.html.erb (Duration: 0.8ms | Allocations: 188)
+  Rendered painel/cards/upa/_d5.html.erb (Duration: 0.8ms | Allocations: 188)
+  Rendered painel/cards/upa/_d11.html.erb (Duration: 0.7ms | Allocations: 187)
+  Rendered painel/cards/upa/_quantidade_atendimento_upa_hoje.html.erb (Duration: 4.9ms | Allocations: 188)
+  Rendered painel/cards/upa/_d2.html.erb (Duration: 0.7ms | Allocations: 187)
+  Rendered painel/cards/upa/_d6.html.erb (Duration: 0.7ms | Allocations: 188)
+  Rendered painel/cards/upa/_d12.html.erb (Duration: 3.8ms | Allocations: 187)
+  Rendered painel/cards/upa/_g1.html.erb (Duration: 0.6ms | Allocations: 187)
+  Rendered painel/cards/upa/_d7.html.erb (Duration: 4.9ms | Allocations: 188)
+  Rendered painel/cards/upa/_d9.html.erb (Duration: 0.7ms | Allocations: 190)
+  Rendered painel/cards/upa/_d13.html.erb (Duration: 0.5ms | Allocations: 187)
+  Rendered painel/cards/upa/_g2.html.erb (Duration: 0.5ms | Allocations: 187)
+  Rendered painel/cards/upa/_d8.html.erb (Duration: 0.8ms | Allocations: 188)
+  Rendered painel/cards/upa/_d10.html.erb (Duration: 0.7ms | Allocations: 187)
+  Rendered painel/cards/upa/_d14.html.erb (Duration: 0.7ms | Allocations: 188)
+  Rendered painel/_slide_3.html.erb (Duration: 87.7ms | Allocations: 6500)
+  Rendered painel/cards/_tomografias.html.erb (Duration: 0.9ms | Allocations: 190)
+  Rendered painel/cards/taxa_ocupacao/_taxa_de_ocupacao_geral.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered painel/cards/media_permanencia/_qtd_internados.html.erb (Duration: 0.6ms | Allocations: 149)
+  Rendered painel/cards/taxa_ocupacao/_taxa_de_ocupacao_leitos.html.erb (Duration: 0.6ms | Allocations: 205)
+  Rendered painel/cards/taxa_ocupacao/_taxa_mortalidade_institucional.html.erb (Duration: 1.8ms | Allocations: 187)
+  Rendered painel/cards/media_permanencia/_media_permanencia_geral_2.html.erb (Duration: 0.7ms | Allocations: 188)
+  Rendered painel/cards/taxa_ocupacao/_pacientes_atendidos.html.erb (Duration: 0.6ms | Allocations: 149)
+  Rendered painel/cards/taxa_ocupacao/_taxa_de_ocupacao_leitos_extras.html.erb (Duration: 0.6ms | Allocations: 180)
+  [1m[36mProductionBySpecialty Load (1.1ms)[0m  [1m[34mSELECT "production_by_specialties".* FROM "production_by_specialties"[0m
+  ↳ app/views/painel/chart_bars/_producao_assistencial_hospitalar.html.erb:15
+  Rendered painel/chart_bars/_producao_assistencial_hospitalar.html.erb (Duration: 14.9ms | Allocations: 4097)
+  Rendered painel/_slide_4.html.erb (Duration: 26.4ms | Allocations: 7417)
+  Rendered painel/chart_bars/_quantidade_internacoes.html.erb (Duration: 0.9ms | Allocations: 393)
+  Rendered painel/chart_bars/_pacientes_atendidos.html.erb (Duration: 0.7ms | Allocations: 366)
+  Rendered painel/_slide_5.html.erb (Duration: 3.9ms | Allocations: 1840)
+  Rendered painel/show.html.erb within layouts/application (Duration: 473.4ms | Allocations: 62890)
+  Rendered layout layouts/application.html.erb (Duration: 483.6ms | Allocations: 66002)
+Completed 200 OK in 678ms (Views: 480.4ms | ActiveRecord: 68.0ms | Allocations: 128704)
+
+
+Started GET "/welcome/index" for ::1 at 2022-08-29 13:55:30 -0300
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/layout/_side_bar.html.erb (Duration: 1.6ms | Allocations: 969)
+  Rendered welcome/layout/_nav.html.erb (Duration: 2.3ms | Allocations: 1052)
+  Rendered welcome/layout/_footer.html.erb (Duration: 0.7ms | Allocations: 137)
+  Rendered welcome/index.html.erb within layouts/application (Duration: 6.2ms | Allocations: 2766)
+  Rendered layout layouts/application.html.erb (Duration: 12.1ms | Allocations: 5407)
+Completed 200 OK in 16ms (Views: 15.0ms | ActiveRecord: 0.0ms | Allocations: 6207)
+
+
+Started GET "/hojeqtdatendimentos/new" for ::1 at 2022-08-29 13:55:34 -0300
+Processing by HojeqtdatendimentosController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering hojeqtdatendimentos/new.html.erb within layouts/application
+  Rendered welcome/layout/_side_bar.html.erb (Duration: 0.6ms | Allocations: 496)
+  Rendered welcome/layout/_nav.html.erb (Duration: 1.0ms | Allocations: 749)
+  Rendered welcome/layout/_footer.html.erb (Duration: 0.1ms | Allocations: 16)
+  Rendered hojeqtdatendimentos/new.html.erb within layouts/application (Duration: 4.8ms | Allocations: 2558)
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | Allocations: 4956)
+Completed 200 OK in 12ms (Views: 9.5ms | ActiveRecord: 0.0ms | Allocations: 6321)
+
+
+Started GET "/hojeqtdatendimentos/remove_all" for ::1 at 2022-08-29 13:55:37 -0300
+Processing by HojeqtdatendimentosController#remove_all as HTML
+  [1m[36mHojeqtdatendimento Delete All (1.4ms)[0m  [1m[31mDELETE FROM "hojeqtdatendimentos"[0m
+  ↳ app/controllers/hojeqtdatendimentos_controller.rb:10:in `remove_all'
+Redirected to http://localhost:3000/hojeqtdatendimentos/new
+Completed 302 Found in 6ms (ActiveRecord: 3.4ms | Allocations: 1049)
+
+
+Started GET "/hojeqtdatendimentos/new" for ::1 at 2022-08-29 13:55:37 -0300
+Processing by HojeqtdatendimentosController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering hojeqtdatendimentos/new.html.erb within layouts/application
+  Rendered welcome/layout/_side_bar.html.erb (Duration: 0.6ms | Allocations: 411)
+  Rendered welcome/layout/_nav.html.erb (Duration: 0.9ms | Allocations: 627)
+  Rendered welcome/layout/_footer.html.erb (Duration: 0.0ms | Allocations: 15)
+  Rendered hojeqtdatendimentos/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1785)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 4130)
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.0ms | Allocations: 4408)
+
+
+Started POST "/import_hojeqtdatendimentos" for ::1 at 2022-08-29 13:55:44 -0300
+Processing by HojeqtdatendimentosController#import_hojeqtdatendimentos as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "file"=>#<ActionDispatch::Http::UploadedFile:0x00007fc240048da0 @tempfile=#<Tempfile:/tmp/RackMultipart20220829-4216-mwjr9e.xlsx>, @original_filename="TiMedReportExport (7).xlsx", @content_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"TiMedReportExport (7).xlsx\"\r\nContent-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet\r\n">, "commit"=>"Importar"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/hojeqtdatendimentos_controller.rb:24:in `block in import_hojeqtdatendimentos'
+  [1m[36mHojeqtdatendimento Create (13.5ms)[0m  [1m[32mINSERT INTO "hojeqtdatendimentos" ("ano_mes", "registrados", "classificados", "atendidos", "acolhidos", "tm_atendimento", "tm_verde", "verde_meta", "verde_fora_meta", "tm_amarelo", "amarelo_meta", "amarelo_fora_meta", "vermelho_meta", "vermelho_fora_meta", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16) RETURNING "id"[0m  [["ano_mes", "202208"], ["registrados", 146.0], ["classificados", 142.0], ["atendidos", 106.0], ["acolhidos", 149.0], ["tm_atendimento", 44.0], ["tm_verde", 54.0], ["verde_meta", 48.0], ["verde_fora_meta", 21.0], ["tm_amarelo", 17.0], ["amarelo_meta", 29.0], ["amarelo_fora_meta", 2.0], ["vermelho_meta", 0.0], ["vermelho_fora_meta", 0.0], ["created_at", "2022-08-29 16:55:45.008556"], ["updated_at", "2022-08-29 16:55:45.008556"]]
+  ↳ app/controllers/hojeqtdatendimentos_controller.rb:24:in `block in import_hojeqtdatendimentos'
+  [1m[36mTRANSACTION (4.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/hojeqtdatendimentos_controller.rb:24:in `block in import_hojeqtdatendimentos'
+Redirected to http://localhost:3000/hojeqtdatendimentos/new
+Completed 302 Found in 72ms (ActiveRecord: 19.9ms | Allocations: 14529)
+
+
+Started GET "/hojeqtdatendimentos/new" for ::1 at 2022-08-29 13:55:45 -0300
+Processing by HojeqtdatendimentosController#new as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering hojeqtdatendimentos/new.html.erb within layouts/application
+  Rendered welcome/layout/_side_bar.html.erb (Duration: 1.0ms | Allocations: 429)
+  Rendered welcome/layout/_nav.html.erb (Duration: 1.3ms | Allocations: 711)
+  Rendered welcome/layout/_footer.html.erb (Duration: 0.1ms | Allocations: 15)
+  Rendered hojeqtdatendimentos/new.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1956)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 4325)
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.0ms | Allocations: 4679)
+
+
+Started GET "/" for ::1 at 2022-08-29 13:58:20 -0300
+Processing by PainelController#show as HTML
+  [1m[36mComputedTomography Sum (0.7ms)[0m  [1m[34mSELECT SUM("computed_tomographies"."amount") FROM "computed_tomographies"[0m
+  ↳ app/controllers/painel_controller.rb:452:in `computed_tomographies'
+  [1m[36mAmountOfUpaService Sum (0.3ms)[0m  [1m[34mSELECT SUM("amount_of_upa_services"."attended") FROM "amount_of_upa_services"[0m
+  ↳ app/controllers/painel_controller.rb:468:in `amount_of_upa_services'
+  [1m[36mConsolidado Sum (1.0ms)[0m  [1m[34mSELECT SUM("consolidados"."obito_maior") FROM "consolidados"[0m
+  ↳ app/controllers/painel_controller.rb:410:in `consolidados'
+  [1m[36mConsolidado Sum (0.3ms)[0m  [1m[34mSELECT SUM("consolidados"."total_de_saidas") FROM "consolidados"[0m
+  ↳ app/controllers/painel_controller.rb:410:in `consolidados'
+  [1m[36mConsolidado Sum (0.3ms)[0m  [1m[34mSELECT SUM("consolidados"."internados") FROM "consolidados"[0m
+  ↳ app/controllers/painel_controller.rb:422:in `consolidados'
+  [1m[36mConsolidado Sum (0.4ms)[0m  [1m[34mSELECT SUM("consolidados"."pacientes_dia") FROM "consolidados"[0m
+  ↳ app/controllers/painel_controller.rb:424:in `consolidados'
+  [1m[36mConsolidado Sum (0.4ms)[0m  [1m[34mSELECT SUM("consolidados"."leitos_dia") FROM "consolidados"[0m
+  ↳ app/controllers/painel_controller.rb:424:in `consolidados'
+  [1m[36mCACHE Consolidado Sum (0.0ms)[0m  [1m[34mSELECT SUM("consolidados"."pacientes_dia") FROM "consolidados"[0m
+  ↳ app/controllers/painel_controller.rb:425:in `consolidados'
+  [1m[36mCACHE Consolidado Sum (0.0ms)[0m  [1m[34mSELECT SUM("consolidados"."total_de_saidas") FROM "consolidados"[0m
+  ↳ app/controllers/painel_controller.rb:425:in `consolidados'
+  [1m[36mCensoSetor Sum (0.4ms)[0m  [1m[34mSELECT SUM("censo_setors"."mpe") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "ORTOPEDIA"]]
+  ↳ app/controllers/painel_controller.rb:227:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.5ms)[0m  [1m[34mSELECT SUM("censo_setors"."mpe") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "ENFERMARIA NEURO"]]
+  ↳ app/controllers/painel_controller.rb:239:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.3ms)[0m  [1m[34mSELECT SUM("censo_setors"."mpe") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CLINICA MEDICA"]]
+  ↳ app/controllers/painel_controller.rb:251:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.2ms)[0m  [1m[34mSELECT SUM("censo_setors"."mpe") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CLINICA CIRÚRGICA"]]
+  ↳ app/controllers/painel_controller.rb:263:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.2ms)[0m  [1m[34mSELECT SUM("censo_setors"."mpe") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CLINICA PEDIATRICA"]]
+  ↳ app/controllers/painel_controller.rb:275:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.2ms)[0m  [1m[34mSELECT SUM("censo_setors"."mpe") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "UTI PED"]]
+  ↳ app/controllers/painel_controller.rb:287:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.2ms)[0m  [1m[34mSELECT SUM("censo_setors"."mpe") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CTI 1"]]
+  ↳ app/controllers/painel_controller.rb:300:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.2ms)[0m  [1m[34mSELECT SUM("censo_setors"."mpe") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CTI 2"]]
+  ↳ app/controllers/painel_controller.rb:300:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.2ms)[0m  [1m[34mSELECT SUM("censo_setors"."mpe") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CTI 3"]]
+  ↳ app/controllers/painel_controller.rb:300:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.2ms)[0m  [1m[34mSELECT SUM("censo_setors"."mpe") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CTI 4"]]
+  ↳ app/controllers/painel_controller.rb:300:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.2ms)[0m  [1m[34mSELECT SUM("censo_setors"."pacientes_dia") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CTI 1"]]
+  ↳ app/controllers/painel_controller.rb:313:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.3ms)[0m  [1m[34mSELECT SUM("censo_setors"."leitos_dia") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CTI 1"]]
+  ↳ app/controllers/painel_controller.rb:313:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.4ms)[0m  [1m[34mSELECT SUM("censo_setors"."pacientes_dia") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CTI 2"]]
+  ↳ app/controllers/painel_controller.rb:326:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.4ms)[0m  [1m[34mSELECT SUM("censo_setors"."leitos_dia") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CTI 2"]]
+  ↳ app/controllers/painel_controller.rb:326:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.3ms)[0m  [1m[34mSELECT SUM("censo_setors"."pacientes_dia") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CTI 3"]]
+  ↳ app/controllers/painel_controller.rb:339:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.2ms)[0m  [1m[34mSELECT SUM("censo_setors"."leitos_dia") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CTI 3"]]
+  ↳ app/controllers/painel_controller.rb:339:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.2ms)[0m  [1m[34mSELECT SUM("censo_setors"."pacientes_dia") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CTI 4"]]
+  ↳ app/controllers/painel_controller.rb:352:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.2ms)[0m  [1m[34mSELECT SUM("censo_setors"."leitos_dia") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CTI 4"]]
+  ↳ app/controllers/painel_controller.rb:352:in `censo_setors'
+  [1m[36mCACHE CensoSetor Sum (0.0ms)[0m  [1m[34mSELECT SUM("censo_setors"."pacientes_dia") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CTI 1"]]
+  ↳ app/controllers/painel_controller.rb:365:in `censo_setors'
+  [1m[36mCACHE CensoSetor Sum (0.0ms)[0m  [1m[34mSELECT SUM("censo_setors"."pacientes_dia") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CTI 2"]]
+  ↳ app/controllers/painel_controller.rb:365:in `censo_setors'
+  [1m[36mCACHE CensoSetor Sum (0.0ms)[0m  [1m[34mSELECT SUM("censo_setors"."pacientes_dia") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CTI 3"]]
+  ↳ app/controllers/painel_controller.rb:365:in `censo_setors'
+  [1m[36mCACHE CensoSetor Sum (0.0ms)[0m  [1m[34mSELECT SUM("censo_setors"."pacientes_dia") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CTI 4"]]
+  ↳ app/controllers/painel_controller.rb:365:in `censo_setors'
+  [1m[36mCACHE CensoSetor Sum (0.0ms)[0m  [1m[34mSELECT SUM("censo_setors"."leitos_dia") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CTI 1"]]
+  ↳ app/controllers/painel_controller.rb:366:in `censo_setors'
+  [1m[36mCACHE CensoSetor Sum (0.0ms)[0m  [1m[34mSELECT SUM("censo_setors"."leitos_dia") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CTI 2"]]
+  ↳ app/controllers/painel_controller.rb:366:in `censo_setors'
+  [1m[36mCACHE CensoSetor Sum (0.0ms)[0m  [1m[34mSELECT SUM("censo_setors"."leitos_dia") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CTI 3"]]
+  ↳ app/controllers/painel_controller.rb:366:in `censo_setors'
+  [1m[36mCACHE CensoSetor Sum (0.0ms)[0m  [1m[34mSELECT SUM("censo_setors"."leitos_dia") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CTI 4"]]
+  ↳ app/controllers/painel_controller.rb:366:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.5ms)[0m  [1m[34mSELECT SUM("censo_setors"."pacientes_dia") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "UTI PED"]]
+  ↳ app/controllers/painel_controller.rb:380:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.3ms)[0m  [1m[34mSELECT SUM("censo_setors"."leitos_dia") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "UTI PED"]]
+  ↳ app/controllers/painel_controller.rb:380:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.3ms)[0m  [1m[34mSELECT SUM("censo_setors"."pacientes_dia") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "UPO"]]
+  ↳ app/controllers/painel_controller.rb:393:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.3ms)[0m  [1m[34mSELECT SUM("censo_setors"."leitos_dia") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "UPO"]]
+  ↳ app/controllers/painel_controller.rb:393:in `censo_setors'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Numerador D1"]]
+  ↳ app/controllers/painel_controller.rb:52:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Denominador D1"]]
+  ↳ app/controllers/painel_controller.rb:52:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Numerador D2"]]
+  ↳ app/controllers/painel_controller.rb:64:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Denominador D2"]]
+  ↳ app/controllers/painel_controller.rb:64:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Numerador D5"]]
+  ↳ app/controllers/painel_controller.rb:76:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Denominador D5"]]
+  ↳ app/controllers/painel_controller.rb:76:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Numerador D6"]]
+  ↳ app/controllers/painel_controller.rb:88:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Denominador D6"]]
+  ↳ app/controllers/painel_controller.rb:88:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Numerador D7"]]
+  ↳ app/controllers/painel_controller.rb:100:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.4ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Denominador D7"]]
+  ↳ app/controllers/painel_controller.rb:100:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.3ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Numerador D8"]]
+  ↳ app/controllers/painel_controller.rb:112:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.3ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Denominador D8"]]
+  ↳ app/controllers/painel_controller.rb:112:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.3ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Numerador D9"]]
+  ↳ app/controllers/painel_controller.rb:124:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Denominador D9"]]
+  ↳ app/controllers/painel_controller.rb:124:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Numerador D10"]]
+  ↳ app/controllers/painel_controller.rb:136:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Denominador D10"]]
+  ↳ app/controllers/painel_controller.rb:136:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Numerador D11"]]
+  ↳ app/controllers/painel_controller.rb:148:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Denominador D11"]]
+  ↳ app/controllers/painel_controller.rb:148:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Numerador D12"]]
+  ↳ app/controllers/painel_controller.rb:160:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Denominador D12"]]
+  ↳ app/controllers/painel_controller.rb:160:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Numerador D13"]]
+  ↳ app/controllers/painel_controller.rb:172:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Denominador D13"]]
+  ↳ app/controllers/painel_controller.rb:172:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.3ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Numerador D14"]]
+  ↳ app/controllers/painel_controller.rb:184:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.3ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Denominador D14"]]
+  ↳ app/controllers/painel_controller.rb:184:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.3ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Numerador G1"]]
+  ↳ app/controllers/painel_controller.rb:196:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Denominador G1"]]
+  ↳ app/controllers/painel_controller.rb:196:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Numerador G2"]]
+  ↳ app/controllers/painel_controller.rb:208:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Denominador G2"]]
+  ↳ app/controllers/painel_controller.rb:208:in `upa_indicadores_ses'
+  [1m[36mCensoDiario Count (0.6ms)[0m  [1m[34mSELECT COUNT("censo_diarios"."leito") FROM "censo_diarios" WHERE NOT (("censo_diarios"."boletim" = $1 OR "censo_diarios"."boletim" IS NULL)) AND NOT (leito LIKE '%EXTRA%')[0m  [["boletim", ""]]
+  ↳ app/controllers/painel_controller.rb:18:in `censo_diarios'
+  [1m[36mCensoDiario Count (0.3ms)[0m  [1m[34mSELECT COUNT("censo_diarios"."leito") FROM "censo_diarios" WHERE (leito LIKE '%EXTRA%')[0m
+  ↳ app/controllers/painel_controller.rb:19:in `censo_diarios'
+  [1m[36mCensoDiario Count (0.3ms)[0m  [1m[34mSELECT COUNT("censo_diarios"."leito") FROM "censo_diarios" WHERE NOT (("censo_diarios"."boletim" = $1 OR "censo_diarios"."boletim" IS NULL)) AND (leito LIKE '%EXTRA%')[0m  [["boletim", ""]]
+  ↳ app/controllers/painel_controller.rb:20:in `censo_diarios'
+  [1m[36mCensoDiario Count (0.3ms)[0m  [1m[34mSELECT COUNT("censo_diarios"."leito") FROM "censo_diarios" WHERE NOT (leito LIKE '%EXTRA%')[0m
+  ↳ app/controllers/painel_controller.rb:21:in `censo_diarios'
+  [1m[36mPaciente Count (2.2ms)[0m  [1m[34mSELECT COUNT("pacientes"."tipo_entrada") FROM "pacientes" WHERE "pacientes"."especialidade" = $1[0m  [["especialidade", "CLINICA MEDICA"]]
+  ↳ app/controllers/painel_controller.rb:39:in `pacientes'
+  [1m[36mPaciente Count (2.0ms)[0m  [1m[34mSELECT COUNT("pacientes"."tipo_entrada") FROM "pacientes" WHERE "pacientes"."especialidade" = $1[0m  [["especialidade", "CIRURGIA GERAL"]]
+  ↳ app/controllers/painel_controller.rb:40:in `pacientes'
+  [1m[36mPaciente Count (1.5ms)[0m  [1m[34mSELECT COUNT("pacientes"."tipo_entrada") FROM "pacientes" WHERE "pacientes"."especialidade" = $1[0m  [["especialidade", "CIRURGIA VASCULAR"]]
+  ↳ app/controllers/painel_controller.rb:41:in `pacientes'
+  [1m[36mPaciente Count (1.0ms)[0m  [1m[34mSELECT COUNT("pacientes"."tipo_entrada") FROM "pacientes" WHERE "pacientes"."especialidade" = $1[0m  [["especialidade", "NEUROCIRURGIA"]]
+  ↳ app/controllers/painel_controller.rb:42:in `pacientes'
+  [1m[36mPaciente Count (1.1ms)[0m  [1m[34mSELECT COUNT("pacientes"."tipo_entrada") FROM "pacientes" WHERE "pacientes"."especialidade" = $1[0m  [["especialidade", "ORTOPEDIA"]]
+  ↳ app/controllers/painel_controller.rb:43:in `pacientes'
+  [1m[36mPaciente Count (1.1ms)[0m  [1m[34mSELECT COUNT("pacientes"."tipo_entrada") FROM "pacientes" WHERE "pacientes"."especialidade" = $1[0m  [["especialidade", "PEDIATRIA"]]
+  ↳ app/controllers/painel_controller.rb:44:in `pacientes'
+  [1m[36mPaciente Count (0.9ms)[0m  [1m[34mSELECT COUNT("pacientes"."tipo_entrada") FROM "pacientes" WHERE "pacientes"."especialidade" = $1[0m  [["especialidade", "COMISSÃO DE CURATIVOS"]]
+  ↳ app/controllers/painel_controller.rb:45:in `pacientes'
+  [1m[36mPaciente Count (0.9ms)[0m  [1m[34mSELECT COUNT("pacientes"."tipo_entrada") FROM "pacientes" WHERE "pacientes"."especialidade" = $1[0m  [["especialidade", "BUCOMAXILOFACIAL"]]
+  ↳ app/controllers/painel_controller.rb:46:in `pacientes'
+  [1m[36mPaciente Count (1.1ms)[0m  [1m[34mSELECT COUNT("pacientes"."especialidade") FROM "pacientes"[0m
+  ↳ app/controllers/painel_controller.rb:47:in `pacientes'
+  Rendering layout layouts/application.html.erb
+  Rendering painel/show.html.erb within layouts/application
+  Rendered painel/cards/taxa_ocupacao/_taxa_de_ocupacao_geral.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered painel/cards/taxa_ocupacao/_taxa_de_ocupacao_cti_1.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered painel/cards/taxa_ocupacao/_taxa_de_ocupacao_cti_3.html.erb (Duration: 0.0ms | Allocations: 20)
+  Rendered painel/cards/taxa_ocupacao/_taxa_de_ocupacao_uti_ped.html.erb (Duration: 0.0ms | Allocations: 20)
+  Rendered painel/cards/taxa_ocupacao/_taxa_de_ocupacao_cti_geral.html.erb (Duration: 0.0ms | Allocations: 20)
+  Rendered painel/cards/taxa_ocupacao/_taxa_de_ocupacao_cti_2.html.erb (Duration: 0.0ms | Allocations: 20)
+  Rendered painel/cards/taxa_ocupacao/_taxa_de_ocupacao_cti_4.html.erb (Duration: 0.0ms | Allocations: 20)
+  Rendered painel/cards/taxa_ocupacao/_taxa_de_ocupacao_upo.html.erb (Duration: 0.0ms | Allocations: 20)
+  [1m[36mCensoSetor Load (0.5ms)[0m  [1m[34mSELECT "censo_setors".* FROM "censo_setors"[0m
+  ↳ app/views/painel/chart_bars/_taxa_de_ocupacao_geral.html.erb:15
+  Rendered painel/chart_bars/_taxa_de_ocupacao_geral.html.erb (Duration: 1.9ms | Allocations: 922)
+  Rendered painel/_slide_1.html.erb (Duration: 5.5ms | Allocations: 2791)
+  Rendered painel/cards/media_permanencia/_media_permanencia_geral.html.erb (Duration: 0.0ms | Allocations: 20)
+  Rendered painel/cards/media_permanencia/_media_permanencia_uti_ped.html.erb (Duration: 0.0ms | Allocations: 20)
+  Rendered painel/cards/media_permanencia/_media_permanencia_clinica_pediatrica.html.erb (Duration: 0.0ms | Allocations: 20)
+  Rendered painel/cards/media_permanencia/_media_permanencia_ortopedia.html.erb (Duration: 0.0ms | Allocations: 20)
+  Rendered painel/cards/media_permanencia/_media_permanencia_ctis.html.erb (Duration: 0.0ms | Allocations: 20)
+  Rendered painel/cards/media_permanencia/_media_permanencia_clinica_medica.html.erb (Duration: 0.0ms | Allocations: 20)
+  Rendered painel/cards/media_permanencia/_media_permanencia_clinica_cirurgica.html.erb (Duration: 0.0ms | Allocations: 20)
+  Rendered painel/cards/media_permanencia/_media_permanencia_enfermaria_neuro.html.erb (Duration: 0.0ms | Allocations: 20)
+  Rendered painel/chart_bars/_media_permanencia_geral.html.erb (Duration: 0.1ms | Allocations: 65)
+  Rendered painel/_slide_2.html.erb (Duration: 2.6ms | Allocations: 1426)
+  Rendered painel/cards/upa/_quantidade_atendimento_upa.html.erb (Duration: 0.0ms | Allocations: 20)
+  Rendered painel/cards/upa/_d1.html.erb (Duration: 0.0ms | Allocations: 20)
+  Rendered painel/cards/upa/_d5.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered painel/cards/upa/_d11.html.erb (Duration: 0.0ms | Allocations: 20)
+  Rendered painel/cards/upa/_quantidade_atendimento_upa_hoje.html.erb (Duration: 0.0ms | Allocations: 20)
+  Rendered painel/cards/upa/_d2.html.erb (Duration: 0.0ms | Allocations: 20)
+  Rendered painel/cards/upa/_d6.html.erb (Duration: 0.0ms | Allocations: 20)
+  Rendered painel/cards/upa/_d12.html.erb (Duration: 0.0ms | Allocations: 20)
+  Rendered painel/cards/upa/_g1.html.erb (Duration: 0.0ms | Allocations: 20)
+  Rendered painel/cards/upa/_d7.html.erb (Duration: 0.0ms | Allocations: 20)
+  Rendered painel/cards/upa/_d9.html.erb (Duration: 0.0ms | Allocations: 20)
+  Rendered painel/cards/upa/_d13.html.erb (Duration: 0.0ms | Allocations: 20)
+  Rendered painel/cards/upa/_g2.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered painel/cards/upa/_d8.html.erb (Duration: 0.0ms | Allocations: 20)
+  Rendered painel/cards/upa/_d10.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered painel/cards/upa/_d14.html.erb (Duration: 0.0ms | Allocations: 20)
+  Rendered painel/_slide_3.html.erb (Duration: 4.1ms | Allocations: 2177)
+  Rendered painel/cards/_tomografias.html.erb (Duration: 0.0ms | Allocations: 20)
+  Rendered painel/cards/taxa_ocupacao/_taxa_de_ocupacao_geral.html.erb (Duration: 0.0ms | Allocations: 20)
+  Rendered painel/cards/media_permanencia/_qtd_internados.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered painel/cards/taxa_ocupacao/_taxa_de_ocupacao_leitos.html.erb (Duration: 0.0ms | Allocations: 23)
+  Rendered painel/cards/taxa_ocupacao/_taxa_mortalidade_institucional.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered painel/cards/media_permanencia/_media_permanencia_geral_2.html.erb (Duration: 0.0ms | Allocations: 20)
+  Rendered painel/cards/taxa_ocupacao/_pacientes_atendidos.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered painel/cards/taxa_ocupacao/_taxa_de_ocupacao_leitos_extras.html.erb (Duration: 0.0ms | Allocations: 21)
+  [1m[36mProductionBySpecialty Load (0.4ms)[0m  [1m[34mSELECT "production_by_specialties".* FROM "production_by_specialties"[0m
+  ↳ app/views/painel/chart_bars/_producao_assistencial_hospitalar.html.erb:15
+  Rendered painel/chart_bars/_producao_assistencial_hospitalar.html.erb (Duration: 1.7ms | Allocations: 685)
+  Rendered painel/_slide_4.html.erb (Duration: 4.0ms | Allocations: 2043)
+  Rendered painel/chart_bars/_quantidade_internacoes.html.erb (Duration: 0.2ms | Allocations: 65)
+  Rendered painel/chart_bars/_pacientes_atendidos.html.erb (Duration: 0.7ms | Allocations: 38)
+  Rendered painel/_slide_5.html.erb (Duration: 1.8ms | Allocations: 854)
+  Rendered painel/show.html.erb within layouts/application (Duration: 18.9ms | Allocations: 9613)
+  Rendered layout layouts/application.html.erb (Duration: 22.2ms | Allocations: 12087)
+Completed 200 OK in 148ms (Views: 22.3ms | ActiveRecord: 30.7ms | Allocations: 56659)
+
+
+Started GET "/" for ::1 at 2022-08-29 14:03:30 -0300
+Processing by PainelController#show as HTML
+  [1m[36mComputedTomography Sum (0.6ms)[0m  [1m[34mSELECT SUM("computed_tomographies"."amount") FROM "computed_tomographies"[0m
+  ↳ app/controllers/painel_controller.rb:465:in `computed_tomographies'
+  [1m[36mAmountOfUpaService Sum (0.5ms)[0m  [1m[34mSELECT SUM("amount_of_upa_services"."attended") FROM "amount_of_upa_services"[0m
+  ↳ app/controllers/painel_controller.rb:481:in `amount_of_upa_services'
+  [1m[36mConsolidado Sum (0.4ms)[0m  [1m[34mSELECT SUM("consolidados"."obito_maior") FROM "consolidados"[0m
+  ↳ app/controllers/painel_controller.rb:423:in `consolidados'
+  [1m[36mConsolidado Sum (0.3ms)[0m  [1m[34mSELECT SUM("consolidados"."total_de_saidas") FROM "consolidados"[0m
+  ↳ app/controllers/painel_controller.rb:423:in `consolidados'
+  [1m[36mConsolidado Sum (0.3ms)[0m  [1m[34mSELECT SUM("consolidados"."internados") FROM "consolidados"[0m
+  ↳ app/controllers/painel_controller.rb:435:in `consolidados'
+  [1m[36mConsolidado Sum (0.5ms)[0m  [1m[34mSELECT SUM("consolidados"."pacientes_dia") FROM "consolidados"[0m
+  ↳ app/controllers/painel_controller.rb:437:in `consolidados'
+  [1m[36mConsolidado Sum (0.3ms)[0m  [1m[34mSELECT SUM("consolidados"."leitos_dia") FROM "consolidados"[0m
+  ↳ app/controllers/painel_controller.rb:437:in `consolidados'
+  [1m[36mCACHE Consolidado Sum (0.0ms)[0m  [1m[34mSELECT SUM("consolidados"."pacientes_dia") FROM "consolidados"[0m
+  ↳ app/controllers/painel_controller.rb:438:in `consolidados'
+  [1m[36mCACHE Consolidado Sum (0.0ms)[0m  [1m[34mSELECT SUM("consolidados"."total_de_saidas") FROM "consolidados"[0m
+  ↳ app/controllers/painel_controller.rb:438:in `consolidados'
+  [1m[36mCensoSetor Sum (0.5ms)[0m  [1m[34mSELECT SUM("censo_setors"."mpe") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "ORTOPEDIA"]]
+  ↳ app/controllers/painel_controller.rb:240:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.2ms)[0m  [1m[34mSELECT SUM("censo_setors"."mpe") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "ENFERMARIA NEURO"]]
+  ↳ app/controllers/painel_controller.rb:252:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.2ms)[0m  [1m[34mSELECT SUM("censo_setors"."mpe") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CLINICA MEDICA"]]
+  ↳ app/controllers/painel_controller.rb:264:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.3ms)[0m  [1m[34mSELECT SUM("censo_setors"."mpe") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CLINICA CIRÚRGICA"]]
+  ↳ app/controllers/painel_controller.rb:276:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.3ms)[0m  [1m[34mSELECT SUM("censo_setors"."mpe") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CLINICA PEDIATRICA"]]
+  ↳ app/controllers/painel_controller.rb:288:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.3ms)[0m  [1m[34mSELECT SUM("censo_setors"."mpe") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "UTI PED"]]
+  ↳ app/controllers/painel_controller.rb:300:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.4ms)[0m  [1m[34mSELECT SUM("censo_setors"."mpe") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CTI 1"]]
+  ↳ app/controllers/painel_controller.rb:313:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.2ms)[0m  [1m[34mSELECT SUM("censo_setors"."mpe") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CTI 2"]]
+  ↳ app/controllers/painel_controller.rb:313:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.2ms)[0m  [1m[34mSELECT SUM("censo_setors"."mpe") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CTI 3"]]
+  ↳ app/controllers/painel_controller.rb:313:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.2ms)[0m  [1m[34mSELECT SUM("censo_setors"."mpe") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CTI 4"]]
+  ↳ app/controllers/painel_controller.rb:313:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.3ms)[0m  [1m[34mSELECT SUM("censo_setors"."pacientes_dia") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CTI 1"]]
+  ↳ app/controllers/painel_controller.rb:326:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.2ms)[0m  [1m[34mSELECT SUM("censo_setors"."leitos_dia") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CTI 1"]]
+  ↳ app/controllers/painel_controller.rb:326:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.2ms)[0m  [1m[34mSELECT SUM("censo_setors"."pacientes_dia") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CTI 2"]]
+  ↳ app/controllers/painel_controller.rb:339:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.2ms)[0m  [1m[34mSELECT SUM("censo_setors"."leitos_dia") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CTI 2"]]
+  ↳ app/controllers/painel_controller.rb:339:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.2ms)[0m  [1m[34mSELECT SUM("censo_setors"."pacientes_dia") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CTI 3"]]
+  ↳ app/controllers/painel_controller.rb:352:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.2ms)[0m  [1m[34mSELECT SUM("censo_setors"."leitos_dia") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CTI 3"]]
+  ↳ app/controllers/painel_controller.rb:352:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.3ms)[0m  [1m[34mSELECT SUM("censo_setors"."pacientes_dia") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CTI 4"]]
+  ↳ app/controllers/painel_controller.rb:365:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.3ms)[0m  [1m[34mSELECT SUM("censo_setors"."leitos_dia") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CTI 4"]]
+  ↳ app/controllers/painel_controller.rb:365:in `censo_setors'
+  [1m[36mCACHE CensoSetor Sum (0.0ms)[0m  [1m[34mSELECT SUM("censo_setors"."pacientes_dia") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CTI 1"]]
+  ↳ app/controllers/painel_controller.rb:378:in `censo_setors'
+  [1m[36mCACHE CensoSetor Sum (0.0ms)[0m  [1m[34mSELECT SUM("censo_setors"."pacientes_dia") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CTI 2"]]
+  ↳ app/controllers/painel_controller.rb:378:in `censo_setors'
+  [1m[36mCACHE CensoSetor Sum (0.0ms)[0m  [1m[34mSELECT SUM("censo_setors"."pacientes_dia") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CTI 3"]]
+  ↳ app/controllers/painel_controller.rb:378:in `censo_setors'
+  [1m[36mCACHE CensoSetor Sum (0.0ms)[0m  [1m[34mSELECT SUM("censo_setors"."pacientes_dia") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CTI 4"]]
+  ↳ app/controllers/painel_controller.rb:378:in `censo_setors'
+  [1m[36mCACHE CensoSetor Sum (0.0ms)[0m  [1m[34mSELECT SUM("censo_setors"."leitos_dia") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CTI 1"]]
+  ↳ app/controllers/painel_controller.rb:379:in `censo_setors'
+  [1m[36mCACHE CensoSetor Sum (0.0ms)[0m  [1m[34mSELECT SUM("censo_setors"."leitos_dia") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CTI 2"]]
+  ↳ app/controllers/painel_controller.rb:379:in `censo_setors'
+  [1m[36mCACHE CensoSetor Sum (0.0ms)[0m  [1m[34mSELECT SUM("censo_setors"."leitos_dia") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CTI 3"]]
+  ↳ app/controllers/painel_controller.rb:379:in `censo_setors'
+  [1m[36mCACHE CensoSetor Sum (0.0ms)[0m  [1m[34mSELECT SUM("censo_setors"."leitos_dia") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "CTI 4"]]
+  ↳ app/controllers/painel_controller.rb:379:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.4ms)[0m  [1m[34mSELECT SUM("censo_setors"."pacientes_dia") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "UTI PED"]]
+  ↳ app/controllers/painel_controller.rb:393:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.2ms)[0m  [1m[34mSELECT SUM("censo_setors"."leitos_dia") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "UTI PED"]]
+  ↳ app/controllers/painel_controller.rb:393:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.2ms)[0m  [1m[34mSELECT SUM("censo_setors"."pacientes_dia") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "UPO"]]
+  ↳ app/controllers/painel_controller.rb:406:in `censo_setors'
+  [1m[36mCensoSetor Sum (0.2ms)[0m  [1m[34mSELECT SUM("censo_setors"."leitos_dia") FROM "censo_setors" WHERE "censo_setors"."secao" = $1[0m  [["secao", "UPO"]]
+  ↳ app/controllers/painel_controller.rb:406:in `censo_setors'
+  [1m[36mUpaIndicadoresSe Pluck (0.6ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Numerador D1"]]
+  ↳ app/controllers/painel_controller.rb:65:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.3ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Denominador D1"]]
+  ↳ app/controllers/painel_controller.rb:65:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Numerador D2"]]
+  ↳ app/controllers/painel_controller.rb:77:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Denominador D2"]]
+  ↳ app/controllers/painel_controller.rb:77:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Numerador D5"]]
+  ↳ app/controllers/painel_controller.rb:89:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Denominador D5"]]
+  ↳ app/controllers/painel_controller.rb:89:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Numerador D6"]]
+  ↳ app/controllers/painel_controller.rb:101:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Denominador D6"]]
+  ↳ app/controllers/painel_controller.rb:101:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Numerador D7"]]
+  ↳ app/controllers/painel_controller.rb:113:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Denominador D7"]]
+  ↳ app/controllers/painel_controller.rb:113:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Numerador D8"]]
+  ↳ app/controllers/painel_controller.rb:125:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Denominador D8"]]
+  ↳ app/controllers/painel_controller.rb:125:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.4ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Numerador D9"]]
+  ↳ app/controllers/painel_controller.rb:137:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Denominador D9"]]
+  ↳ app/controllers/painel_controller.rb:137:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.1ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Numerador D10"]]
+  ↳ app/controllers/painel_controller.rb:149:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Denominador D10"]]
+  ↳ app/controllers/painel_controller.rb:149:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Numerador D11"]]
+  ↳ app/controllers/painel_controller.rb:161:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Denominador D11"]]
+  ↳ app/controllers/painel_controller.rb:161:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Numerador D12"]]
+  ↳ app/controllers/painel_controller.rb:173:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Denominador D12"]]
+  ↳ app/controllers/painel_controller.rb:173:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Numerador D13"]]
+  ↳ app/controllers/painel_controller.rb:185:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Denominador D13"]]
+  ↳ app/controllers/painel_controller.rb:185:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Numerador D14"]]
+  ↳ app/controllers/painel_controller.rb:197:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Denominador D14"]]
+  ↳ app/controllers/painel_controller.rb:197:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Numerador G1"]]
+  ↳ app/controllers/painel_controller.rb:209:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Denominador G1"]]
+  ↳ app/controllers/painel_controller.rb:209:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Numerador G2"]]
+  ↳ app/controllers/painel_controller.rb:221:in `upa_indicadores_ses'
+  [1m[36mUpaIndicadoresSe Pluck (0.2ms)[0m  [1m[34mSELECT "upa_indicadores_ses"."variavel" FROM "upa_indicadores_ses" WHERE "upa_indicadores_ses"."descricao" = $1[0m  [["descricao", "Denominador G2"]]
+  ↳ app/controllers/painel_controller.rb:221:in `upa_indicadores_ses'
+  [1m[36mCensoDiario Count (0.7ms)[0m  [1m[34mSELECT COUNT("censo_diarios"."leito") FROM "censo_diarios" WHERE NOT (("censo_diarios"."boletim" = $1 OR "censo_diarios"."boletim" IS NULL)) AND NOT (leito LIKE '%EXTRA%')[0m  [["boletim", ""]]
+  ↳ app/controllers/painel_controller.rb:31:in `censo_diarios'
+  [1m[36mCensoDiario Count (0.3ms)[0m  [1m[34mSELECT COUNT("censo_diarios"."leito") FROM "censo_diarios" WHERE (leito LIKE '%EXTRA%')[0m
+  ↳ app/controllers/painel_controller.rb:32:in `censo_diarios'
+  [1m[36mCensoDiario Count (0.7ms)[0m  [1m[34mSELECT COUNT("censo_diarios"."leito") FROM "censo_diarios" WHERE NOT (("censo_diarios"."boletim" = $1 OR "censo_diarios"."boletim" IS NULL)) AND (leito LIKE '%EXTRA%')[0m  [["boletim", ""]]
+  ↳ app/controllers/painel_controller.rb:33:in `censo_diarios'
+  [1m[36mCensoDiario Count (0.4ms)[0m  [1m[34mSELECT COUNT("censo_diarios"."leito") FROM "censo_diarios" WHERE NOT (leito LIKE '%EXTRA%')[0m
+  ↳ app/controllers/painel_controller.rb:34:in `censo_diarios'
+  [1m[36mPaciente Count (2.7ms)[0m  [1m[34mSELECT COUNT("pacientes"."tipo_entrada") FROM "pacientes" WHERE "pacientes"."especialidade" = $1[0m  [["especialidade", "CLINICA MEDICA"]]
+  ↳ app/controllers/painel_controller.rb:52:in `pacientes'
+  [1m[36mPaciente Count (1.7ms)[0m  [1m[34mSELECT COUNT("pacientes"."tipo_entrada") FROM "pacientes" WHERE "pacientes"."especialidade" = $1[0m  [["especialidade", "CIRURGIA GERAL"]]
+  ↳ app/controllers/painel_controller.rb:53:in `pacientes'
+  [1m[36mPaciente Count (2.2ms)[0m  [1m[34mSELECT COUNT("pacientes"."tipo_entrada") FROM "pacientes" WHERE "pacientes"."especialidade" = $1[0m  [["especialidade", "CIRURGIA VASCULAR"]]
+  ↳ app/controllers/painel_controller.rb:54:in `pacientes'
+  [1m[36mPaciente Count (1.7ms)[0m  [1m[34mSELECT COUNT("pacientes"."tipo_entrada") FROM "pacientes" WHERE "pacientes"."especialidade" = $1[0m  [["especialidade", "NEUROCIRURGIA"]]
+  ↳ app/controllers/painel_controller.rb:55:in `pacientes'
+  [1m[36mPaciente Count (1.7ms)[0m  [1m[34mSELECT COUNT("pacientes"."tipo_entrada") FROM "pacientes" WHERE "pacientes"."especialidade" = $1[0m  [["especialidade", "ORTOPEDIA"]]
+  ↳ app/controllers/painel_controller.rb:56:in `pacientes'
+  [1m[36mPaciente Count (2.3ms)[0m  [1m[34mSELECT COUNT("pacientes"."tipo_entrada") FROM "pacientes" WHERE "pacientes"."especialidade" = $1[0m  [["especialidade", "PEDIATRIA"]]
+  ↳ app/controllers/painel_controller.rb:57:in `pacientes'
+  [1m[36mPaciente Count (1.8ms)[0m  [1m[34mSELECT COUNT("pacientes"."tipo_entrada") FROM "pacientes" WHERE "pacientes"."especialidade" = $1[0m  [["especialidade", "COMISSÃO DE CURATIVOS"]]
+  ↳ app/controllers/painel_controller.rb:58:in `pacientes'
+  [1m[36mPaciente Count (2.1ms)[0m  [1m[34mSELECT COUNT("pacientes"."tipo_entrada") FROM "pacientes" WHERE "pacientes"."especialidade" = $1[0m  [["especialidade", "BUCOMAXILOFACIAL"]]
+  ↳ app/controllers/painel_controller.rb:59:in `pacientes'
+  [1m[36mPaciente Count (1.7ms)[0m  [1m[34mSELECT COUNT("pacientes"."especialidade") FROM "pacientes"[0m
+  ↳ app/controllers/painel_controller.rb:60:in `pacientes'
+  [1m[36mHojeqtdatendimento Sum (0.7ms)[0m  [1m[34mSELECT SUM("hojeqtdatendimentos"."atendidos") FROM "hojeqtdatendimentos"[0m
+  ↳ app/controllers/painel_controller.rb:14:in `hojeqtdatendimentos'
+  Rendering layout layouts/application.html.erb
+  Rendering painel/show.html.erb within layouts/application
+  Rendered painel/cards/taxa_ocupacao/_taxa_de_ocupacao_geral.html.erb (Duration: 0.7ms | Allocations: 203)
+  Rendered painel/cards/taxa_ocupacao/_taxa_de_ocupacao_cti_1.html.erb (Duration: 0.5ms | Allocations: 189)
+  Rendered painel/cards/taxa_ocupacao/_taxa_de_ocupacao_cti_3.html.erb (Duration: 0.5ms | Allocations: 188)
+  Rendered painel/cards/taxa_ocupacao/_taxa_de_ocupacao_uti_ped.html.erb (Duration: 0.5ms | Allocations: 188)
+  Rendered painel/cards/taxa_ocupacao/_taxa_de_ocupacao_cti_geral.html.erb (Duration: 0.5ms | Allocations: 189)
+  Rendered painel/cards/taxa_ocupacao/_taxa_de_ocupacao_cti_2.html.erb (Duration: 0.4ms | Allocations: 188)
+  Rendered painel/cards/taxa_ocupacao/_taxa_de_ocupacao_cti_4.html.erb (Duration: 0.4ms | Allocations: 188)
+  Rendered painel/cards/taxa_ocupacao/_taxa_de_ocupacao_upo.html.erb (Duration: 0.5ms | Allocations: 188)
+  [1m[36mCensoSetor Load (0.6ms)[0m  [1m[34mSELECT "censo_setors".* FROM "censo_setors"[0m
+  ↳ app/views/painel/chart_bars/_taxa_de_ocupacao_geral.html.erb:15
+  Rendered painel/chart_bars/_taxa_de_ocupacao_geral.html.erb (Duration: 22.7ms | Allocations: 12837)
+  Rendered painel/_slide_1.html.erb (Duration: 158.1ms | Allocations: 38370)
+  Rendered painel/cards/media_permanencia/_media_permanencia_geral.html.erb (Duration: 0.7ms | Allocations: 188)
+  Rendered painel/cards/media_permanencia/_media_permanencia_uti_ped.html.erb (Duration: 0.5ms | Allocations: 188)
+  Rendered painel/cards/media_permanencia/_media_permanencia_clinica_pediatrica.html.erb (Duration: 0.5ms | Allocations: 188)
+  Rendered painel/cards/media_permanencia/_media_permanencia_ortopedia.html.erb (Duration: 0.4ms | Allocations: 187)
+  Rendered painel/cards/media_permanencia/_media_permanencia_ctis.html.erb (Duration: 0.5ms | Allocations: 190)
+  Rendered painel/cards/media_permanencia/_media_permanencia_clinica_medica.html.erb (Duration: 0.8ms | Allocations: 188)
+  Rendered painel/cards/media_permanencia/_media_permanencia_clinica_cirurgica.html.erb (Duration: 0.5ms | Allocations: 188)
+  Rendered painel/cards/media_permanencia/_media_permanencia_enfermaria_neuro.html.erb (Duration: 0.4ms | Allocations: 187)
+  Rendered painel/chart_bars/_media_permanencia_geral.html.erb (Duration: 0.6ms | Allocations: 396)
+  Rendered painel/_slide_2.html.erb (Duration: 10.5ms | Allocations: 4077)
+  Rendered painel/cards/upa/_quantidade_atendimento_upa.html.erb (Duration: 0.5ms | Allocations: 188)
+  Rendered painel/cards/upa/_d1.html.erb (Duration: 0.5ms | Allocations: 188)
+  Rendered painel/cards/upa/_d5.html.erb (Duration: 0.5ms | Allocations: 188)
+  Rendered painel/cards/upa/_d11.html.erb (Duration: 0.4ms | Allocations: 187)
+  Rendered painel/cards/upa/_quantidade_atendimento_upa_hoje.html.erb (Duration: 0.4ms | Allocations: 188)
+  Rendered painel/cards/upa/_d2.html.erb (Duration: 0.6ms | Allocations: 187)
+  Rendered painel/cards/upa/_d6.html.erb (Duration: 0.5ms | Allocations: 188)
+  Rendered painel/cards/upa/_d12.html.erb (Duration: 0.5ms | Allocations: 187)
+  Rendered painel/cards/upa/_g1.html.erb (Duration: 0.5ms | Allocations: 187)
+  Rendered painel/cards/upa/_d7.html.erb (Duration: 0.5ms | Allocations: 188)
+  Rendered painel/cards/upa/_d9.html.erb (Duration: 0.5ms | Allocations: 187)
+  Rendered painel/cards/upa/_d13.html.erb (Duration: 0.4ms | Allocations: 187)
+  Rendered painel/cards/upa/_g2.html.erb (Duration: 0.5ms | Allocations: 187)
+  Rendered painel/cards/upa/_d8.html.erb (Duration: 0.5ms | Allocations: 188)
+  Rendered painel/cards/upa/_d10.html.erb (Duration: 0.4ms | Allocations: 187)
+  Rendered painel/cards/upa/_d14.html.erb (Duration: 0.4ms | Allocations: 188)
+  Rendered painel/_slide_3.html.erb (Duration: 14.3ms | Allocations: 6483)
+  Rendered painel/cards/_tomografias.html.erb (Duration: 0.4ms | Allocations: 190)
+  Rendered painel/cards/taxa_ocupacao/_taxa_de_ocupacao_geral.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered painel/cards/media_permanencia/_qtd_internados.html.erb (Duration: 0.4ms | Allocations: 149)
+  Rendered painel/cards/taxa_ocupacao/_taxa_de_ocupacao_leitos.html.erb (Duration: 0.4ms | Allocations: 205)
+  Rendered painel/cards/taxa_ocupacao/_taxa_mortalidade_institucional.html.erb (Duration: 0.4ms | Allocations: 187)
+  Rendered painel/cards/media_permanencia/_media_permanencia_geral_2.html.erb (Duration: 0.5ms | Allocations: 188)
+  Rendered painel/cards/taxa_ocupacao/_pacientes_atendidos.html.erb (Duration: 0.4ms | Allocations: 150)
+  Rendered painel/cards/taxa_ocupacao/_taxa_de_ocupacao_leitos_extras.html.erb (Duration: 0.4ms | Allocations: 180)
+  [1m[36mProductionBySpecialty Load (0.6ms)[0m  [1m[34mSELECT "production_by_specialties".* FROM "production_by_specialties"[0m
+  ↳ app/views/painel/chart_bars/_producao_assistencial_hospitalar.html.erb:15
+  Rendered painel/chart_bars/_producao_assistencial_hospitalar.html.erb (Duration: 10.7ms | Allocations: 4077)
+  Rendered painel/_slide_4.html.erb (Duration: 17.3ms | Allocations: 7389)
+  Rendered painel/chart_bars/_quantidade_internacoes.html.erb (Duration: 0.6ms | Allocations: 393)
+  Rendered painel/chart_bars/_pacientes_atendidos.html.erb (Duration: 0.6ms | Allocations: 366)
+  Rendered painel/_slide_5.html.erb (Duration: 2.8ms | Allocations: 1840)
+  Rendered painel/show.html.erb within layouts/application (Duration: 206.2ms | Allocations: 59304)
+  Rendered layout layouts/application.html.erb (Duration: 214.0ms | Allocations: 62422)
+Completed 200 OK in 485ms (Views: 211.3ms | ActiveRecord: 60.4ms | Allocations: 127244)
+
+
+[4138] - Gracefully shutting down workers...
+[4138] === puma shutdown: 2022-08-29 14:04:09 -0300 ===
+[4138] - Goodbye!
+Exiting

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_19_115504) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_29_162022) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -108,6 +108,25 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_19_115504) do
     t.float "tmg"
     t.float "tmi"
     t.float "ir"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "hojeqtdatendimentos", force: :cascade do |t|
+    t.string "ano_mes"
+    t.float "registrados"
+    t.float "classificados"
+    t.float "atendidos"
+    t.float "acolhidos"
+    t.float "tm_atendimento"
+    t.float "tm_verde"
+    t.float "verde_meta"
+    t.float "verde_fora_meta"
+    t.float "tm_amarelo"
+    t.float "amarelo_meta"
+    t.float "amarelo_fora_meta"
+    t.float "vermelho_meta"
+    t.float "vermelho_fora_meta"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

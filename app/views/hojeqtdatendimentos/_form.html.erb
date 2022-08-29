@@ -1,0 +1,89 @@
+<%= form_with(model: hojeqtdatendimento) do |form| %>
+  <% if hojeqtdatendimento.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(hojeqtdatendimento.errors.count, "error") %> proibiu que esta lista fosse salva:</h2>
+
+      <ul>
+        <% hojeqtdatendimento.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row justify-content-center">
+    <div class="col-3">
+      <%= form.label :ano_mes, style: "display: block", class: "form-label" %>
+      <%= form.text_field :ano_mes, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :registrados, style: "display: block", class: "form-label" %>
+      <%= form.text_field :registrados, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :classificados, style: "display: block", class: "form-label" %>
+      <%= form.text_field :classificados, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :atendidos, style: "display: block", class: "form-label" %>
+      <%= form.text_field :atendidos, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :acolhidos, style: "display: block", class: "form-label" %>
+      <%= form.text_field :acolhidos, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :tm_atendimento, style: "display: block", class: "form-label" %>
+      <%= form.text_field :tm_atendimento, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :tm_verde, style: "display: block", class: "form-label" %>
+      <%= form.text_field :tm_verde, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :verde_meta, style: "display: block", class: "form-label" %>
+      <%= form.text_field :verde_meta, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :verde_fora_meta, style: "display: block", class: "form-label" %>
+      <%= form.text_field :verde_fora_meta, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :tm_amarelo, style: "display: block", class: "form-label" %>
+      <%= form.text_field :tm_amarelo, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :amarelo_meta, style: "display: block", class: "form-label" %>
+      <%= form.text_field :amarelo_meta, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :amarelo_fora_meta, style: "display: block", class: "form-label" %>
+      <%= form.text_field :amarelo_fora_meta, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :vermelho_meta, style: "display: block", class: "form-label" %>
+      <%= form.text_field :vermelho_meta, class: "form-label" %>
+    </div>
+
+    <div class="col-3">
+      <%= form.label :vermelho_fora_meta, style: "display: block", class: "form-label" %>
+      <%= form.text_field :vermelho_fora_meta, class: "form-label" %>
+    </div>
+
+    <div>
+      <%= form.submit %>
+    </div>
+  </div>
+<% end %>
