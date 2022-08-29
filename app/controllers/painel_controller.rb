@@ -446,20 +446,12 @@ class PainelController < ApplicationController
     @computed_tomographies = ComputedTomography.all
     @total_tomografia = ComputedTomography.all.sum(:amount)
     @media_tomografia = (((((@total_tomografia.to_f) / 2400) * 100).to_i) - 100)
-<<<<<<< HEAD
     @color_total_tomografia = if @total_tomografia >= 2400 
-=======
-    @color_media_tomografia = if @total_tomografia >= 2400 
->>>>>>> origin/desenv
       "success" 
     else 
       "danger" 
     end
-<<<<<<< HEAD
     @text_total_tomografia = if @total_tomografia >= 2400 
-=======
-    @text_media_tomografia = if @total_tomografia >= 2400 
->>>>>>> origin/desenv
       "Meta atingida" 
     else 
       "Meta não atingida" 
