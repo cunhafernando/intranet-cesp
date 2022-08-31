@@ -2356,3 +2356,18 @@ DEBUGGER: Attaching after process 5167 fork to child process 5248
 DEBUGGER[bin/rails#5249]: Attaching after process 5167 fork to child process 5249
 DEBUGGER[bin/rails#5254]: Attaching after process 5167 fork to child process 5254
 DEBUGGER[bin/rails#5257]: Attaching after process 5167 fork to child process 5257
+=== puma startup: 2022-08-29 15:26:29 -0300 ===
+DEBUGGER: Attaching after process 5630 fork to child process 5699
+DEBUGGER[bin/rails#5703]: Attaching after process 5630 fork to child process 5703
+DEBUGGER[bin/rails#5706]: Attaching after process 5630 fork to child process 5706
+DEBUGGER[bin/rails#5709]: Attaching after process 5630 fork to child process 5709
+=== puma startup: 2022-08-31 09:10:22 -0300 ===
+DEBUGGER: Attaching after process 933 fork to child process 1092
+DEBUGGER[bin/rails#1095]: Attaching after process 933 fork to child process 1095
+DEBUGGER[bin/rails#1098]: Attaching after process 933 fork to child process 1098
+DEBUGGER[bin/rails#1101]: Attaching after process 933 fork to child process 1101
+=== puma startup: 2022-08-31 09:15:33 -0300 ===
+DEBUGGER: Attaching after process 1654 fork to child process 1731
+DEBUGGER[bin/rails#1734]: Attaching after process 1654 fork to child process 1734
+DEBUGGER[bin/rails#1737]: Attaching after process 1654 fork to child process 1737
+DEBUGGER[bin/rails#1740]: Attaching after process 1654 fork to child process 1740
